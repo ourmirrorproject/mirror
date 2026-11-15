@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261115b">
+  <link rel="stylesheet" href="styles.css?v=20261115c">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -58,7 +58,11 @@
             <img class="op op-still" src="assets/reflections.jpg" width="1600" height="1067" alt="Sun reflected on water, the title card for Reflections">
             <img class="op op-poster" src="assets/sdyff-poster-2026.jpg" width="1047" height="1600" alt="Official poster for the San Diego Young Filmmakers Festival 2026, listing Reflections among the official selections">
           </div>
-          <div class="official-overlay">
+        </div>
+        <div class="official-below">
+            <div class="hero-actions official-watch">
+              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=-6ybJOofFA4" target="_blank" rel="noopener noreferrer">Watch Reflections</a>
+            </div>
             <div class="official-laurels">
               <svg class="festival-laurel-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" width="560" height="320" role="img" aria-label="Official Selection, San Diego Young Filmmakers Festival, 2026">
   <defs>
@@ -161,43 +165,19 @@
 </svg>
 
             </div>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=-6ybJOofFA4" target="_blank" rel="noopener noreferrer">Watch Reflections</a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-<section class="section votw" id="watch">
-      <div class="wrap votw-layout">
-        <div class="yt yt-feature" id="votw-player" data-youtube="v9NWlqYaPfo" data-title="Common Stereotypes From Your Region">
-          <img src="assets/voices/common-stereotypes.jpg" width="800" height="450" alt="Thumbnail for Common Stereotypes From Your Region">
-          <button type="button" class="yt-play" aria-label="Play Common Stereotypes From Your Region"></button>
-        </div>
-        <div>
-          <header class="section-head">
-            <p class="eyebrow">This week</p>
-            <h2>Video of the Week</h2>
-          </header>
-          <p class="votw-caption" id="votw-caption">Young people share the stereotypes they hear about their regions — and how they see themselves instead.</p>
-        </div>
-      </div>
-      <script type="application/json" id="votw-data">{
-  "id": "v9NWlqYaPfo",
-  "title": "Common Stereotypes From Your Region",
-  "caption": "Young people share the stereotypes they hear about their regions — and how they see themselves instead.",
-  "thumbnail": "assets/voices/common-stereotypes.jpg"
-}</script>
-    </section>
     <section class="section regions" id="regions">
-      <div class="wrap">
-        <header class="section-head">
+      <div class="wrap regions-votw">
+        <div class="regions-col">
+          <header class="section-head">
           <p class="eyebrow">Regions</p>
           <h2>Stories from 7 regions</h2>
           <p>Tap a globe to open that region’s interviews, facts, and photos.</p>
         </header>
-        <nav class="globe-grid" aria-label="Interview regions">
+          <nav class="globe-grid" aria-label="Interview regions">
           <a class="globe-card" data-region="argentina" href="regions/argentina.html">
             <span class="g-bg" aria-hidden="true"></span>
             <span class="g-overlay" aria-hidden="true"></span>
@@ -255,7 +235,23 @@
             </span>
           </a>
         </nav>
-        <p class="globe-note">Each globe opens that region’s page. Japan also appears as this week’s Travel Blog highlight, below, and more from the road is in Behind the Scenes. Interviews from France and Spain will appear when they are ready.</p>
+        </div>
+        <aside class="votw-card" id="watch" aria-label="Video of the Week">
+          <header class="section-head">
+            <p class="eyebrow">This week</p>
+            <h2>Video of the Week</h2>
+          </header>
+          <div class="yt yt-feature" id="votw-player" data-youtube="v9NWlqYaPfo" data-title="Common Stereotypes From Your Region" data-start="15" data-end="46">
+          <img src="assets/voices/common-stereotypes.jpg" width="800" height="450" alt="Thumbnail for Common Stereotypes From Your Region">
+          <button type="button" class="yt-play" aria-label="Play Common Stereotypes From Your Region"></button>
+        </div>
+          <p class="votw-caption" id="votw-caption">Young people share the stereotypes they hear about their regions — and how they see themselves instead.</p>
+          <p class="votw-full"><a id="votw-full-link" href="https://www.youtube.com/watch?v=v9NWlqYaPfo" target="_blank" rel="noopener noreferrer">Watch full interview</a></p>
+          <script type="application/json" id="votw-data">{"id": "v9NWlqYaPfo", "title": "Common Stereotypes From Your Region", "caption": "Young people share the stereotypes they hear about their regions — and how they see themselves instead.", "thumbnail": "assets/voices/common-stereotypes.jpg", "start": 15, "end": 46}</script>
+        </aside>
+      </div>
+      <div class="wrap">
+<p class="globe-note">Each globe opens that region’s page. Japan also appears as this week’s Travel Blog highlight, below, and more from the road is in Behind the Scenes. Interviews from France and Spain will appear when they are ready.</p>
         <div class="bts" id="behind-the-scenes">
           <h3 class="clips-title">Behind the Scenes</h3>
           <p class="clips-lede">Prep and on the road: stills from travel days, streets, and food along the way, plus short clips from the journey.</p>
@@ -1229,6 +1225,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261115b"></script>
+  <script src="script.js?v=20261115c"></script>
 </body>
 </html>

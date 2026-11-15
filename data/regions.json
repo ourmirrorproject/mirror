@@ -3,6 +3,44 @@
     "argentina": {
       "name": "Argentina",
       "playlist": "PLohWU7C96ZbRcyKnbC1dNRsw0ja66OPhO",
+      "people": [
+        {
+          "clips": [
+            {
+              "id": "Yh4JXiddf8U",
+              "title": "What you think of teenagers in the united states"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "7ewKNBRoouw",
+              "title": "How you feel when you listen stereotypes about failures?"
+            },
+            {
+              "id": "hKFpWzv6PmY",
+              "title": "you feel comfortable travelling to united states"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "RAYTklo4rsU",
+              "title": "young columbians do that they may not"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "W26A0soMmVM",
+              "title": "what you think which are some good ways to break the stereotypes and help to understand each other"
+            }
+          ]
+        }
+      ],
       "videos": [
         {
           "id": "Yh4JXiddf8U",
@@ -17,6 +55,10 @@
           "title": "you feel comfortable travelling to united states"
         },
         {
+          "id": "RAYTklo4rsU",
+          "title": "young columbians do that they may not"
+        },
+        {
           "id": "W26A0soMmVM",
           "title": "what you think which are some good ways to break the stereotypes and help to understand each other"
         }
@@ -25,6 +67,44 @@
     "bolivia": {
       "name": "Bolivia",
       "playlist": "PLohWU7C96ZbTyqBA99H123J4TBOjzMLt5",
+      "people": [
+        {
+          "clips": [
+            {
+              "id": "zsR8yeuzXJE",
+              "title": "Do you think americans are welcome to travel to your country?"
+            },
+            {
+              "id": "Brpt29uf4zs",
+              "title": "Do you think you would feel comfortable and welcome to united states?"
+            },
+            {
+              "id": "L3SboznEryg",
+              "title": "How do you personally feel when you hear stereotypes about people from your country?"
+            },
+            {
+              "id": "l8cUT8aiQv4",
+              "title": "what do you think which are good ways to break the stereotypes and help to understand each other"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "JFsIbEWBIw8",
+              "title": "what are some common stereotypes about teenagers in your country that you think they are not true?"
+            },
+            {
+              "id": "8h_beAQwyTk",
+              "title": "What interesting things about teenagers in your country that people from other countries not know?"
+            },
+            {
+              "id": "H4VifOR6h34",
+              "title": "What you think of teenagers in the united states? Bolivian Interview"
+            }
+          ]
+        }
+      ],
       "videos": [
         {
           "id": "zsR8yeuzXJE",
@@ -39,6 +119,10 @@
           "title": "How do you personally feel when you hear stereotypes about people from your country?"
         },
         {
+          "id": "l8cUT8aiQv4",
+          "title": "what do you think which are good ways to break the stereotypes and help to understand each other"
+        },
+        {
           "id": "JFsIbEWBIw8",
           "title": "what are some common stereotypes about teenagers in your country that you think they are not true?"
         },
@@ -49,20 +133,211 @@
         {
           "id": "H4VifOR6h34",
           "title": "What you think of teenagers in the united states? Bolivian Interview"
-        },
-        {
-          "id": "l8cUT8aiQv4",
-          "title": "what do you think which are good ways to break the stereotypes and help to understand each other"
         }
       ]
     },
     "cameroon": {
       "name": "Cameroon",
       "playlist": "PLohWU7C96ZbRs0kAREIXCN7DjfEI9UQIY",
+      "people": [
+        {
+          "thumbnail": "assets/voices/people/cameroon-01.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 5,
+              "end": 15,
+              "thumbnail": "assets/voices/people/cameroon-01.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-02.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 15,
+              "end": 46,
+              "thumbnail": "assets/voices/people/cameroon-02.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-03.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 46,
+              "end": 62,
+              "thumbnail": "assets/voices/people/cameroon-03.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-04.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 62,
+              "end": 88,
+              "thumbnail": "assets/voices/people/cameroon-04.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-05.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 88,
+              "end": 110,
+              "thumbnail": "assets/voices/people/cameroon-05.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-06.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 110,
+              "end": 134,
+              "thumbnail": "assets/voices/people/cameroon-06.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-07.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 134,
+              "end": 168,
+              "thumbnail": "assets/voices/people/cameroon-07.jpg"
+            },
+            {
+              "id": "DxMhmJjM7T0",
+              "title": "What is your impression on american teenagers? | Cameroon Interview | Africa interview"
+            },
+            {
+              "id": "K5x8efHMiFY",
+              "title": "How do you personally feel when you hear stereo type about people from africa | Cameroon (Africa)"
+            },
+            {
+              "id": "SipjK6Oq6OE",
+              "title": "What are some intresting things about teenagers in africa that other peoples may not know? - Africa"
+            },
+            {
+              "id": "T-WVed-cRtI",
+              "title": "Do you think americans are welcome to travel to your country? | Cameroon (Africa) Interview"
+            },
+            {
+              "id": "rhC8ZysM7TU",
+              "title": "What are the good ways to break stereotypes and help people understand each other better? | Cameroon"
+            },
+            {
+              "id": "BDG9Sjo3zRI",
+              "title": "Do you think you would feel welcome if you travel to america? | Cameroon (Africa) Interview"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-08.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 168,
+              "end": 185,
+              "thumbnail": "assets/voices/people/cameroon-08.jpg"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-09.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 185,
+              "end": 206,
+              "thumbnail": "assets/voices/people/cameroon-09.jpg"
+            },
+            {
+              "id": "-bazu61qXfw",
+              "title": "Cameroon Voices"
+            }
+          ]
+        },
+        {
+          "thumbnail": "assets/voices/people/cameroon-10.jpg",
+          "clips": [
+            {
+              "id": "v9NWlqYaPfo",
+              "title": "Common Stereotypes From Your Region",
+              "start": 206,
+              "end": 220,
+              "thumbnail": "assets/voices/people/cameroon-10.jpg"
+            }
+          ]
+        }
+      ],
       "videos": [
         {
-          "id": "mbzYv8xDenY",
-          "title": "what are some common stereotypes about teenagers in cameroon that you think they are not true?"
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 5,
+          "end": 15,
+          "thumbnail": "assets/voices/people/cameroon-01.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 15,
+          "end": 46,
+          "thumbnail": "assets/voices/people/cameroon-02.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 46,
+          "end": 62,
+          "thumbnail": "assets/voices/people/cameroon-03.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 62,
+          "end": 88,
+          "thumbnail": "assets/voices/people/cameroon-04.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 88,
+          "end": 110,
+          "thumbnail": "assets/voices/people/cameroon-05.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 110,
+          "end": 134,
+          "thumbnail": "assets/voices/people/cameroon-06.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 134,
+          "end": 168,
+          "thumbnail": "assets/voices/people/cameroon-07.jpg"
         },
         {
           "id": "DxMhmJjM7T0",
@@ -87,16 +362,83 @@
         {
           "id": "BDG9Sjo3zRI",
           "title": "Do you think you would feel welcome if you travel to america? | Cameroon (Africa) Interview"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 168,
+          "end": 185,
+          "thumbnail": "assets/voices/people/cameroon-08.jpg"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 185,
+          "end": 206,
+          "thumbnail": "assets/voices/people/cameroon-09.jpg"
+        },
+        {
+          "id": "-bazu61qXfw",
+          "title": "Cameroon Voices"
+        },
+        {
+          "id": "v9NWlqYaPfo",
+          "title": "Common Stereotypes From Your Region",
+          "start": 206,
+          "end": 220,
+          "thumbnail": "assets/voices/people/cameroon-10.jpg"
         }
       ]
     },
     "china": {
       "name": "China",
       "playlist": "PLohWU7C96ZbRXoVN6mOS3jLlkrkwPsAh6",
+      "people": [
+        {
+          "clips": [
+            {
+              "id": "L3oTR7XeN9E",
+              "title": "what do you think which are some good ways to break stereotypes and help people to understand | asia"
+            },
+            {
+              "id": "ilMRK_DTwJE",
+              "title": "What are some interesting things about teenagers of china | china (asia) interviews"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "6fJ4XuTknqg",
+              "title": "Do you think Americans are welcome to travel to china? | China (Asia) Interview"
+            },
+            {
+              "id": "QLqJIRkqmFA",
+              "title": "How do you personally feel when you hear stereotypes about china that are not true | china interview"
+            },
+            {
+              "id": "7pg1fUdJsF8",
+              "title": "Do you think you would feel comfortable and welcome if you travel to america? | China (Asia)"
+            },
+            {
+              "id": "TVCODd55QhU",
+              "title": "what are some common stereotypes about teenagers in your country that other peoples may not know?"
+            },
+            {
+              "id": "Ow_0khDR4aI",
+              "title": "what is your impression of american teenagers | china (Asia) Interview"
+            }
+          ]
+        }
+      ],
       "videos": [
         {
           "id": "L3oTR7XeN9E",
           "title": "what do you think which are some good ways to break stereotypes and help people to understand | asia"
+        },
+        {
+          "id": "ilMRK_DTwJE",
+          "title": "What are some interesting things about teenagers of china | china (asia) interviews"
         },
         {
           "id": "6fJ4XuTknqg",
@@ -115,10 +457,6 @@
           "title": "what are some common stereotypes about teenagers in your country that other peoples may not know?"
         },
         {
-          "id": "ilMRK_DTwJE",
-          "title": "What are some interesting things about teenagers of china | china (asia) interviews"
-        },
-        {
           "id": "Ow_0khDR4aI",
           "title": "what is your impression of american teenagers | china (Asia) Interview"
         }
@@ -127,19 +465,58 @@
     "japan": {
       "name": "Japan",
       "playlist": null,
+      "people": [],
       "videos": []
     },
     "nigeria": {
       "name": "Nigeria",
       "playlist": "PLohWU7C96ZbSsMggtafetNq8G51VSzItr",
+      "people": [
+        {
+          "clips": [
+            {
+              "id": "a_6V5NzlnXc",
+              "title": "Do you think americans are welcome to travel to nigeria? | Nigeria Interview (America)"
+            },
+            {
+              "id": "3hxCjI7kCg0",
+              "title": "How do you personally feel when you hear stereotypes about nigeria that is not correct? | Nigeria"
+            },
+            {
+              "id": "s0kOp6_31Ek",
+              "title": "what are some common stereotypes about teenagers of nigeria | Nigeria (Africa) Interview"
+            },
+            {
+              "id": "7-YjG-e4Sv4",
+              "title": "what are some interesting thingsabout teenagers of nigeria that other peoples may not know | Nigeria"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "oHfMejh1P6w",
+              "title": "Do you think you would feel comfortable travelling to america | Nigeria Interview (Africa)"
+            },
+            {
+              "id": "-vSKcEg3y0M",
+              "title": "what do you think which are some good ways to break stereotypes | Nigeria Interview (Africa)"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "B3yfT6xwMi0",
+              "title": "What you think of teenagers in the united states | Nigeria (Africa) interviews"
+            }
+          ]
+        }
+      ],
       "videos": [
         {
           "id": "a_6V5NzlnXc",
           "title": "Do you think americans are welcome to travel to nigeria? | Nigeria Interview (America)"
-        },
-        {
-          "id": "oHfMejh1P6w",
-          "title": "Do you think you would feel comfortable travelling to america | Nigeria Interview (Africa)"
         },
         {
           "id": "3hxCjI7kCg0",
@@ -154,6 +531,10 @@
           "title": "what are some interesting thingsabout teenagers of nigeria that other peoples may not know | Nigeria"
         },
         {
+          "id": "oHfMejh1P6w",
+          "title": "Do you think you would feel comfortable travelling to america | Nigeria Interview (Africa)"
+        },
+        {
           "id": "-vSKcEg3y0M",
           "title": "what do you think which are some good ways to break stereotypes | Nigeria Interview (Africa)"
         },
@@ -166,6 +547,40 @@
     "philippines": {
       "name": "The Philippines",
       "playlist": "PLohWU7C96ZbS1LXCzweYKx4-aHpN_CQN9",
+      "people": [
+        {
+          "clips": [
+            {
+              "id": "V7smAPSLkYU",
+              "title": "Do you think americans are welcome to travel to philipines | Philipines (Asia) Interview"
+            },
+            {
+              "id": "MY0WzJmIT5Y",
+              "title": "Do you think you would feel comfortable and welcome if you travel to america | Philipines (Asia)"
+            },
+            {
+              "id": "pawmYpXhKLo",
+              "title": "How do you personally feel when you hear stereotypes about philipines that are not true | Philipines"
+            },
+            {
+              "id": "QNpg8HNmVIY",
+              "title": "The most common Stereotypes you hear about the teenagers of philipines | Philipines (Asia) Interview"
+            },
+            {
+              "id": "pSdeUQqKrE0",
+              "title": "what do you think are some good ways to break stereotypes | Philipines (Asis) Interview"
+            },
+            {
+              "id": "ybgQRrzz6xY",
+              "title": "what is your impression on american teenagers | Philipines (Asia) Interview"
+            },
+            {
+              "id": "TngLk3UfE3Q",
+              "title": "What are the interesting things about teenagers of your country that others dont know | Philipines"
+            }
+          ]
+        }
+      ],
       "videos": [
         {
           "id": "V7smAPSLkYU",

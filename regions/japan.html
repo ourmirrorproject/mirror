@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261115b">
+  <link rel="stylesheet" href="../styles.css?v=20261115c">
 </head>
 <body class="region-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -58,20 +58,21 @@
                     <header class="section-head region-media-head">
             <p class="eyebrow">Watch</p>
             <h2>Interviews</h2>
-            <p class="region-videos-lede" hidden>Click a thumbnail to play.</p>
+            <p class="region-videos-lede" hidden>Each card is one person we interviewed. Click a clip to play.</p>
             <p class="region-videos-empty">Interview videos from Japan will appear here when they are ready.</p>
           </header>
           <div id="region-videos" class="video-group" data-region="japan"></div>
-          <script type="application/json" id="region-videos-data">{"regions": {"japan": {"name": "Japan", "playlist": null, "videos": []}}}</script>
+          <script type="application/json" id="region-videos-data">{"regions": {"japan": {"name": "Japan", "playlist": null, "people": [], "videos": []}}}</script>
 
         <div class="didyouknow region-didyouknow" id="did-you-know">
             <h3 class="clips-title">Did you know?</h3>
             <p class="clips-lede">Tap or click the card to flip it.</p>
             <div class="fact-grid region-fact-grid">
-              <article class="fact-card">
+              <article class="fact-card" data-region="japan">
               <button type="button" class="fact-flip" aria-expanded="false" aria-label="Did you know about Japan? Flip the card.">
                 <span class="fact-front">
-                  <span class="fact-kicker">Did you know?</span>
+                  <span class="fact-ornament" aria-hidden="true"><svg class="fact-motif" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 20 L24 12 L38 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/><path d="M14 20 V36 M34 20 V36 M8 22 H40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+                  <span class="fact-title">Did you know?</span>
                   <span class="fact-country">Japan</span>
                   <span class="fact-hint">Tap to flip</span>
                 </span>
@@ -82,6 +83,7 @@
                     <li>The Hiroshima Peace Memorial (Genbaku Dome) was inscribed as a UNESCO World Heritage Site in 1996. It is the ruined hall that stood near the hypocenter of the 6 August 1945 atomic bombing, preserved as a call for peace.</li>
                     <li>Itsukushima Shinto Shrine on Miyajima has been a UNESCO World Heritage Site since 1996. Its great vermilion torii stands in the sea and appears to float at high tide.</li>
                   </ul>
+                  <span class="fact-source-line">Sources are listed below the card.</span>
                 </span>
               </button>
             </article>
@@ -184,6 +186,6 @@
       <div class="yt-lightbox-frame"></div>
     </div>
   </div>
-  <script src="../script.js?v=20261115b"></script>
+  <script src="../script.js?v=20261115c"></script>
 </body>
 </html>

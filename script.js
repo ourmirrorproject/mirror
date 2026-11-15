@@ -41,12 +41,46 @@
   applyLegacyHash();
   window.addEventListener("hashchange", applyLegacyHash);
 
+
+  function youtubeEmbedSrc(id, opts) {
+    opts = opts || {};
+    const params = new URLSearchParams();
+    if (opts.autoplay) params.set("autoplay", "1");
+    params.set("rel", "0");
+    params.set("cc_load_policy", "0");
+    params.set("iv_load_policy", "3");
+    params.set("hl", "en");
+    // No cc_lang_pref and no captions param: YouTube has no "captions=none",
+    // so omitting them is the equivalent of not requesting a caption track.
+    if (opts.start !== undefined && opts.start !== null && String(opts.start) !== "") {
+      const start = parseInt(opts.start, 10);
+      if (!Number.isNaN(start) && start >= 0) params.set("start", String(start));
+    }
+    if (opts.end !== undefined && opts.end !== null && String(opts.end) !== "") {
+      const end = parseInt(opts.end, 10);
+      if (!Number.isNaN(end) && end > 0) params.set("end", String(end));
+    }
+    return "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?" + params.toString();
+  }
+
+  function readTimeAttr(el, name) {
+    if (!el) return null;
+    const raw = el.getAttribute(name);
+    if (raw === null || raw === "") return null;
+    const n = parseInt(raw, 10);
+    return Number.isNaN(n) ? null : n;
+  }
+
   function mountPlayer(el) {
     const id = el.getAttribute("data-youtube");
     const title = el.getAttribute("data-title") || "YouTube video";
     if (!id) return;
     const iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3";
+    iframe.src = youtubeEmbedSrc(id, {
+      autoplay: true,
+      start: readTimeAttr(el, "data-start"),
+      end: readTimeAttr(el, "data-end")
+    });
     iframe.title = title;
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.allowFullscreen = true;
@@ -211,10 +245,10 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     document.body.style.overflow = "";
   }
 
-  function openLightbox(id, title) {
+  function openLightbox(id, title, start, end) {
     if (!lightbox || !frame || !id) return;
     const iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3";
+    iframe.src = youtubeEmbedSrc(id, { autoplay: true, start: start, end: end });
     iframe.title = title || "YouTube video";
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.allowFullscreen = true;
@@ -230,7 +264,12 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const el = e.target.closest("[data-open-video]");
     if (!el) return;
     e.preventDefault();
-    openLightbox(el.getAttribute("data-open-video"), el.getAttribute("data-title"));
+    openLightbox(
+      el.getAttribute("data-open-video"),
+      el.getAttribute("data-title"),
+      readTimeAttr(el, "data-start"),
+      readTimeAttr(el, "data-end")
+    );
   });
 
   if (lightbox) {
@@ -256,10 +295,21 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     }
   }
 
-  function mountThumb(el, id, title, src, alt) {
+  function mountThumb(el, id, title, src, alt, times) {
     if (!el || !id) return;
     el.setAttribute("data-youtube", id);
     el.setAttribute("data-title", title || "");
+    times = times || {};
+    if (times.start !== undefined && times.start !== null && String(times.start) !== "") {
+      el.setAttribute("data-start", String(times.start));
+    } else {
+      el.removeAttribute("data-start");
+    }
+    if (times.end !== undefined && times.end !== null && String(times.end) !== "") {
+      el.setAttribute("data-end", String(times.end));
+    } else {
+      el.removeAttribute("data-end");
+    }
     const img = el.querySelector("img");
     if (img && src) {
       img.src = src;
@@ -339,14 +389,22 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
-  loadJSON("video-of-the-week.json?v=20261115b", "votw-data").then((data) => {
+  loadJSON("video-of-the-week.json?v=20261115c", "votw-data").then((data) => {
     if (!data || !data.id) return;
     const player = document.getElementById("votw-player");
     const caption = document.getElementById("votw-caption");
     const heading = document.getElementById("votw-title");
-    mountThumb(player, data.id, data.title, data.thumbnail, data.title);
+    const full = document.getElementById("votw-full-link");
+    mountThumb(player, data.id, data.title, data.thumbnail, data.title, {
+      start: data.start,
+      end: data.end
+    });
     if (caption && data.caption) caption.textContent = data.caption;
     if (heading && data.title) heading.textContent = data.title;
+    if (full) {
+      full.href = "https://www.youtube.com/watch?v=" + encodeURIComponent(data.id);
+      full.hidden = false;
+    }
   });
   }
 
@@ -463,7 +521,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115b", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115c", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -480,46 +538,102 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   });
   }
 
+  function mediaUrl(src) {
+    if (!src) return src;
+    if (/^https?:/i.test(src) || src.startsWith("../") || src.startsWith("/")) return src;
+    const onRegion = !!document.getElementById("region-videos");
+    return (onRegion ? "../" : "") + src;
+  }
+
+  function interviewThumb(v) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "video-thumb";
+    btn.setAttribute("data-open-video", v.id);
+    btn.setAttribute("data-title", v.title || "Interview");
+    if (v.start !== undefined && v.start !== null && String(v.start) !== "") {
+      btn.setAttribute("data-start", String(v.start));
+    }
+    if (v.end !== undefined && v.end !== null && String(v.end) !== "") {
+      btn.setAttribute("data-end", String(v.end));
+    }
+    const img = document.createElement("img");
+    img.src = v.thumbnail
+      ? mediaUrl(v.thumbnail)
+      : ("https://i.ytimg.com/vi/" + encodeURIComponent(v.id) + "/hqdefault.jpg");
+    img.width = 480;
+    img.height = 360;
+    img.alt = "";
+    img.loading = "lazy";
+    const span = document.createElement("span");
+    span.textContent = v.title || "Interview";
+    btn.appendChild(img);
+    btn.appendChild(span);
+    return btn;
+  }
+
+  function peopleFromRegion(region) {
+    if (!region) return [];
+    if (Array.isArray(region.people) && region.people.length) {
+      return region.people.map((person) => ({
+        thumbnail: person && person.thumbnail,
+        clips: (person && person.clips) || []
+      }));
+    }
+    return ((region.videos) || []).map((v) => ({ clips: [v] }));
+  }
+
   function renderRegionVideos() {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115b";
+    const jsonUrl = "../data/regions.json?v=20261115c";
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       const region = data && data.regions && data.regions[slug];
-      const videos = (region && region.videos) || [];
+      const people = peopleFromRegion(region).map((person) => ({
+        thumbnail: person.thumbnail,
+        clips: (person.clips || []).filter((v) => v && v.id)
+      })).filter((person) => person.clips.length);
       const lede = document.querySelector(".region-videos-lede");
       const empty = document.querySelector(".region-videos-empty");
-      if (!videos.length) {
+      if (!people.length) {
         if (lede) lede.hidden = true;
         if (empty) empty.hidden = false;
         return;
       }
       if (lede) lede.hidden = false;
       if (empty) empty.hidden = true;
-      const grid = document.createElement("div");
-      grid.className = "video-grid";
-      videos.forEach((v) => {
-        if (!v || !v.id) return;
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "video-thumb";
-        btn.setAttribute("data-open-video", v.id);
-        btn.setAttribute("data-title", v.title || "Interview");
+      const list = document.createElement("div");
+      list.className = "person-grid";
+      people.forEach((person) => {
+        const clips = person.clips;
+        const card = document.createElement("article");
+        card.className = "person-card";
+        const portrait = document.createElement("div");
+        portrait.className = "person-portrait";
         const img = document.createElement("img");
-        img.src = "https://i.ytimg.com/vi/" + encodeURIComponent(v.id) + "/hqdefault.jpg";
+        const portraitSrc = person.thumbnail || clips[0].thumbnail;
+        img.src = portraitSrc
+          ? mediaUrl(portraitSrc)
+          : ("https://i.ytimg.com/vi/" + encodeURIComponent(clips[0].id) + "/hqdefault.jpg");
         img.width = 480;
         img.height = 360;
         img.alt = "";
         img.loading = "lazy";
-        const span = document.createElement("span");
-        span.textContent = v.title || "Interview";
-        btn.appendChild(img);
-        btn.appendChild(span);
-        grid.appendChild(btn);
+        portrait.appendChild(img);
+        const meta = document.createElement("p");
+        meta.className = "person-clipcount";
+        meta.textContent = clips.length === 1 ? "1 interview clip" : (clips.length + " interview clips");
+        const row = document.createElement("div");
+        row.className = "person-clips video-grid";
+        clips.forEach((v) => row.appendChild(interviewThumb(v)));
+        card.appendChild(portrait);
+        card.appendChild(meta);
+        card.appendChild(row);
+        list.appendChild(card);
       });
-      root.appendChild(grid);
-      if (region.playlist) {
+      root.appendChild(list);
+      if (region && region.playlist) {
         const a = document.createElement("a");
         a.className = "playlist-link";
         a.href = "https://www.youtube.com/playlist?list=" + encodeURIComponent(region.playlist);
