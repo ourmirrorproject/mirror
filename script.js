@@ -269,7 +269,77 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     if (btn) btn.setAttribute("aria-label", "Play " + (title || "video"));
   }
 
-  loadJSON("video-of-the-week.json", "votw-data").then((data) => {
+
+  const CHEVRON_LEFT = '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9.2 2.2 4.4 7l4.8 4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const CHEVRON_RIGHT = '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4.8 2.2 9.6 7l-4.8 4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function updateCarousel(wrap) {
+    const track = wrap.querySelector(".carousel-track");
+    if (!track) return;
+    const prev = wrap.querySelector(".carousel-prev");
+    const next = wrap.querySelector(".carousel-next");
+    const max = track.scrollWidth - track.clientWidth;
+    wrap.classList.toggle("is-static", max <= 4);
+    if (prev) prev.disabled = track.scrollLeft <= 4;
+    if (next) next.disabled = track.scrollLeft >= max - 4;
+  }
+
+  function initCarousels(scope) {
+    const root = scope || document;
+    root.querySelectorAll(".bts-journey, .travel-photos, .japan-gallery, .video-grid").forEach((track) => {
+      if (!track.children.length) return;
+      let wrap = track.parentElement;
+      if (!wrap || !wrap.classList.contains("media-carousel")) {
+        wrap = document.createElement("div");
+        wrap.className = "media-carousel";
+        track.parentNode.insertBefore(wrap, track);
+        wrap.appendChild(track);
+      }
+      track.classList.add("carousel-track");
+      if (!track.hasAttribute("tabindex")) track.setAttribute("tabindex", "0");
+      if (!track.getAttribute("aria-label")) {
+        if (track.classList.contains("bts-journey")) track.setAttribute("aria-label", "Behind the Scenes photos and clips");
+        else if (track.classList.contains("travel-photos")) track.setAttribute("aria-label", "Travel photos");
+        else if (track.classList.contains("japan-gallery")) track.setAttribute("aria-label", "Photos from the trip");
+        else track.setAttribute("aria-label", "Interview videos");
+      }
+      if (!wrap.querySelector(".carousel-btn")) {
+        const prev = document.createElement("button");
+        prev.type = "button";
+        prev.className = "carousel-btn carousel-prev";
+        prev.setAttribute("aria-label", "Scroll left");
+        prev.innerHTML = CHEVRON_LEFT;
+        const next = document.createElement("button");
+        next.type = "button";
+        next.className = "carousel-btn carousel-next";
+        next.setAttribute("aria-label", "Scroll right");
+        next.innerHTML = CHEVRON_RIGHT;
+        wrap.insertBefore(prev, track);
+        wrap.appendChild(next);
+        const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const go = (dir) => {
+          const amount = Math.max(Math.round(track.clientWidth * 0.72), 200);
+          track.scrollBy({ left: dir * amount, behavior: reduce ? "auto" : "smooth" });
+        };
+        prev.addEventListener("click", () => go(-1));
+        next.addEventListener("click", () => go(1));
+        track.addEventListener("scroll", () => updateCarousel(wrap), { passive: true });
+        track.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+          if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+        });
+        if (typeof ResizeObserver !== "undefined") {
+          new ResizeObserver(() => updateCarousel(wrap)).observe(track);
+        } else {
+          window.addEventListener("resize", () => updateCarousel(wrap));
+        }
+      }
+      updateCarousel(wrap);
+    });
+  }
+
+  if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
+  loadJSON("video-of-the-week.json?v=20261115", "votw-data").then((data) => {
     if (!data || !data.id) return;
     const player = document.getElementById("votw-player");
     const caption = document.getElementById("votw-caption");
@@ -278,6 +348,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     if (caption && data.caption) caption.textContent = data.caption;
     if (heading && data.title) heading.textContent = data.title;
   });
+  }
 
   function escapeHtml(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
@@ -312,8 +383,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   function renderPlace(place, isHighlight) {
     const root = document.getElementById("travel-highlight");
     if (!root || !place) return;
-    const lead = (place.photos && place.photos[0]) || null;
-    const rest = (place.photos || []).slice(1);
+    const photosList = place.photos || [];
     const kicker = isHighlight ? "This week\u2019s highlight" : "From the travel blog";
     const badge = place.badge ? '<span class="badge-travel">' + escapeHtml(place.badge) + "</span>" : "";
     const cards = (place.cards || []).map((card) => {
@@ -329,7 +399,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         '" target="_blank" rel="noopener noreferrer">Source: ' + escapeHtml(card.source_label) +
         "</a></div></div></div>";
     }).join("");
-    const photos = rest.map((ph) => {
+    const photos = photosList.map((ph) => {
       return "<figure><img src=\"" + escapeHtml(ph.src) + "\" width=\"" + (ph.width || "") +
         "\" height=\"" + (ph.height || "") + "\" alt=\"" + escapeHtml(ph.alt || "") +
         "\" loading=\"lazy\"><figcaption>" + (ph.caption_html || "") + "</figcaption></figure>";
@@ -359,19 +429,16 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       '<div class="travel-highlight-head"><div>' +
       '<p class="travel-kicker">' + kicker + "</p>" +
       "<h3>" + escapeHtml(place.name) + "</h3></div>" + badge + "</div>" +
-      (lead ? '<figure class="travel-lead"><img src="' + escapeHtml(lead.src) +
-        '" width="' + (lead.width || "") + '" height="' + (lead.height || "") +
-        '" alt="' + escapeHtml(lead.alt || "") + '"><figcaption>' +
-        (lead.caption_html || "") + "</figcaption></figure>" : "") +
       '<p class="travel-note">' + escapeHtml(place.note) + "</p>" +
+      (photos ? '<div class="travel-photos">' + photos + "</div>" : "") +
       videoHtml +
       '<h4 class="culture-heading">Culture cards</h4>' +
       '<p class="culture-lede">Tap or click a card to flip it.</p>' +
       '<div class="culture-grid">' + cards + "</div>" +
-      '<div class="travel-photos">' + photos + "</div>" +
       '<details class="travel-sources"><summary>Sources</summary><ul>' + sources + "</ul></details>";
 
     bindCultureCards(root);
+    initCarousels(root);
   }
 
   function renderChips(places, activeId, onPick) {
@@ -395,7 +462,8 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     return null;
   }
 
-  loadJSON("travel-blog.json", "travel-blog-data").then((data) => {
+  if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
+  loadJSON("travel-blog.json?v=20261115", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -410,4 +478,6 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       show(id);
     });
   });
+  }
+  initCarousels();
 })();
