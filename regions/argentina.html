@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261115j">
+  <link rel="stylesheet" href="../styles.css?v=20261115k">
 </head>
 <body class="region-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -71,35 +71,20 @@
           <aside class="region-stage-aside">
             <div class="didyouknow region-didyouknow" id="did-you-know">
             <h3 class="clips-title">Did you know?</h3>
-            <p class="clips-lede">Tap or click the card to flip it.</p>
+            <p class="clips-lede">Tap or click the card to see a fact. Click again for the next one.</p>
             <div class="fact-grid region-fact-grid">
               <article class="fact-card" data-region="argentina">
-              <button type="button" class="fact-flip" aria-expanded="false" aria-label="Did you know about Argentina? Flip the card.">
+              <div class="fact-flip" role="button" tabindex="0" aria-expanded="false" aria-label="Did you know about Argentina? Show the next fact.">
                 <span class="fact-front">
                   <span class="fact-ornament" aria-hidden="true"><svg class="fact-motif" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="33.0" y1="24.0" x2="42.0" y2="24.0"/><line x1="31.8" y1="28.5" x2="39.6" y2="33.0"/><line x1="28.5" y1="31.8" x2="33.0" y2="39.6"/><line x1="24.0" y1="33.0" x2="24.0" y2="42.0"/><line x1="19.5" y1="31.8" x2="15.0" y2="39.6"/><line x1="16.2" y1="28.5" x2="8.4" y2="33.0"/><line x1="15.0" y1="24.0" x2="6.0" y2="24.0"/><line x1="16.2" y1="19.5" x2="8.4" y2="15.0"/><line x1="19.5" y1="16.2" x2="15.0" y2="8.4"/><line x1="24.0" y1="15.0" x2="24.0" y2="6.0"/><line x1="28.5" y1="16.2" x2="33.0" y2="8.4"/><line x1="31.8" y1="19.5" x2="39.6" y2="15.0"/></svg></span>
                   <span class="fact-title">Did you know?</span>
                   <span class="fact-country">Argentina</span>
-                  <span class="fact-hint">Tap to flip</span>
+                  <span class="fact-hint">Tap to see a fact</span>
                 </span>
-                <span class="fact-back">
-                  <span class="fact-country">Argentina</span>
-                  <ul>
-                    <li>Cerro Aconcagua is the tallest mountain in the Western Hemisphere, and Laguna del Carbón is the hemisphere’s lowest point.</li>
-                    <li>Iguazú Falls, shared with Brazil, drop about 80 meters across a span of almost three kilometers.</li>
-                    <li>At Cueva de las Manos in Patagonia, stenciled handprints and hunting scenes were painted between 13,000 and 9,500 years ago.</li>
-                  </ul>
-                  <span class="fact-source-line">Sources are listed below the card.</span>
-                </span>
-              </button>
+                <span class="fact-back" aria-hidden="true"></span>
+              </div>
             </article>
             </div>
-            
-          <details class="fact-sources">
-              <summary>Sources for these facts</summary>
-              <ul>
-                <li>Argentina: <a href="https://www.cia.gov/the-world-factbook/countries/argentina/" target="_blank" rel="noopener noreferrer">CIA World Factbook</a> (Aconcagua and Laguna del Carbón); <a href="https://whc.unesco.org/en/list/303/" target="_blank" rel="noopener noreferrer">UNESCO — Iguazu National Park</a>; <a href="https://whc.unesco.org/en/list/936/" target="_blank" rel="noopener noreferrer">UNESCO — Cueva de las Manos, Río Pinturas</a>.</li>
-              </ul>
-            </details>
             </div>
           </aside>
         </div>
@@ -135,6 +120,6 @@
       <div class="yt-lightbox-frame"></div>
     </div>
   </div>
-  <script src="../script.js?v=20261115j"></script>
+  <script src="../script.js?v=20261115k"></script>
 </body>
 </html>

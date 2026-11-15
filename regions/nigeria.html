@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261115j">
+  <link rel="stylesheet" href="../styles.css?v=20261115k">
 </head>
 <body class="region-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -71,35 +71,20 @@
           <aside class="region-stage-aside">
             <div class="didyouknow region-didyouknow" id="did-you-know">
             <h3 class="clips-title">Did you know?</h3>
-            <p class="clips-lede">Tap or click the card to flip it.</p>
+            <p class="clips-lede">Tap or click the card to see a fact. Click again for the next one.</p>
             <div class="fact-grid region-fact-grid">
               <article class="fact-card" data-region="nigeria">
-              <button type="button" class="fact-flip" aria-expanded="false" aria-label="Did you know about Nigeria? Flip the card.">
+              <div class="fact-flip" role="button" tabindex="0" aria-expanded="false" aria-label="Did you know about Nigeria? Show the next fact.">
                 <span class="fact-front">
                   <span class="fact-ornament" aria-hidden="true"><svg class="fact-motif" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 30 C14 18 20 14 24 14 C28 14 34 18 38 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 34 C16 28 32 28 40 34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="14" r="2.2" fill="currentColor"/></svg></span>
                   <span class="fact-title">Did you know?</span>
                   <span class="fact-country">Nigeria</span>
-                  <span class="fact-hint">Tap to flip</span>
+                  <span class="fact-hint">Tap to see a fact</span>
                 </span>
-                <span class="fact-back">
-                  <span class="fact-country">Nigeria</span>
-                  <ul>
-                    <li>Nigeria is Africa’s most populous country.</li>
-                    <li>It is home to more than 250 ethnic groups, and English is the official language.</li>
-                    <li>The Osun-Osogbo Sacred Grove, a UNESCO World Heritage Site, is one of the last remnants of primary high forest in southern Nigeria and a living sacred place in Yoruba culture.</li>
-                  </ul>
-                  <span class="fact-source-line">Sources are listed below the card.</span>
-                </span>
-              </button>
+                <span class="fact-back" aria-hidden="true"></span>
+              </div>
             </article>
             </div>
-            
-          <details class="fact-sources">
-              <summary>Sources for these facts</summary>
-              <ul>
-                <li>Nigeria: <a href="https://www.cia.gov/the-world-factbook/countries/nigeria/" target="_blank" rel="noopener noreferrer">CIA World Factbook</a> (population; ethnic groups and official language); <a href="https://whc.unesco.org/en/list/1118/" target="_blank" rel="noopener noreferrer">UNESCO — Osun-Osogbo Sacred Grove</a>.</li>
-              </ul>
-            </details>
             </div>
           </aside>
         </div>
@@ -135,6 +120,6 @@
       <div class="yt-lightbox-frame"></div>
     </div>
   </div>
-  <script src="../script.js?v=20261115j"></script>
+  <script src="../script.js?v=20261115k"></script>
 </body>
 </html>

@@ -154,6 +154,7 @@ document.addEventListener("keydown", (e) => {
   if (news) handleForm(news, "newsletter-success");
 
   document.querySelectorAll("button.fact-flip").forEach((btn) => {
+    if (btn.closest(".region-didyouknow")) return;
     btn.addEventListener("click", () => {
       const card = btn.closest(".fact-card");
       const open = card.classList.toggle("is-flipped");
@@ -742,7 +743,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115j", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115k", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -809,7 +810,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115j";
+    const jsonUrl = "../data/regions.json?v=20261115k";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
@@ -824,9 +825,75 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         initLocalClocks(holder);
       }
     }
+    function mountRegionFacts(region) {
+      const card = document.querySelector(".region-didyouknow .fact-card");
+      if (!card || !region) return;
+      const facts = (region.facts || []).filter((f) => f && f.text);
+      if (!facts.length) return;
+      const flip = card.querySelector(".fact-flip");
+      const back = card.querySelector(".fact-back");
+      const front = card.querySelector(".fact-front");
+      if (!flip || !back) return;
+      const sources = card.closest(".region-didyouknow").querySelector("details.fact-sources");
+      if (sources) sources.hidden = true;
+      const lede = card.closest(".region-didyouknow").querySelector(".clips-lede");
+      if (lede) lede.textContent = "Tap or click the card to see a fact. Click again for the next one.";
+      let index = 0;
+      function showFact() {
+        const fact = facts[index];
+        back.replaceChildren();
+        const head = document.createElement("div");
+        head.className = "fact-back-head";
+        const country = document.createElement("span");
+        country.className = "fact-country";
+        country.textContent = region.name || "";
+        const counter = document.createElement("span");
+        counter.className = "fact-index";
+        counter.textContent = (index + 1) + "/" + facts.length;
+        head.appendChild(country);
+        head.appendChild(counter);
+        const text = document.createElement("p");
+        text.className = "fact-text";
+        text.textContent = fact.text;
+        const srcLine = document.createElement("p");
+        srcLine.className = "fact-source-line";
+        if (fact.source_url && fact.source_label) {
+          srcLine.appendChild(document.createTextNode("Source: "));
+          const a = document.createElement("a");
+          a.href = fact.source_url;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = fact.source_label;
+          srcLine.appendChild(a);
+        } else if (fact.source_label) {
+          srcLine.textContent = "Source: " + fact.source_label;
+        }
+        back.appendChild(head);
+        back.appendChild(text);
+        if (srcLine.childNodes.length) back.appendChild(srcLine);
+      }
+      showFact();
+      const advance = (event) => {
+        if (event.target.closest("a")) return;
+        if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+        if (event.type === "keydown") event.preventDefault();
+        if (!card.classList.contains("is-flipped")) {
+          card.classList.add("is-flipped");
+          flip.setAttribute("aria-expanded", "true");
+          back.setAttribute("aria-hidden", "false");
+          if (front) front.setAttribute("aria-hidden", "true");
+          return;
+        }
+        index = (index + 1) % facts.length;
+        showFact();
+      };
+      flip.addEventListener("click", advance);
+      flip.addEventListener("keydown", advance);
+    }
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       mountRegionLiveBar(data);
       const region = data && data.regions && data.regions[slug];
+      mountRegionFacts(region);
       const people = peopleFromRegion(region).map((person) => ({
         thumbnail: person.thumbnail,
         clips: (person.clips || []).filter((v) => v && (v.id || v.src))
@@ -840,8 +907,6 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       }
       if (lede) lede.hidden = false;
       if (empty) empty.hidden = true;
-      const list = document.createElement("div");
-      list.className = "person-grid";
       function localInterviewPlayer(v) {
         const fig = document.createElement("figure");
         fig.className = "local-interview";
@@ -862,40 +927,18 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         fig.appendChild(frame);
         return fig;
       }
+      const localList = document.createElement("div");
+      localList.className = "region-local-clips";
+      const clipGrid = document.createElement("div");
+      clipGrid.className = "region-clip-grid";
       people.forEach((person) => {
-        const clips = person.clips;
-        const localClips = clips.filter((v) => v.src && !v.id);
-        const ytClips = clips.filter((v) => v.id);
-        if (localClips.length && !ytClips.length) {
-          localClips.forEach((clip) => list.appendChild(localInterviewPlayer(clip)));
-          return;
-        }
-        const card = document.createElement("article");
-        card.className = "person-card";
-        const portrait = document.createElement("div");
-        portrait.className = "person-portrait";
-        const img = document.createElement("img");
-        const portraitSrc = person.thumbnail || clips[0].thumbnail;
-        img.src = portraitSrc
-          ? mediaUrl(portraitSrc)
-          : ("https://i.ytimg.com/vi/" + encodeURIComponent(clips[0].id) + "/hqdefault.jpg");
-        img.width = 480;
-        img.height = 360;
-        img.alt = "";
-        img.loading = "lazy";
-        portrait.appendChild(img);
-        const meta = document.createElement("p");
-        meta.className = "person-clipcount";
-        meta.textContent = clips.length === 1 ? "1 interview clip" : (clips.length + " interview clips");
-        const row = document.createElement("div");
-        row.className = "person-clips video-grid";
-        clips.forEach((v) => row.appendChild(interviewThumb(v)));
-        card.appendChild(portrait);
-        card.appendChild(meta);
-        card.appendChild(row);
-        list.appendChild(card);
+        const localClips = person.clips.filter((v) => v.src && !v.id);
+        const ytClips = person.clips.filter((v) => v.id);
+        localClips.forEach((clip) => localList.appendChild(localInterviewPlayer(clip)));
+        ytClips.forEach((clip) => clipGrid.appendChild(interviewThumb(clip)));
       });
-      root.appendChild(list);
+      if (localList.childElementCount) root.appendChild(localList);
+      if (clipGrid.childElementCount) root.appendChild(clipGrid);
       if (region && region.playlist) {
         const a = document.createElement("a");
         a.className = "playlist-link";

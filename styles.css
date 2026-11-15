@@ -2538,3 +2538,46 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   border-radius: 16px;
   background: #1c1216;
 }
+
+
+/* Region interview clips: show the videos directly, no duplicate cover cards */
+.region-clip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.2rem;
+}
+.region-local-clips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0 1.2rem;
+}
+
+/* Did You Know: one fact and one source per card state, with a 1/N index */
+.region-didyouknow .fact-back-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+.region-didyouknow .fact-back .fact-country { margin-bottom: 0; }
+.region-didyouknow .fact-index {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--taupe);
+  flex: none;
+}
+.region-didyouknow .fact-text {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.region-didyouknow .fact-source-line a {
+  color: var(--plum);
+}
+.region-didyouknow .fact-sources[hidden],
+.region-didyouknow .fact-sources { display: none; }
