@@ -744,7 +744,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115x", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115y", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -769,28 +769,19 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     return (onRegion ? "../" : "") + src;
   }
 
-  function interviewCaption(v, index) {
-    const question = (v && v.title ? String(v.title) : "").trim();
-    const copy = document.createElement("span");
-    copy.className = "video-copy";
-    const title = document.createElement("span");
-    title.className = "video-title";
-    title.textContent = question || "Interview";
-    const sub = document.createElement("span");
-    sub.className = "video-subtitle";
-    sub.textContent = "Interview " + String(index);
-    copy.appendChild(title);
-    copy.appendChild(sub);
-    return copy;
+  function interviewA11yName(index) {
+    return "Mirror Project interview " + String(index);
   }
 
   function interviewThumb(v, index) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "video-thumb";
-    const question = (v && v.title ? String(v.title) : "").trim();
+    const label = interviewA11yName(index);
     btn.setAttribute("data-open-video", v.id);
-    btn.setAttribute("data-title", question || "Interview");
+    btn.setAttribute("data-title", label);
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
     if (v.start !== undefined && v.start !== null && String(v.start) !== "") {
       btn.setAttribute("data-start", String(v.start));
     }
@@ -806,7 +797,6 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     img.alt = "";
     img.loading = "lazy";
     btn.appendChild(img);
-    btn.appendChild(interviewCaption(v, index));
     return btn;
   }
 
@@ -825,7 +815,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115x";
+    const jsonUrl = "../data/regions.json?v=20261115y";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
@@ -978,9 +968,10 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         source.src = mediaUrl(v.src);
         source.type = v.type || "video/mp4";
         video.appendChild(source);
+        video.setAttribute("aria-label", interviewA11yName(index));
+        video.setAttribute("title", interviewA11yName(index));
         frame.appendChild(video);
         fig.appendChild(frame);
-        fig.appendChild(interviewCaption(v, index));
         return fig;
       }
       const localList = document.createElement("div");
