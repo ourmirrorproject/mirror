@@ -743,7 +743,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115p", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115q", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -810,7 +810,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115p";
+    const jsonUrl = "../data/regions.json?v=20261115q";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
