@@ -1,3 +1,74 @@
+
+function youtubeEmbedSrc(id, opts) {
+  opts = opts || {};
+  const params = new URLSearchParams();
+  if (opts.autoplay) params.set("autoplay", "1");
+  params.set("rel", "0");
+  params.set("cc_load_policy", "0");
+  params.set("iv_load_policy", "3");
+  params.set("hl", "en");
+  params.set("cc_lang_pref", "en");
+  if (opts.start !== undefined && opts.start !== null && String(opts.start) !== "") {
+    const start = parseInt(opts.start, 10);
+    if (!Number.isNaN(start) && start >= 0) params.set("start", String(start));
+  }
+  if (opts.end !== undefined && opts.end !== null && String(opts.end) !== "") {
+    const end = parseInt(opts.end, 10);
+    if (!Number.isNaN(end) && end > 0) params.set("end", String(end));
+  }
+  return "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?" + params.toString();
+}
+
+function readTimeAttr(el, name) {
+  if (!el) return null;
+  const raw = el.getAttribute(name);
+  if (raw === null || raw === "") return null;
+  const n = parseInt(raw, 10);
+  return Number.isNaN(n) ? null : n;
+}
+
+const YT_IFRAME_ALLOW = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+
+function mountYouTubeIframe(id, title, start, end) {
+  const iframe = document.createElement("iframe");
+  iframe.src = youtubeEmbedSrc(id, { autoplay: true, start: start, end: end });
+  iframe.title = title || "YouTube video";
+  iframe.allow = YT_IFRAME_ALLOW;
+  iframe.setAttribute("allowfullscreen", "");
+  iframe.allowFullscreen = true;
+  iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+  return iframe;
+}
+
+function mountPlayer(el) {
+  if (!el || el.classList.contains("is-playing")) return;
+  const id = el.getAttribute("data-youtube");
+  const title = el.getAttribute("data-title") || "YouTube video";
+  if (!id) return;
+  const iframe = mountYouTubeIframe(id, title, readTimeAttr(el, "data-start"), readTimeAttr(el, "data-end"));
+  el.classList.add("is-playing");
+  const btn = el.querySelector(".yt-play");
+  const img = el.querySelector("img");
+  if (btn) btn.remove();
+  if (img) img.remove();
+  el.appendChild(iframe);
+}
+
+document.addEventListener("click", (e) => {
+  const el = e.target.closest(".yt");
+  if (!el || el.classList.contains("is-playing")) return;
+  if (e.target.closest("a")) return;
+  e.preventDefault();
+  mountPlayer(el);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  const el = e.target.closest && e.target.closest(".yt");
+  if (!el || el.classList.contains("is-playing")) return;
+  e.preventDefault();
+  mountPlayer(el);
+});
+
 (function () {
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
@@ -42,64 +113,6 @@
   window.addEventListener("hashchange", applyLegacyHash);
 
 
-  function youtubeEmbedSrc(id, opts) {
-    opts = opts || {};
-    const params = new URLSearchParams();
-    if (opts.autoplay) params.set("autoplay", "1");
-    params.set("rel", "0");
-    params.set("cc_load_policy", "0");
-    params.set("iv_load_policy", "3");
-    params.set("hl", "en");
-    params.set("cc_lang_pref", "en");
-    // Captions stay off by default (cc_load_policy=0). If a viewer or the
-    // player still opens a track, prefer English over auto-translated
-    // Spanish/French. No captions= param.
-    if (opts.start !== undefined && opts.start !== null && String(opts.start) !== "") {
-      const start = parseInt(opts.start, 10);
-      if (!Number.isNaN(start) && start >= 0) params.set("start", String(start));
-    }
-    if (opts.end !== undefined && opts.end !== null && String(opts.end) !== "") {
-      const end = parseInt(opts.end, 10);
-      if (!Number.isNaN(end) && end > 0) params.set("end", String(end));
-    }
-    return "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?" + params.toString();
-  }
-
-  function readTimeAttr(el, name) {
-    if (!el) return null;
-    const raw = el.getAttribute(name);
-    if (raw === null || raw === "") return null;
-    const n = parseInt(raw, 10);
-    return Number.isNaN(n) ? null : n;
-  }
-
-  function mountPlayer(el) {
-    const id = el.getAttribute("data-youtube");
-    const title = el.getAttribute("data-title") || "YouTube video";
-    if (!id) return;
-    const iframe = document.createElement("iframe");
-    iframe.src = youtubeEmbedSrc(id, {
-      autoplay: true,
-      start: readTimeAttr(el, "data-start"),
-      end: readTimeAttr(el, "data-end")
-    });
-    iframe.title = title;
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-    iframe.setAttribute("loading", "lazy");
-    el.classList.add("is-playing");
-    const btn = el.querySelector(".yt-play");
-    const img = el.querySelector("img");
-    if (btn) btn.remove();
-    if (img) img.remove();
-    el.appendChild(iframe);
-  }
-
-  document.querySelectorAll(".yt").forEach((el) => {
-    const btn = el.querySelector(".yt-play");
-    if (!btn) return;
-    btn.addEventListener("click", () => mountPlayer(el));
-  });
 
   async function handleForm(form, successId, button) {
     form.addEventListener("submit", async (e) => {
@@ -249,11 +262,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
 
   function openLightbox(id, title, start, end) {
     if (!lightbox || !frame || !id) return;
-    const iframe = document.createElement("iframe");
-    iframe.src = youtubeEmbedSrc(id, { autoplay: true, start: start, end: end });
-    iframe.title = title || "YouTube video";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
+    const iframe = mountYouTubeIframe(id, title || "YouTube video", start, end);
     frame.innerHTML = "";
     frame.appendChild(iframe);
     lightbox.hidden = false;
@@ -391,7 +400,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
-  loadJSON("video-of-the-week.json?v=20261115d", "votw-data").then((data) => {
+  loadJSON("video-of-the-week.json?v=20261115e", "votw-data").then((data) => {
     if (!data || !data.id) return;
     const player = document.getElementById("votw-player");
     const caption = document.getElementById("votw-caption");
@@ -489,12 +498,17 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       '<div class="travel-highlight-head"><div>' +
       '<p class="travel-kicker">' + kicker + "</p>" +
       "<h3>" + escapeHtml(place.name) + "</h3></div>" + badge + "</div>" +
+      '<div class="travel-stage">' +
+      '<div class="travel-stage-main">' +
       '<p class="travel-note">' + escapeHtml(place.note) + "</p>" +
       (photos ? '<div class="travel-photos">' + photos + "</div>" : "") +
       videoHtml +
+      "</div>" +
+      '<aside class="travel-stage-aside">' +
       '<h4 class="culture-heading">Culture cards</h4>' +
       '<p class="culture-lede">Tap or click a card to flip it.</p>' +
-      '<div class="culture-grid">' + cards + "</div>" +
+      '<div class="culture-grid culture-collage">' + cards + "</div>" +
+      "</aside></div>" +
       '<details class="travel-sources"><summary>Sources</summary><ul>' + sources + "</ul></details>";
 
     bindCultureCards(root);
@@ -523,7 +537,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115d", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115e", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -589,7 +603,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115d";
+    const jsonUrl = "../data/regions.json?v=20261115e";
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       const region = data && data.regions && data.regions[slug];
       const people = peopleFromRegion(region).map((person) => ({
