@@ -102,7 +102,7 @@
     if (back) back.setAttribute("aria-hidden", "true");
   });
 
-document.querySelectorAll(".bts-player").forEach((player) => {
+document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const video = player.querySelector("video");
     const playBtn = player.querySelector(".bts-play");
     const muteBtn = player.querySelector(".bts-mute");
@@ -182,4 +182,189 @@ document.querySelectorAll(".bts-player").forEach((player) => {
     });
   });
 
+})();
+
+(function () {
+  const lightbox = document.getElementById("yt-lightbox");
+  const frame = lightbox ? lightbox.querySelector(".yt-lightbox-frame") : null;
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    if (frame) frame.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+
+  function openLightbox(id, title) {
+    if (!lightbox || !frame || !id) return;
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0";
+    iframe.title = title || "YouTube video";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    frame.innerHTML = "";
+    frame.appendChild(iframe);
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    const closeBtn = lightbox.querySelector(".yt-lightbox-close");
+    if (closeBtn) closeBtn.focus();
+  }
+
+  document.querySelectorAll("[data-open-video]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      openLightbox(el.getAttribute("data-open-video"), el.getAttribute("data-title"));
+    });
+  });
+
+  if (lightbox) {
+    lightbox.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeLightbox));
+    const closeBtn = lightbox.querySelector(".yt-lightbox-close");
+    if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  }
+
+  async function loadJSON(url, fallbackId) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error("fetch failed");
+      return await res.json();
+    } catch (err) {
+      const inline = document.getElementById(fallbackId);
+      if (inline) {
+        try { return JSON.parse(inline.textContent); } catch (e2) { return null; }
+      }
+      return null;
+    }
+  }
+
+  function mountThumb(el, id, title, src, alt) {
+    if (!el || !id) return;
+    el.setAttribute("data-youtube", id);
+    el.setAttribute("data-title", title || "");
+    const img = el.querySelector("img");
+    if (img && src) {
+      img.src = src;
+      img.alt = alt || title || "";
+    }
+    const btn = el.querySelector(".yt-play");
+    if (btn) btn.setAttribute("aria-label", "Play " + (title || "video"));
+  }
+
+  loadJSON("video-of-the-week.json", "votw-data").then((data) => {
+    if (!data || !data.id) return;
+    const player = document.getElementById("votw-player");
+    const caption = document.getElementById("votw-caption");
+    const heading = document.getElementById("votw-title");
+    mountThumb(player, data.id, data.title, data.thumbnail, data.title);
+    if (caption && data.caption) caption.textContent = data.caption;
+    if (heading && data.title) heading.textContent = data.title;
+  });
+
+  function escapeHtml(s) {
+    return String(s || "").replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function bindCultureCards(root) {
+    root.querySelectorAll(".culture-card").forEach((card) => {
+      const front = card.querySelector(".fact-front");
+      const back = card.querySelector(".fact-back");
+      const toggle = () => {
+        const open = card.classList.toggle("is-flipped");
+        card.setAttribute("aria-expanded", open ? "true" : "false");
+        if (front) front.setAttribute("aria-hidden", open ? "true" : "false");
+        if (back) back.setAttribute("aria-hidden", open ? "false" : "true");
+      };
+      card.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        toggle();
+      });
+      card.addEventListener("keydown", (e) => {
+        if (e.target.closest("a")) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+  }
+
+  function renderPlace(place, isHighlight) {
+    const root = document.getElementById("travel-highlight");
+    if (!root || !place) return;
+    const lead = (place.photos && place.photos[0]) || null;
+    const rest = (place.photos || []).slice(1);
+    const kicker = isHighlight ? "This week\u2019s highlight" : "From the travel blog";
+    const badge = place.badge ? '<span class="badge-travel">' + escapeHtml(place.badge) + "</span>" : "";
+    const cards = (place.cards || []).map((card) => {
+      return '<div class="fact-card culture-card" tabindex="0" role="button" aria-expanded="false">' +
+        '<div class="fact-flip"><div class="fact-front" aria-hidden="false">' +
+        '<span class="fact-kicker">' + escapeHtml(card.kicker) + "</span>" +
+        '<span class="fact-country">' + escapeHtml(card.title) + "</span>" +
+        '<span class="fact-hint">Tap to flip</span></div>' +
+        '<div class="fact-back" aria-hidden="true">' +
+        '<span class="fact-kicker">' + escapeHtml(card.kicker) + "</span>" +
+        "<p>" + escapeHtml(card.body) + "</p>" +
+        '<a class="culture-source" href="' + escapeHtml(card.source_url) +
+        '" target="_blank" rel="noopener noreferrer">Source: ' + escapeHtml(card.source_label) +
+        "</a></div></div></div>";
+    }).join("");
+    const photos = rest.map((ph) => {
+      return "<figure><img src=\"" + escapeHtml(ph.src) + "\" width=\"" + (ph.width || "") +
+        "\" height=\"" + (ph.height || "") + "\" alt=\"" + escapeHtml(ph.alt || "") +
+        "\" loading=\"lazy\"><figcaption>" + (ph.caption_html || "") + "</figcaption></figure>";
+    }).join("");
+    const sources = (place.cards || []).map((card) => {
+      return "<li><a href=\"" + escapeHtml(card.source_url) +
+        "\" target=\"_blank\" rel=\"noopener noreferrer\">" + escapeHtml(card.source_label) +
+        "</a> \u2014 " + escapeHtml(card.title) + "</li>";
+    }).join("");
+
+    root.innerHTML =
+      '<div class="travel-highlight-head"><div>' +
+      '<p class="travel-kicker">' + kicker + "</p>" +
+      "<h3>" + escapeHtml(place.name) + "</h3></div>" + badge + "</div>" +
+      (lead ? '<figure class="travel-lead"><img src="' + escapeHtml(lead.src) +
+        '" width="' + (lead.width || "") + '" height="' + (lead.height || "") +
+        '" alt="' + escapeHtml(lead.alt || "") + '"><figcaption>' +
+        (lead.caption_html || "") + "</figcaption></figure>" : "") +
+      '<p class="travel-note">' + escapeHtml(place.note) + "</p>" +
+      '<h4 class="culture-heading">Culture cards</h4>' +
+      '<p class="culture-lede">Tap or click a card to flip it.</p>' +
+      '<div class="culture-grid">' + cards + "</div>" +
+      '<div class="travel-photos">' + photos + "</div>" +
+      '<details class="travel-sources"><summary>Sources</summary><ul>' + sources + "</ul></details>";
+
+    bindCultureCards(root);
+  }
+
+  function renderChips(places, activeId, onPick) {
+    const nav = document.getElementById("travel-chips");
+    if (!nav) return;
+    nav.innerHTML = "";
+    places.forEach((place) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "place-chip" + (place.id === activeId ? " is-active" : "");
+      btn.textContent = place.name;
+      btn.setAttribute("aria-pressed", place.id === activeId ? "true" : "false");
+      btn.addEventListener("click", () => onPick(place.id));
+      nav.appendChild(btn);
+    });
+  }
+
+  loadJSON("travel-blog.json", "travel-blog-data").then((data) => {
+    if (!data || !data.places || !data.places.length) return;
+    const highlightId = data.highlight || data.places[0].id;
+    const show = (id) => {
+      const place = data.places.find((p) => p.id === id) || data.places[0];
+      renderPlace(place, place.id === highlightId);
+      renderChips(data.places, place.id, show);
+    };
+    show(highlightId);
+  });
 })();

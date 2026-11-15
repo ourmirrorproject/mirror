@@ -1,0 +1,674 @@
+{
+  "highlight": "singapore",
+  "places": [
+    {
+      "id": "france",
+      "name": "France",
+      "badge": "Interviews coming soon",
+      "note": "In France, so much of public life still happens in person: at a café table, in a market line, around a meal that is allowed to take its time. Since 2017, labor law has also recognized a right to disconnect, so work messages are not assumed to follow people home.",
+      "photos": [
+        {
+          "src": "assets/travels/france/eiffel-sunset.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The Eiffel Tower at sunset, Paris",
+          "caption_html": "The Eiffel Tower at sunset, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": true
+        },
+        {
+          "src": "assets/travels/france/provence-lavender.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A lavender field in Provence",
+          "caption_html": "A lavender field in Provence. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/france/menu-du-moment.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "A Menu du Moment chalkboard at a restaurant in France",
+          "caption_html": "A Menu du Moment chalkboard at a restaurant in France. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/france/assemblee-nationale.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The Assemblée nationale, Paris",
+          "caption_html": "The Assemblée nationale, the lower house of the French Parliament, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "The apéritif",
+          "body": "The gastronomic meal of the French, inscribed by UNESCO in 2010, customarily opens with an apéritif — a pause that gathers people before the meal begins.",
+          "source_url": "https://ich.unesco.org/en/RL/gastronomic-meal-of-the-french-00437",
+          "source_label": "UNESCO"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Service Civique",
+          "body": "Through Service Civique, young people in France can spend six to twelve months on a mission of general interest — in education, the environment, culture, solidarity, and other civic fields.",
+          "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13278",
+          "source_label": "Service-Public.fr"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "The right to disconnect",
+          "body": "Since 1 January 2017, French labor law has required companies to address employees’ droit à la déconnexion — the right not to be expected to answer work messages during rest, leave, and family life.",
+          "source_url": "https://code.travail.gouv.fr/code-du-travail/l2242-17",
+          "source_label": "Code du travail, L. 2242-17"
+        },
+        {
+          "kicker": "A word",
+          "title": "Terroir",
+          "body": "Terroir is more than “soil.” In French it names the living bond between a place — its land, climate, and know-how — and the taste of what is grown or made there.",
+          "source_url": "https://www.cnrtl.fr/definition/terroir",
+          "source_label": "CNRTL"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "A meal that gathers",
+          "body": "UNESCO recognized the gastronomic meal of the French not as luxury dining, but as a social ritual for celebrating important moments, meant to draw family and friends closer together.",
+          "source_url": "https://ich.unesco.org/en/RL/gastronomic-meal-of-the-french-00437",
+          "source_label": "UNESCO"
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "badge": "Interviews coming soon",
+      "note": "Spain is too often flattened into sun, spectacle, and a long afternoon sleep. After a meal, sobremesa keeps people at the table just to talk; in the evening, the paseo turns a street into a shared living room.",
+      "photos": [
+        {
+          "src": "assets/travels/spain/sagrada-familia.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "The Sagrada Família in Barcelona",
+          "caption_html": "The Sagrada Família, Barcelona. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": true
+        },
+        {
+          "src": "assets/travels/spain/casa-batllo.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "Casa Batlló in Barcelona at night",
+          "caption_html": "Casa Batlló, on Passeig de Gràcia in Barcelona, at night. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/generalife.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The Patio de la Acequia at the Generalife, Granada",
+          "caption_html": "The Patio de la Acequia at the Generalife, Granada. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/las-setas.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A view through Metropol Parasol, Las Setas, over Seville",
+          "caption_html": "Looking out through Metropol Parasol (Las Setas) over Seville. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "Sobremesa",
+          "body": "The Real Academia Española defines sobremesa as the time spent at the table after eating. It is not leftover food — it is leftover time, kept for conversation.",
+          "source_url": "https://dle.rae.es/sobremesa",
+          "source_label": "RAE"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Erasmus in Spain",
+          "body": "Spain has consistently been among the top — and often the leading — destinations for Erasmus+ higher-education exchanges, a meeting place for young people from across Europe.",
+          "source_url": "https://erasmus-plus.ec.europa.eu/resources-and-tools/factsheets-statistics-evaluations/statistics/data/learning-mobility-projects",
+          "source_label": "Erasmus+ (European Commission)"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "The siesta myth",
+          "body": "Travel posts and stock images still sell a Spain that sleeps through the afternoon. In a 2009 Fundadeps survey of more than 3,000 adults, 58.6% said they never took a siesta, and only 16.2% did so daily.",
+          "source_url": "https://english.elpais.com/elpais/2016/04/06/inenglish/1459949163_140228.html",
+          "source_label": "El País, citing Fundadeps (2009)"
+        },
+        {
+          "kicker": "A word",
+          "title": "Quedar",
+          "body": "In everyday Spanish, quedar is how you make a plan to meet someone. It is a small word for a big habit: showing up for one another, in person.",
+          "source_url": "https://dle.rae.es/quedar",
+          "source_label": "RAE"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "Tapeo",
+          "body": "A tapa is a small portion of food, often shared. Going for tapas — tapeo — is a way of eating in company, moving from plate to plate and conversation to conversation.",
+          "source_url": "https://dle.rae.es/tapa",
+          "source_label": "RAE"
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "badge": "Interviews coming soon",
+      "note": "Italy is easy to reduce to one plate of pasta and one famous tower, but connection often happens at a walking pace: a passeggiata in the evening, an aperitivo before the meal. Slow Food, which began here, is one way people have pushed back against speed and sameness at the table.",
+      "photos": [
+        {
+          "src": "assets/travels/italy/manarola.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Colorful houses of Manarola on the cliffs of Cinque Terre",
+          "caption_html": "Manarola, one of the five villages of Cinque Terre, Liguria. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": true
+        },
+        {
+          "src": "assets/travels/italy/tagliatelle.jpg",
+          "width": 1253,
+          "height": 1400,
+          "alt": "Fresh tagliatelle hanging to dry on a wooden rack",
+          "caption_html": "Fresh tagliatelle drying on a wooden rack. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/italy/tuscan-cappuccino.jpg",
+          "width": 1400,
+          "height": 1390,
+          "alt": "A cappuccino in a cup painted with a Tuscan landscape of cypress and poppies",
+          "caption_html": "A cappuccino in a hand-painted cup with cypress and poppies. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/italy/pisa-campo.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "The Baptistery, Cathedral, and Leaning Tower in Pisa",
+          "caption_html": "The Baptistery, Cathedral, and Leaning Tower in the Piazza del Duomo, Pisa. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "Passeggiata",
+          "body": "A passeggiata is a stroll, often in the evening along a main street or a seafront — a way of taking the air, greeting neighbors, and taking part in the life of a town.",
+          "source_url": "https://www.treccani.it/vocabolario/passeggiata/",
+          "source_label": "Treccani"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Servizio Civile Universale",
+          "body": "Since a 2017 reform, Italy’s Servizio Civile Universale has invited young people (ages 18–28) into unarmed civic service, on projects for communities, education, and peace.",
+          "source_url": "https://www.scelgoilserviziocivile.gov.it/scopri-il-servizio-civile/cos%C3%A8/",
+          "source_label": "Dipartimento per le politiche giovanili"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "Slow Food",
+          "body": "Slow Food began in Italy in 1986, after protests against a fast-food restaurant near Rome’s Spanish Steps, and became an international movement in 1989. It argues for food that is “good, clean and fair,” a reply to a system — and, today, to feeds — that push the same flavors everywhere.",
+          "source_url": "https://www.slowfood.com/our-history/",
+          "source_label": "Slow Food"
+        },
+        {
+          "kicker": "A word",
+          "title": "Convivio",
+          "body": "In Italian, a convivio is a banquet, a being-together at the table (from the Latin convivium, “to live together”). It names the meal as a place of company, not only of calories.",
+          "source_url": "https://www.treccani.it/vocabolario/convivio/",
+          "source_label": "Treccani"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "Aperitivo",
+          "body": "An aperitivo is the drink — and the accompanying bites — that opens the evening. It is less a cocktail hour than a social pause: a way of arriving, together, before the meal.",
+          "source_url": "https://www.treccani.it/vocabolario/aperitivo/",
+          "source_label": "Treccani"
+        }
+      ]
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "badge": "Interviews coming soon",
+      "note": "In India, a meal can be a thali of many complementary dishes, and a greeting like namaste acknowledges the person in front of you. A vast generation of young people is already changing how the country pays, speaks, and is seen — including through public systems such as UPI.",
+      "photos": [
+        {
+          "src": "assets/travels/india/mysore-kalyana-mantapa.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The pillared Kalyana Mantapa hall of Mysore Palace",
+          "caption_html": "The Kalyana Mantapa, the pillared marriage hall of Mysore Palace. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": true
+        },
+        {
+          "src": "assets/travels/india/coorg-jeep.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A jeep on a track through coffee plantations in Coorg, Karnataka",
+          "caption_html": "A jeep winding through coffee plantations in Coorg (Kodagu), Karnataka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/south-indian-thali.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A South Indian thali served on a banana leaf",
+          "caption_html": "A South Indian thali, served on a banana leaf. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/nagarhole-tusker.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A tusker elephant in Nagarhole National Park, Karnataka",
+          "caption_html": "A tusker elephant in Nagarhole National Park, near Kabini, Karnataka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "Mysuru Dasara",
+          "body": "Mysuru Dasara, also called Nada Habba, is Karnataka’s ten-day state festival, ending on Vijayadashami. The royal city fills with processions, music, and light.",
+          "source_url": "https://utsav.gov.in/view-event/mysuru-dasara",
+          "source_label": "Utsav, Ministry of Tourism, India"
+        },
+        {
+          "kicker": "Young people",
+          "title": "A vast generation",
+          "body": "United Nations population estimates show India as home to the world’s largest population of young people (ages 15–24) — a generation already shaping culture, technology, and public life.",
+          "source_url": "https://population.un.org/wpp/",
+          "source_label": "UN World Population Prospects"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "UPI",
+          "body": "The Unified Payments Interface (UPI), run by NPCI, is India’s instant, interoperable public payments system. It has become everyday infrastructure for households and small merchants. Large digital systems can widen access; they also raise questions about privacy, inclusion, and who is left out if the technology fails.",
+          "source_url": "https://www.npci.org.in/what-we-do/upi/product-overview",
+          "source_label": "NPCI"
+        },
+        {
+          "kicker": "A word",
+          "title": "Namaste",
+          "body": "Namaste is a widely used greeting in India, often made with the palms together, that acknowledges the person in front of you. In a project about listening, it is a useful word to carry: attention is a form of respect.",
+          "source_url": "https://www.britannica.com/topic/namaskar",
+          "source_label": "Encyclopaedia Britannica"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "The thali",
+          "body": "A South Indian thali arrives as a spread of complementary dishes — often on a banana leaf — to be eaten together, with the hand, as a complete meal rather than a single main course.",
+          "source_url": "https://www.britannica.com/topic/Indian-cuisine",
+          "source_label": "Encyclopaedia Britannica"
+        }
+      ]
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "badge": "Travel only, for now",
+      "note": "Día de Muertos is not Halloween in another language. It is a way families stay in conversation with those they love, building ofrendas of food, flowers, and light. This is a travel postcard, for now.",
+      "photos": [
+        {
+          "src": "assets/travels/mexico/ofrenda-tradicional.jpg",
+          "width": 1400,
+          "height": 970,
+          "alt": "Pan de muerto, marigold flowers, candles, and food on a Día de Muertos ofrenda",
+          "caption_html": "Pan de muerto, cempasúchil, candles, and food on a Día de Muertos ofrenda. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Ofrenda_tradicional_mexicana.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Wotancito</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (cropped and resized).</span>",
+          "span2": true
+        },
+        {
+          "src": "assets/travels/mexico/los-cabos-pouches.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "Colorful woven souvenir pouches labeled Los Cabos",
+          "caption_html": "Woven souvenir pouches labeled Los Cabos, Baja California Sur. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/mexico/baja-coast-aerial.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "An airplane wing over the Baja California Sur coast near Los Cabos",
+          "caption_html": "The Baja California Sur coast from the air, on the approach to Los Cabos. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "Día de Muertos",
+          "body": "As practiced especially in Mexico’s Indigenous communities, Día de Muertos commemorates the temporary return of relatives and loved ones each year in late October and early November. UNESCO inscribed the festivity in 2008.",
+          "source_url": "https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
+          "source_label": "UNESCO"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Ley Olimpia",
+          "body": "The campaign known as Ley Olimpia, begun by Olimpia Coral Melo after her intimate images were shared without consent, helped Mexico criminalize digital sexual violence. It is one way young people have pushed for dignity in digital life.",
+          "source_url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf",
+          "source_label": "Código Penal Federal (Mexico)"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "Not a costume",
+          "body": "Feeds and stock imagery often flatten Día de Muertos into a generic Halloween look. The practice UNESCO describes is a family ritual of welcome — food, flowers, candles, and memory — not a costume.",
+          "source_url": "https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
+          "source_label": "UNESCO"
+        },
+        {
+          "kicker": "A word",
+          "title": "Ofrenda",
+          "body": "An ofrenda is the home or cemetery altar prepared for Día de Muertos: food, flowers, candles, and photographs arranged so the dead can find their way.",
+          "source_url": "https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
+          "source_label": "UNESCO"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "A table for a visit",
+          "body": "Families prepare the deceased’s favorite dishes and place them on the ofrenda alongside bread, fruit, and flowers — a table set for a visit, not only a farewell. Pan de muerto is part of that welcome.",
+          "source_url": "https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
+          "source_label": "UNESCO"
+        }
+      ]
+    },
+    {
+      "id": "england",
+      "name": "England",
+      "badge": "Travel only, for now",
+      "note": "England is more than palaces and pageantry. People connect over a Sunday roast, in a local pub, and in the open-air argument of Speakers’ Corner — a living public culture, not a souvenir myth.",
+      "photos": [
+        {
+          "src": "assets/travels/england/blenheim-courtyard.jpg",
+          "width": 1400,
+          "height": 734,
+          "alt": "The courtyard and colonnades of Blenheim Palace under a blue sky",
+          "caption_html": "The Great Court at Blenheim Palace, Oxfordshire. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": true
+        },
+        {
+          "src": "assets/travels/england/tower-bridge.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Tower Bridge seen from a boat on the Thames",
+          "caption_html": "Tower Bridge from the Thames. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/england/st-pauls.jpg",
+          "width": 1400,
+          "height": 755,
+          "alt": "The west facade of St Paul’s Cathedral",
+          "caption_html": "St Paul’s Cathedral, London. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/england/parliament-westminster.jpg",
+          "width": 1400,
+          "height": 461,
+          "alt": "The Houses of Parliament and the Elizabeth Tower under a grey sky",
+          "caption_html": "The Houses of Parliament and the Elizabeth Tower, from Westminster Bridge. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "Speakers’ Corner",
+          "body": "At the north-east edge of Hyde Park, Speakers’ Corner continues a long tradition of public debate. The 1872 Parks Regulation Act established the right to meet and speak freely in the park.",
+          "source_url": "https://www.royalparks.org.uk/visit/parks/hyde-park/speakers-corner",
+          "source_label": "The Royal Parks"
+        },
+        {
+          "kicker": "Young people",
+          "title": "UK Youth Parliament",
+          "body": "Young people aged 11 to 18 can be elected as Members of Youth Parliament, who represent their areas and take debates into the House of Commons chamber.",
+          "source_url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10138/",
+          "source_label": "UK Parliament / House of Commons Library"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "Online Safety Act",
+          "body": "The Online Safety Act 2023 places duties of care on major online platforms, including additional protections for children — a reminder that technology is not neutral, and that the rules around it can be argued in public.",
+          "source_url": "https://www.legislation.gov.uk/ukpga/2023/50/contents",
+          "source_label": "legislation.gov.uk"
+        },
+        {
+          "kicker": "A word",
+          "title": "Cheers",
+          "body": "In everyday British English, “cheers” can mean thank you, goodbye, or a toast — a small word that does a lot of social work.",
+          "source_url": "https://dictionary.cambridge.org/dictionary/english/cheers",
+          "source_label": "Cambridge Dictionary"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "Sunday roast",
+          "body": "A shared meal of roast meat, potatoes, vegetables, and often Yorkshire pudding — a weekly table that still gathers families and friends, at home or in the local pub.",
+          "source_url": "https://www.bbc.co.uk/bitesize/articles/zsphjfr",
+          "source_label": "BBC Bitesize"
+        }
+      ]
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "badge": "Travel only, for now",
+      "note": "Look past the glass and efficiency, and Singapore is also a community dining room. In hawker centres, people from many backgrounds share a table; young people are among those training to keep that culture going.",
+      "photos": [
+        {
+          "src": "assets/travels/singapore/supertrees.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "Supertrees covered in plants, with a skyway between them, at Gardens by the Bay",
+          "caption_html": "Supertrees at Gardens by the Bay. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/hawker-centre.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "People dining at metal tables under canopy umbrellas at a night-time hawker centre",
+          "caption_html": "An evening at a hawker centre — a community dining room. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/satay.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "Satay skewers with cucumber, onion, and peanut sauce on a hawker tray",
+          "caption_html": "Satay with peanut sauce. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/haji-lane.jpg",
+          "width": 1093,
+          "height": 1400,
+          "alt": "The colorful shophouses and murals of Haji Lane, with a pedestrian whose face is blurred",
+          "caption_html": "Haji Lane in Kampong Glam. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "Hawker culture",
+          "body": "Hawker centres serve as community dining rooms, where people from many backgrounds gather over food. UNESCO inscribed Singapore’s hawker culture in 2020.",
+          "source_url": "https://ich.unesco.org/en/RL/hawker-culture-in-singapore-community-dining-and-culinary-practices-in-a-multicultural-urban-context-01568",
+          "source_label": "UNESCO"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Incubation stalls",
+          "body": "Singapore’s Incubation Stall Programme helps aspiring hawkers, including people new to the trade, start a stall at reduced rent — one way a new generation can keep hawker culture going.",
+          "source_url": "https://www.nea.gov.sg/our-services/hawker-management/programmes-and-grants/isp",
+          "source_label": "National Environment Agency"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "Smart Nation",
+          "body": "Singapore’s Smart Nation programme uses digital public services to make daily life easier. Large digital systems can widen access — and they also raise questions about privacy, inclusion, and who is left out.",
+          "source_url": "https://www.smartnation.gov.sg/about/our-vision/smart-nation-vision/",
+          "source_label": "Smart Nation Singapore"
+        },
+        {
+          "kicker": "A word",
+          "title": "Lah",
+          "body": "In Singlish, lah is a common sentence-final particle. It colors a remark with attitude — emphasis, softness, or solidarity — depending on tone and context.",
+          "source_url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=5d5de338-98c5-4a97-9b51-727e807d6507",
+          "source_label": "National Library Board Singapore"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "A shared table",
+          "body": "A hawker meal is often eaten together at a simple table: satay, rice, broth, and other dishes that have been refined over years, at a price that keeps the room open.",
+          "source_url": "https://ich.unesco.org/en/RL/hawker-culture-in-singapore-community-dining-and-culinary-practices-in-a-multicultural-urban-context-01568",
+          "source_label": "UNESCO"
+        }
+      ]
+    },
+    {
+      "id": "malta",
+      "name": "Malta",
+      "badge": "Travel only, for now",
+      "note": "Malta is more than a film backdrop or a beach party. It has a language of its own, quiet limestone streets in Mdina, and village festas that bring people into the square — and, since 2018, a vote at sixteen.",
+      "photos": [
+        {
+          "src": "assets/travels/malta/fort-st-angelo.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Fort St Angelo on the Grand Harbour, with Valletta’s skyline beyond",
+          "caption_html": "Fort St. Angelo in the Grand Harbour, with Valletta beyond. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/malta/mdina-street.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A narrow limestone alley opening onto a baroque facade",
+          "caption_html": "A quiet street in Mdina, known as the Silent City. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/malta/mdina-palazzo.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A limestone palazzo with Gothic-revival windows and a coat of arms",
+          "caption_html": "A limestone palazzo in Mdina — we have not confirmed the exact building, so we leave the name hedged. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/malta/mdina-door.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A dark wooden door set in weathered limestone",
+          "caption_html": "A weathered doorway in Mdina. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "The festa",
+          "body": "The village festa is an annual parish celebration, typically a week of bands, processions, fireworks, and shared food. UNESCO inscribed the Maltese village festa in 2023.",
+          "source_url": "https://ich.unesco.org/en/RL/maltese-village-festa-an-annual-community-celebration-01871",
+          "source_label": "UNESCO"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Voting at 16",
+          "body": "Since 2018, Maltese citizens who have turned sixteen can vote in general and European Parliament elections — one of the clearest ways young people here take part in public life.",
+          "source_url": "https://legislation.mt/eli/act/2018/4/eng",
+          "source_label": "Legislation Malta, Act IV of 2018"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "A language of its own",
+          "body": "Maltese is the only Semitic official language of the European Union, and the only one written in the Latin alphabet. Feeds often flatten the islands into a party backdrop; the language itself is a living reminder that Malta is not a set.",
+          "source_url": "https://malta.representation.ec.europa.eu/strategy-and-priorities/key-eu-policies-malta/maltese-language_en",
+          "source_label": "European Commission, Representation in Malta"
+        },
+        {
+          "kicker": "A word",
+          "title": "Merħba",
+          "body": "Merħba is the Maltese word for welcome — a greeting that opens a door, a shop, or a conversation.",
+          "source_url": "https://mlrs.research.um.edu.mt/resources/gabra/",
+          "source_label": "Ġabra, University of Malta"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "Pastizzi",
+          "body": "Pastizzi are Malta’s beloved savoury pastries, typically filled with ricotta or peas, eaten standing at a shop window or shared on the way from one place to the next.",
+          "source_url": "https://www.visitmalta.com/en/info/maltese-pastizzi",
+          "source_label": "VisitMalta"
+        }
+      ]
+    },
+    {
+      "id": "hawaii",
+      "name": "Hawaiʻi",
+      "badge": "Travel only, for now",
+      "note": "Aloha is more than a greeting. In Hawaiʻi law it is described as mutual regard and affection, and young people have helped bring ʻōlelo Hawaiʻi back into daily life through Pūnana Leo immersion schools.",
+      "photos": [
+        {
+          "src": "assets/travels/hawaii/rocky-shore-sunset.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A sunset over a rocky shore, framed by trees",
+          "caption_html": "Sunset on a rocky shore, Hawaiʻi Island — the exact beach is unverified, so we hedge the place. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/palms-sunset.jpg",
+          "width": 891,
+          "height": 1372,
+          "alt": "Palm trees silhouetted against a pink and purple sunset",
+          "caption_html": "Palms at sunset, Hawaiʻi. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        }
+      ],
+      "cards": [
+        {
+          "kicker": "A custom",
+          "title": "The Aloha Spirit",
+          "body": "Hawaiʻi law describes the Aloha Spirit as more than a greeting: mutual regard and affection, and a way of being careful with other people. State officials may give it consideration in their work.",
+          "source_url": "https://www.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0005/HRS_0005-0007_0005.HTM",
+          "source_label": "Hawaii Revised Statutes §5-7.5"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Pūnana Leo",
+          "body": "Pūnana Leo — “nest of voices” — are Hawaiian-language immersion preschools, begun in 1984, where children are raised in ʻōlelo Hawaiʻi. Young people and families helped bring the language back into daily life.",
+          "source_url": "https://www.ahapunanaleo.org/history-hl-1",
+          "source_label": "ʻAha Pūnana Leo"
+        },
+        {
+          "kicker": "Tech & bias",
+          "title": "Not a backdrop",
+          "body": "Travel feeds often flatten Hawaiʻi into a resort sunset. Aloha, in Hawaiʻi law, is a practice of care, and the language revival is a reminder that this is a living culture, not a backdrop.",
+          "source_url": "https://www.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0005/HRS_0005-0007_0005.HTM",
+          "source_label": "Hawaii Revised Statutes §5-7.5"
+        },
+        {
+          "kicker": "A word",
+          "title": "ʻOhana",
+          "body": "ʻOhana means family, including the wider circle of relatives and people you care for — a word about belonging, not only about a household.",
+          "source_url": "https://wehe.hilo.hawaii.edu/?q=ohana",
+          "source_label": "Wehewehe Hawaiian Dictionaries"
+        },
+        {
+          "kicker": "Food & ritual",
+          "title": "Lūʻau and poke",
+          "body": "A lūʻau is a feast that brings people together. Poke — from a Hawaiian word for a cut piece — is seasoned raw fish, everyday food as well as something the wider world has borrowed.",
+          "source_url": "https://www.britannica.com/topic/luau",
+          "source_label": "Encyclopaedia Britannica"
+        }
+      ]
+    }
+  ]
+}

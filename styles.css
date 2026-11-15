@@ -12,7 +12,11 @@
   --shadow: 0 18px 50px rgba(44, 27, 36, 0.08);
   --serif: "Playfair Display", "Times New Roman", serif;
   --sans: "Plus Jakarta Sans", system-ui, sans-serif;
-  --header-h: 72px;
+  --header-h: 64px;
+  --lavender: #c8b8e8;
+  --mint: #a8d8c8;
+  --peach: #f2c4a8;
+  --sky: #7ab8d4;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -90,15 +94,16 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   letter-spacing: 0.01em;
 }
 .site-nav ul {
-  display: flex; gap: 1.6rem; list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 1.05rem; list-style: none; margin: 0; padding: 0;
+  flex-wrap: wrap; justify-content: flex-end;
 }
 .site-nav a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 .site-nav a:hover { color: var(--plum); }
 .nav-toggle {
@@ -554,7 +559,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   .festival-gallery { grid-template-columns: 1fr; }
   .anya-grid { gap: 1.6rem; }
 }
-@media (max-width: 760px) {
+@media (max-width: 1100px) {
   .nav-toggle { display: block; }
   .site-nav {
     display: none;
@@ -565,6 +570,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   }
   .site-nav.is-open { display: block; }
   .site-nav ul { flex-direction: column; gap: 0.8rem; }
+}
+@media (max-width: 760px) {
   .hero { padding-top: 3rem; }
   .section { padding: 3.6rem 0; }
 }
@@ -972,4 +979,325 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 
 .japan-block, .bts, .dawn-feature, .postcard {
   scroll-margin-top: 84px;
+}
+
+
+/* ---- 2026 layout follow-up: color, Reflections hero, VOTW, globes, travel blog, videos, BTS ---- */
+.site-header { backdrop-filter: blur(12px); }
+
+.reflections-hero {
+  position: relative;
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1.1rem 1.25rem 1.5rem;
+  overflow: hidden;
+  scroll-margin-top: var(--header-h);
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 10%, rgba(200, 184, 232, 0.45), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 85% 80%, rgba(232, 160, 184, 0.28), transparent 58%),
+    radial-gradient(ellipse 45% 40% at 50% 40%, rgba(168, 216, 200, 0.22), transparent 60%);
+}
+.reflections-hero .wrap { position: relative; }
+.reflections-hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.3rem, 8vw, 4.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 0.55rem;
+}
+.reflections-hero .hero-lede {
+  max-width: 34rem;
+  margin: 0 auto 1rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.laurels-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  max-width: 42rem;
+  margin: 0 auto 1.15rem;
+}
+.laurels-compact .laurel {
+  padding: 0.7rem 0.75rem 0.8rem;
+  background: color-mix(in srgb, #fff 80%, var(--lavender));
+  border-color: color-mix(in srgb, var(--plum) 16%, transparent);
+}
+.laurels-compact .laurel-mark svg { width: 34px; height: 34px; }
+.laurels-compact .laurel-name { font-size: 1rem; }
+.laurels-compact .laurel-year { margin: 0; }
+.laurels-compact .laurel-note { font-size: 0.78rem; margin: 0.15rem 0 0; color: var(--plum); }
+.reflections-hero .hero-actions { position: relative; margin-top: 0.2rem; }
+.festival-more { padding-top: 2.5rem; padding-bottom: 0.5rem; }
+
+.votw {
+  background: color-mix(in srgb, var(--lavender) 22%, var(--paper));
+  padding-top: 3.4rem;
+  padding-bottom: 3.4rem;
+}
+.votw-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.8fr);
+  gap: 1.6rem;
+  align-items: center;
+}
+.votw .yt { border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+.votw-caption { color: var(--ink); margin: 0 0 0.6rem; font-size: 1.05rem; }
+.votw .section-head { margin-bottom: 0.4rem; }
+
+.globe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem 1.8rem;
+  margin: 0 auto 1.6rem;
+  max-width: 980px;
+}
+.globe-card {
+  position: relative;
+  width: 156px; height: 156px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 10px 28px rgba(44, 27, 36, 0.12);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.globe-card:hover { transform: scale(1.05); }
+.globe-card .g-bg { position: absolute; inset: 0; transition: transform 0.7s ease; }
+.globe-card:hover .g-bg { transform: scale(1.07); }
+.globe-card[data-region="argentina"] .g-bg { background: linear-gradient(155deg,#c8e8b8,#b8e0a8 40%,#d4e8b8); }
+.globe-card[data-region="bolivia"] .g-bg { background: linear-gradient(155deg,#d4e8a0,#c0d878 40%,#e8d4a8); }
+.globe-card[data-region="cameroon"] .g-bg { background: linear-gradient(155deg,#f5d4b0,#f0c4a0 40%,#e8d4a8); }
+.globe-card[data-region="china"] .g-bg { background: linear-gradient(155deg,#ddc8f0,#c8b0e8 40%,#b8d4f0); }
+.globe-card[data-region="japan"] .g-bg { background: linear-gradient(155deg,#f0c8d8,#e8b0c8 40%,#f2c4a8); }
+.globe-card[data-region="nigeria"] .g-bg { background: linear-gradient(155deg,#f0d4a0,#e8c078 40%,#f5d4b0); }
+.globe-card[data-region="philippines"] .g-bg { background: linear-gradient(155deg,#b8dce8,#a8d8cc 40%,#c8b8e8); }
+.globe-card .g-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 30%, rgba(0,0,0,0.12) 100%);
+}
+.globe-card .g-content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 0.8rem; z-index: 1;
+}
+.globe-card .g-kicker {
+  font-size: 0.52rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--plum); font-weight: 600; margin-bottom: 0.2rem;
+}
+.globe-card .g-name {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.15;
+  text-shadow: 0 1px 6px rgba(255,255,255,0.65);
+}
+.globe-note { text-align: center; color: var(--muted); margin: 0 auto 2rem; max-width: 32rem; font-size: 0.95rem; }
+
+.section.regions {
+  background: color-mix(in srgb, var(--mint) 12%, var(--paper));
+}
+
+/* Dawn cafe: native controls, play once */
+.dawn-feature .dawn-video { width: min(280px, 70vw); border-radius: 16px; background: #1c1216; }
+.dawn-feature .dawn-video video { width: 100%; height: auto; border-radius: 16px; display: block; }
+
+/* Behind the Mirror — polaroid / journey */
+.bts-journey {
+  columns: 3;
+  column-gap: 1.1rem;
+  margin-top: 1.4rem;
+}
+.bts-item {
+  break-inside: avoid;
+  margin: 0 0 1.1rem;
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+  padding: 0.65rem 0.65rem 1rem;
+  box-shadow: 0 8px 22px rgba(44, 27, 36, 0.12);
+  border-radius: 4px 4px 8px 8px;
+  transform: rotate(var(--tilt, 0deg));
+}
+.bts-item:nth-child(3n+1) { --tilt: -1.4deg; background: color-mix(in srgb, #fff 88%, var(--lavender)); }
+.bts-item:nth-child(3n+2) { --tilt: 1.2deg; background: color-mix(in srgb, #fff 88%, var(--peach)); }
+.bts-item:nth-child(3n) { --tilt: -0.6deg; background: color-mix(in srgb, #fff 88%, var(--mint)); }
+.bts-item img, .bts-item video {
+  width: 100%; height: auto; display: block;
+  border-radius: 2px;
+  background: #1c1216;
+}
+.bts-item figcaption {
+  font-size: 0.82rem;
+  color: var(--ink);
+  margin: 0.55rem 0.15rem 0;
+  line-height: 1.45;
+}
+.bts-item .photo-credit, .bts-item .photo-credit a { font-size: 0.72rem; color: var(--muted); }
+.bts-item.bts-wide { width: 100%; }
+.bts-india-pair {
+  break-inside: avoid;
+  display: grid;
+  gap: 0.8rem;
+  margin: 0 0 1.1rem;
+}
+.bts-india-pair .bts-item { margin: 0; }
+
+/* Travel Blog */
+.travel-blog {
+  background: color-mix(in srgb, var(--peach) 14%, var(--paper));
+}
+.travel-blog .section-head { max-width: 36rem; margin-bottom: 1.4rem; }
+.travel-kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--plum);
+  margin: 0 0 0.35rem;
+}
+.travel-highlight-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.7rem 1rem;
+  margin-bottom: 1rem;
+}
+.travel-highlight-head h3 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0;
+}
+.travel-lead {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 0 0 1.2rem;
+}
+.travel-lead img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.travel-note { font-size: 1.08rem; color: var(--ink); max-width: 40rem; margin: 0 0 1.4rem; }
+.travel-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 1.2rem 0 0.8rem;
+}
+.travel-photos figure { margin: 0; }
+.travel-photos img {
+  width: 100%; height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.travel-photos figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem; }
+.travel-sources { margin: 0.4rem 0 1.4rem; }
+.travel-sources summary {
+  cursor: pointer;
+  color: var(--plum);
+  font-weight: 600;
+  font-size: 0.9rem;
+  list-style: none;
+}
+.travel-sources summary::-webkit-details-marker { display: none; }
+.travel-sources ul { margin: 0.5rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.88rem; }
+.place-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+.place-chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.place-chip:hover, .place-chip.is-active {
+  background: var(--plum);
+  color: #fff;
+  border-color: var(--plum);
+}
+
+/* Videos */
+.videos-section {
+  background: color-mix(in srgb, var(--sky) 12%, var(--paper));
+}
+.video-group { margin: 0 0 2.2rem; scroll-margin-top: 84px; }
+.video-group h3 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.video-thumb {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+.video-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.video-thumb span { display: block; padding: 0.7rem 0.8rem 0.85rem; font-weight: 600; font-size: 0.92rem; }
+.video-group .playlist-link { display: inline-block; margin-top: 0.5rem; font-size: 0.88rem; }
+
+/* Lightbox */
+.yt-lightbox[hidden] { display: none; }
+.yt-lightbox {
+  position: fixed; inset: 0; z-index: 400;
+  display: grid; place-items: center;
+  padding: 1.2rem;
+}
+.yt-lightbox-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(20, 10, 16, 0.78);
+}
+.yt-lightbox-dialog {
+  position: relative;
+  width: min(960px, 100%);
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+}
+.yt-lightbox-frame { position: relative; aspect-ratio: 16 / 9; }
+.yt-lightbox-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-lightbox-close {
+  position: absolute; top: 0.4rem; right: 0.4rem; z-index: 2;
+  width: 40px; height: 40px;
+  border: 0; border-radius: 50%;
+  background: rgba(0,0,0,0.55); color: #fff;
+  font-size: 1.5rem; cursor: pointer;
+}
+
+.about-us { background: color-mix(in srgb, var(--lavender) 10%, var(--paper)); }
+.footer-email { margin: 0; }
+.footer-email a { color: var(--plum); }
+
+@media (max-width: 900px) {
+  .votw-layout, .laurels-compact { grid-template-columns: 1fr; }
+  .bts-journey { columns: 2; }
+  .travel-photos { grid-template-columns: 1fr 1fr; }
+  .globe-card { width: 132px; height: 132px; }
+}
+@media (max-width: 700px) {
+  .reflections-hero { min-height: calc(100svh - var(--header-h)); padding: 0.6rem 1rem 1.1rem; }
+  .reflections-hero .hero-lede { font-size: 0.92rem; margin-bottom: 0.7rem; }
+  .bts-journey { columns: 1; }
+  .bts-item { transform: none; }
+  .travel-photos { grid-template-columns: 1fr; }
 }
