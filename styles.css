@@ -1260,7 +1260,29 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   color: inherit;
 }
 .video-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
-.video-thumb span { display: block; padding: 0.7rem 0.8rem 0.85rem; font-weight: 600; font-size: 0.92rem; }
+.video-thumb .video-copy,
+.local-interview .video-copy {
+  display: block;
+  padding: 0.7rem 0.8rem 0.85rem;
+}
+.video-thumb .video-title,
+.local-interview .video-title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.video-thumb .video-subtitle,
+.local-interview .video-subtitle {
+  display: block;
+  margin-top: 0.28rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
 .video-group .playlist-link { display: inline-block; margin-top: 0.5rem; font-size: 0.88rem; }
 
 /* Lightbox */
@@ -2037,10 +2059,12 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .person-card .video-thumb {
   background: color-mix(in srgb, #fff 90%, var(--lavender));
 }
-.person-card .video-thumb span {
+.person-card .video-thumb .video-copy {
+  padding: 0.5rem 0.6rem 0.65rem;
+}
+.person-card .video-thumb .video-title {
   font-size: 0.82rem;
   font-weight: 600;
-  padding: 0.5rem 0.6rem 0.65rem;
 }
 
 /* ---- Decorative Did You Know cards (region pages only; travel culture cards stay as they are) ---- */
@@ -2565,6 +2589,10 @@ button.live-pill {
 .local-interview {
   margin: 0 0 1.25rem;
   max-width: min(280px, 70vw);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 .local-interview-frame {
   width: min(280px, 70vw);

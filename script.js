@@ -744,7 +744,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115w", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115x", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -769,12 +769,28 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     return (onRegion ? "../" : "") + src;
   }
 
-  function interviewThumb(v) {
+  function interviewCaption(v, index) {
+    const question = (v && v.title ? String(v.title) : "").trim();
+    const copy = document.createElement("span");
+    copy.className = "video-copy";
+    const title = document.createElement("span");
+    title.className = "video-title";
+    title.textContent = question || "Interview";
+    const sub = document.createElement("span");
+    sub.className = "video-subtitle";
+    sub.textContent = "Interview " + String(index);
+    copy.appendChild(title);
+    copy.appendChild(sub);
+    return copy;
+  }
+
+  function interviewThumb(v, index) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "video-thumb";
+    const question = (v && v.title ? String(v.title) : "").trim();
     btn.setAttribute("data-open-video", v.id);
-    btn.setAttribute("data-title", v.title || "Interview");
+    btn.setAttribute("data-title", question || "Interview");
     if (v.start !== undefined && v.start !== null && String(v.start) !== "") {
       btn.setAttribute("data-start", String(v.start));
     }
@@ -789,10 +805,8 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     img.height = 360;
     img.alt = "";
     img.loading = "lazy";
-    const span = document.createElement("span");
-    span.textContent = v.title || "Interview";
     btn.appendChild(img);
-    btn.appendChild(span);
+    btn.appendChild(interviewCaption(v, index));
     return btn;
   }
 
@@ -811,7 +825,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115w";
+    const jsonUrl = "../data/regions.json?v=20261115x";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
@@ -948,7 +962,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       }
       if (lede) lede.hidden = false;
       if (empty) empty.hidden = true;
-      function localInterviewPlayer(v) {
+      function localInterviewPlayer(v, index) {
         const fig = document.createElement("figure");
         fig.className = "local-interview";
         const frame = document.createElement("div");
@@ -966,17 +980,25 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         video.appendChild(source);
         frame.appendChild(video);
         fig.appendChild(frame);
+        fig.appendChild(interviewCaption(v, index));
         return fig;
       }
       const localList = document.createElement("div");
       localList.className = "region-local-clips";
       const clipGrid = document.createElement("div");
       clipGrid.className = "region-clip-grid";
+      let interviewN = 0;
       people.forEach((person) => {
         const localClips = person.clips.filter((v) => v.src && !v.id);
         const ytClips = person.clips.filter((v) => v.id);
-        localClips.forEach((clip) => localList.appendChild(localInterviewPlayer(clip)));
-        ytClips.forEach((clip) => clipGrid.appendChild(interviewThumb(clip)));
+        localClips.forEach((clip) => {
+          interviewN += 1;
+          localList.appendChild(localInterviewPlayer(clip, interviewN));
+        });
+        ytClips.forEach((clip) => {
+          interviewN += 1;
+          clipGrid.appendChild(interviewThumb(clip, interviewN));
+        });
       });
       if (localList.childElementCount) root.appendChild(localList);
       if (clipGrid.childElementCount) root.appendChild(clipGrid);
