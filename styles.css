@@ -2705,3 +2705,6 @@ button.live-pill {
   overflow-wrap: anywhere;
   max-width: min(40rem, 100%);
 }
+
+.region-places { margin: 0.4rem 0 1.8rem; }
+.region-places .region-gallery { margin-top: 0.6rem; }

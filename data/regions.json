@@ -175,7 +175,65 @@
         "label": "Obelisk of Buenos Aires",
         "youtube": "r8Busmkpsh8",
         "source": "ARGNews"
-      }
+      },
+      "photos": [
+        {
+          "src": "assets/regions/argentina/iguazu-falls.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Iguazú Falls seen from the Argentina side",
+          "caption_html": "Iguazú Falls, on the Argentina side. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:A_view_of_Iguazu_Falls_from_the_Argentina_side.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Horacio Cambeiro</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/argentina/perito-moreno.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "The blue ice wall of the Perito Moreno Glacier",
+          "caption_html": "The Perito Moreno Glacier in Los Glaciares National Park. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Glaciar_Perito_Moreno14_-_Argentina.JPG\" target=\"_blank\" rel=\"noopener noreferrer\">Diego Delso</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 3.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/argentina/aconcagua.jpg",
+          "width": 1400,
+          "height": 470,
+          "alt": "Arid mountain slopes in Aconcagua Provincial Park",
+          "caption_html": "High country in Aconcagua Provincial Park. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Aconcagua_Provincial_Park_06.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Bernard Gagnon</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/argentina/humahuaca-cactus.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Cardón cacti and layered hills in the Quebrada de Humahuaca",
+          "caption_html": "Cactus and colorful hills in the Quebrada de Humahuaca. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:AR378-Quebrada_de_Humahuaca.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Bernard Gagnon</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/argentina/humahuaca-hills.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Red and gold mineral slopes in the Quebrada de Humahuaca",
+          "caption_html": "Mineral-colored slopes in the Quebrada de Humahuaca. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Quebrada_de_Humahuaca_07.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Bernard Gagnon</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/argentina/humahuaca-rock.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "A steep, layered rock face in the Quebrada de Humahuaca",
+          "caption_html": "A folded rock face in the Quebrada de Humahuaca. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Quebrada_de_Humahuaca_08.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Bernard Gagnon</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/argentina/llao-llao.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "A forested peninsula in the blue waters of Nahuel Huapi Lake",
+          "caption_html": "The Llao Llao peninsula on Nahuel Huapi Lake. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Llao_Llao_Peninsula.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Fernando</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        }
+      ]
     },
     "bolivia": {
       "name": "Bolivia",
@@ -356,7 +414,65 @@
         }
       ],
       "timezone": "America/La_Paz",
-      "webcam": null
+      "webcam": null,
+      "photos": [
+        {
+          "src": "assets/regions/bolivia/salar-de-uyuni.jpg",
+          "width": 1400,
+          "height": 788,
+          "alt": "A small rocky island reflected in the Salar de Uyuni",
+          "caption_html": "An island of rock and cactus on the Salar de Uyuni. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_10-12_HDR.JPG\" target=\"_blank\" rel=\"noopener noreferrer\">Diego Delso</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/bolivia/titicaca-terraces.jpg",
+          "width": 1400,
+          "height": 931,
+          "alt": "Green hillside terraces above Lake Titicaca",
+          "caption_html": "Agricultural terraces on the shore of Lake Titicaca. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Bolivia_-_Inca_terraces%2C_on_the_shores_of_Lake_Titicaca.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Indies1</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/bolivia/valle-de-la-luna-1.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Pale eroded clay spires in Valle de la Luna near La Paz",
+          "caption_html": "Rock formations in Valle de la Luna, near La Paz. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:03-Valle_de_la_Luna_%28La_Paz%29-1.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">PsamatheM</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/bolivia/valle-de-la-luna-2.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Tall clay pinnacles under a blue sky in Valle de la Luna",
+          "caption_html": "Eroded clay pinnacles in Valle de la Luna. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:03-Valle_de_la_Luna_%28La_Paz%29-2.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">PsamatheM</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/bolivia/tiwanaku-stones.jpg",
+          "width": 1400,
+          "height": 931,
+          "alt": "Large pre-Columbian stone blocks among the ruins of Tiwanaku",
+          "caption_html": "Monumental stone blocks at Tiwanaku. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Tiwanaku_-_Ruins_of_monumental_gate.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">P. Hughes</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/bolivia/huayna-potosi.jpg",
+          "width": 1400,
+          "height": 798,
+          "alt": "A snow-capped peak above golden Altiplano grassland",
+          "caption_html": "Huayna Potosí rising above the Altiplano. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Huayna_Potos%C3%AD_y_Chacaltaya%2C_La_Paz%2C_Bolivia.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Antonee Lens</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/bolivia/huayna-potosi-west.jpg",
+          "width": 1400,
+          "height": 891,
+          "alt": "The steep west face of Huayna Potosí",
+          "caption_html": "The west face of Huayna Potosí. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:La_Cara_Oeste_del_Huayna_Potos%C3%AD.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Soletocesar</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        }
+      ]
     },
     "cameroon": {
       "name": "Cameroon",
@@ -718,7 +834,65 @@
           "source_label": "CIA World Factbook"
         }
       ],
-      "timezone": "Africa/Douala"
+      "timezone": "Africa/Douala",
+      "photos": [
+        {
+          "src": "assets/regions/cameroon/mount-cameroon-sea.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Mount Cameroon on the horizon beyond a sunlit sea",
+          "caption_html": "Mount Cameroon seen across the water from Douala. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Mount_Cameroon_from_douala_Cameroon.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Blaizo 237</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/cameroon/mount-cameroon.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "The upper slopes of Mount Cameroon against a blue sky",
+          "caption_html": "Mount Cameroon on a clear day. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Mount_Cameroon_on_a_sunny_day_02.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Adesolive</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/cameroon/rhumsiki-kapsiki.jpg",
+          "width": 1400,
+          "height": 932,
+          "alt": "A volcanic peak rising over green hills near Rhumsiki",
+          "caption_html": "The Kapsiki Peak above Rhumsiki, in the Far North. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Rhumsiki_with_Kapsiki_Peak_%28after_sunrise%29%2C_Far_North_Province_of_Cameroon.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Alfred Weidinger</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/cameroon/rhumsiki-peak.jpg",
+          "width": 1400,
+          "height": 369,
+          "alt": "A needle-like volcanic peak in a dry highland landscape",
+          "caption_html": "Rhumsiki Peak in Cameroon’s Far North Region. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Rhumsiki_peak%2C_North_Cameroon_%2825989204581%29.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">krishna naudin</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/cameroon/foumban-palace.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "Sunlit brick arches in the royal palace at Foumban",
+          "caption_html": "A brick arcade in the royal palace at Foumban. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:CAM-Foumban-Palais_royal-Entr%C3%A9e_du_mus%C3%A9e.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">WILLAV-FR</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/cameroon/limbe-botanic.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Rows of young plants under shade cloth at Limbe Botanic Garden",
+          "caption_html": "Seedlings in the nursery at Limbe Botanic Garden. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Limbe_Botanical_Garden_Nursery_01.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Adesolive</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/cameroon/waza-camels.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "Camels grazing on open grassland near Waza National Park",
+          "caption_html": "A herd of camels near Waza National Park. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:A_herd_of_Camels_off_the_Northern_part_of_the_Waza_National_Park_01.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Adesolive</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        }
+      ]
     },
     "china": {
       "name": "China",
@@ -795,7 +969,7 @@
       ],
       "facts": [
         {
-          "text": "Standard Chinese, or Putonghua, is the official national language; other languages, including Mongolian, Uyghur, and Tibetan, are official in some regions.",
+          "text": "Mandarin (Standard Chinese), or Putonghua, is the official national language; other languages, including Mongolian, Uyghur, and Tibetan, are official in some regions.",
           "source_url": "https://www.cia.gov/the-world-factbook/countries/china/",
           "source_label": "CIA World Factbook"
         },
@@ -821,7 +995,65 @@
         }
       ],
       "timezone": "Asia/Shanghai",
-      "webcam": null
+      "webcam": null,
+      "photos": [
+        {
+          "src": "assets/regions/china/li-river.jpg",
+          "width": 1400,
+          "height": 928,
+          "alt": "Karst peaks along a bend of the Li River near Yangshuo",
+          "caption_html": "The Li River near Yangshuo, in Guangxi. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">chensiyuan</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/china/zhangye-danxia.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Banded red and gold sandstone hills at Zhangye Danxia",
+          "caption_html": "Colored sandstone hills at Zhangye Danxia. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Danxia-landform-1562852.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">iamangela9</a>, Wikimedia Commons, <a href=\"http://creativecommons.org/publicdomain/zero/1.0/deed.en\" target=\"_blank\" rel=\"noopener noreferrer\">CC0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/china/zhangye-danxia-ridges.jpg",
+          "width": 1400,
+          "height": 938,
+          "alt": "Layered colorful ridges in Zhangye Danxia National Geopark",
+          "caption_html": "Ridges in Zhangye Danxia National Geopark. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Zhangye_Danxia_National_Geopark_-_55358345873.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">xiquinhosilva</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/china/forbidden-city-rooftops.jpg",
+          "width": 1400,
+          "height": 1114,
+          "alt": "Golden imperial rooftops of the Forbidden City",
+          "caption_html": "Rooftops of the Forbidden City, Beijing. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Forbidden_city_rooftops.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Dror Feitelson</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/china/huangshan-mist.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Pine-covered granite peaks of Huangshan in mist",
+          "caption_html": "Huangshan in mist. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Huangshan_mist_20141109.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">颐园居</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/china/huangshan-pine.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "A pine tree on a sheer granite pillar at Huangshan",
+          "caption_html": "A pine on a granite pillar at Huangshan. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Mount-huangshan_53319731542_o.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">xiquinhosilva</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/china/longji-terraces.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Golden rice terraces stepping down a hillside at Longji",
+          "caption_html": "Rice terraces at Longji. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Longji_rice_terraces_-_2023_10_11_Kaur_Virunurm.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Kurinurm</a>, Wikimedia Commons, <a href=\"http://creativecommons.org/publicdomain/zero/1.0/deed.en\" target=\"_blank\" rel=\"noopener noreferrer\">CC0</a> (resized).</span>",
+          "span2": false
+        }
+      ]
     },
     "japan": {
       "name": "Japan",
@@ -974,7 +1206,65 @@
           "source_label": "CIA World Factbook"
         }
       ],
-      "timezone": "Africa/Lagos"
+      "timezone": "Africa/Lagos",
+      "photos": [
+        {
+          "src": "assets/regions/nigeria/zuma-rock.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The sheer face of Zuma Rock under a grey sky",
+          "caption_html": "Zuma Rock, in the dry season. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Zuma_Rock_in_the_dry_season.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Hui Linbo</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/nigeria/zuma-rock-behind.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Zuma Rock seen from the rear, with open ground in front",
+          "caption_html": "The back of Zuma Rock, along the Abuja–Kaduna road. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Behind_The_World_Famous_Zuma_Rock_Along_Abuja_Kaduna.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Adenoghie</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/nigeria/olumo-rock.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The granite outcrop of Olumo Rock in Abeokuta",
+          "caption_html": "Olumo Rock in Abeokuta. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Olumo_Rock_in_Abeokuta.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">AdeolaStudio</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/nigeria/idanre-hills.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Dome-shaped hills and forest at Idanre",
+          "caption_html": "The Idanre Hills in Ondo State. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:IDANRE_HILLS_LANDSCAPE.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Sasu photography</a>, Wikimedia Commons, <a href=\"http://creativecommons.org/publicdomain/zero/1.0/deed.en\" target=\"_blank\" rel=\"noopener noreferrer\">CC0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/nigeria/idanre-town.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A hillside town below the rocks of Idanre",
+          "caption_html": "Idanre town beneath the hills. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Idanre_hills_Ondo_State.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Ubiquituous</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/nigeria/yankari.jpg",
+          "width": 1400,
+          "height": 800,
+          "alt": "A patchwork of woodland and grassland at Yankari Game Reserve",
+          "caption_html": "An aerial view of Yankari Game Reserve. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Yankari_game_reserve_aerial_view_01.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Obute Wa</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/nigeria/erin-ijesha-falls.jpg",
+          "width": 933,
+          "height": 1400,
+          "alt": "A tall waterfall in a green gorge at Erin Ijesha",
+          "caption_html": "Erin Ijesha Waterfalls, in Osun State. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Erin_Ijesha%2C_waterfalls%2C_Osun%2C_Nigeria.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Tunde Akangbe</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        }
+      ]
     },
     "philippines": {
       "name": "The Philippines",
@@ -1071,7 +1361,65 @@
         }
       ],
       "timezone": "Asia/Manila",
-      "webcam": null
+      "webcam": null,
+      "photos": [
+        {
+          "src": "assets/regions/philippines/banaue-terraces.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Stepped rice terraces in the mountains around Banaue",
+          "caption_html": "Rice terraces at Banaue. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Banaue_rice_terraces.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Larsjepp</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/philippines/banaue-terraces-slope.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Green rice terraces descending a mountain slope near Banaue",
+          "caption_html": "A slope of rice terraces near Banaue. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Banaue_Philippines_Banaue-Rice-Terraces-01.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">CEphoto, Uwe Aranas</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 3.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/philippines/chocolate-hills.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Conical grassy hills of the Chocolate Hills in Bohol",
+          "caption_html": "The Chocolate Hills in Carmen, Bohol. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Chocolate_Hills_Carmen_Bohol_2019.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Wolfgang Hägele</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/philippines/mayon-volcano.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "The symmetrical cone of Mayon Volcano with a plume of ash",
+          "caption_html": "Mayon Volcano, in Albay. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Erickson_Banzuela_Balderama_-_Mayon_Volcano_Up-close.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Erickson Banzuela Balderama</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/philippines/el-nido-coast.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "A small tropical island and turquoise water off El Nido",
+          "caption_html": "Limestone islands off El Nido, Palawan. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:El_Nido_Bay%2C_Desert_tropical_island%2C_Coastline%2C_Palawan_Island%2C_Philippines.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Vyacheslav Argenberg</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/philippines/el-nido-lagoon.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Turquoise water at the foot of limestone cliffs in El Nido",
+          "caption_html": "A lagoon among limestone cliffs at El Nido. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:El_Nido_Bay%2C_Island_lagoon%2C_Palawan%2C_Philippines.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Vyacheslav Argenberg</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/regions/philippines/taal-crater-lake.jpg",
+          "width": 1400,
+          "height": 928,
+          "alt": "A green crater lake inside Taal Volcano",
+          "caption_html": "The crater lake of Taal Volcano. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Taal_Volcano_crater_lake_8-8-2014.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Kai Lehmann</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 2.0</a> (resized).</span>",
+          "span2": false
+        }
+      ]
     }
   }
 }

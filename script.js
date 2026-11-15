@@ -463,6 +463,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         if (track.classList.contains("bts-journey")) track.setAttribute("aria-label", "Behind the Scenes photos and clips");
         else if (track.classList.contains("travel-photos")) track.setAttribute("aria-label", "Travel photos");
         else if (track.classList.contains("japan-gallery")) track.setAttribute("aria-label", "Photos from the trip");
+        else if (track.classList.contains("region-gallery")) track.setAttribute("aria-label", "Photographs of the region");
         else track.setAttribute("aria-label", "Interview videos");
       }
       if (!wrap.querySelector(".carousel-btn")) {
@@ -743,7 +744,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115v", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115w", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -810,7 +811,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115v";
+    const jsonUrl = "../data/regions.json?v=20261115w";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
@@ -896,10 +897,44 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       flip.addEventListener("click", advance);
       flip.addEventListener("keydown", advance);
     }
+
+    function mountRegionGallery(region) {
+      if (!region) return;
+      const photos = (region.photos || []).filter((ph) => ph && ph.src);
+      if (!photos.length) return;
+      if (document.querySelector(".japan-gallery")) return;
+      if (document.getElementById("region-places")) return;
+      const wrap = document.querySelector(".region-section > .wrap");
+      if (!wrap) return;
+      const section = document.createElement("div");
+      section.className = "region-places";
+      section.id = "region-places";
+      const name = region.name || "";
+      const figures = photos.map((ph) => {
+        const src = mediaUrl(ph.src);
+        const alt = escapeHtml(ph.alt || "");
+        const w = ph.width ? ' width="' + ph.width + '"' : "";
+        const h = ph.height ? ' height="' + ph.height + '"' : "";
+        const cap = ph.caption_html || "";
+        return "<figure><img src=\"" + src + "\"" + w + h + " alt=\"" + alt + "\" loading=\"lazy\"><figcaption>" + cap + "</figcaption></figure>";
+      }).join("");
+      section.innerHTML =
+        '<header class="section-head region-media-head">' +
+        '<p class="eyebrow">Places</p>' +
+        "<h2>Around " + escapeHtml(name) + "</h2>" +
+        "</header>" +
+        '<div class="region-gallery">' + figures + "</div>";
+      const stage = wrap.querySelector(".region-stage");
+      if (stage) stage.insertAdjacentElement("afterend", section);
+      else wrap.appendChild(section);
+      initCarousels(section);
+    }
+
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       mountRegionLiveBar(data);
       const region = data && data.regions && data.regions[slug];
       mountRegionFacts(region);
+      mountRegionGallery(region);
       const people = peopleFromRegion(region).map((person) => ({
         thumbnail: person.thumbnail,
         clips: (person.clips || []).filter((v) => v && (v.id || v.src))

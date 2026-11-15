@@ -552,6 +552,30 @@
           "alt": "An airplane wing over the Baja California Sur coast near Los Cabos",
           "caption_html": "The Baja California Sur coast from the air, on the approach to Los Cabos. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/mexico/chichen-itza-castillo.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "The step pyramid known as El Castillo at Chichén Itzá",
+          "caption_html": "El Castillo at Chichén Itzá. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:El_Castillo%2C_Chichen_Itza_%2814367088455%29.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Arian Zwegers from Brussels, Belgium</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/mexico/agave-tequila.jpg",
+          "width": 1400,
+          "height": 786,
+          "alt": "Rows of blue agave in a field near Tequila, Jalisco",
+          "caption_html": "An agave field near Tequila, Jalisco. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Paisaje_agavero_en_Para%C3%ADso_Azul%2C_Tequila%2C_Jalisco.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Pequeño mar</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/mexico/palacio-bellas-artes-aerial.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "An elevated view of the Palacio de Bellas Artes and its stained-glass dome",
+          "caption_html": "The Palacio de Bellas Artes in Mexico City, seen from above. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Palacio_de_Bellas_Artes%2C_Ciudad_de_M%C3%A9xico%2C_M%C3%A9xico%2C_2015-07-18%2C_DD_10.JPG\" target=\"_blank\" rel=\"noopener noreferrer\">Diego Delso</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
         }
       ],
       "cards": [
@@ -834,6 +858,30 @@
           "alt": "A dark wooden door set in weathered limestone",
           "caption_html": "A weathered doorway in Mdina. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/malta/blue-grotto.jpg",
+          "width": 1200,
+          "height": 800,
+          "alt": "Sea-carved limestone arches of the Blue Grotto",
+          "caption_html": "The Blue Grotto on Malta’s south coast. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Blue_Grotto_Malta_Seascape_Photography_%28163621137%29.jpeg\" target=\"_blank\" rel=\"noopener noreferrer\">Giuseppe Milo</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/3.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 3.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/malta/senglea-grand-harbour.jpg",
+          "width": 1400,
+          "height": 934,
+          "alt": "Valletta’s waterfront across the Grand Harbour from Senglea",
+          "caption_html": "Valletta across the Grand Harbour, seen from Senglea. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Malta_-_Senglea_-_Gardjola_Gardens_-_La_Guardiola_Safe_Haven_Gardens_-_Echaugette_%28reconstructed%29_11_-_Grand_Harbour_%26_Valletta_Waterfront.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Txllxt TxllxT</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/malta/dwejra-inland-sea.jpg",
+          "width": 1400,
+          "height": 757,
+          "alt": "A limestone inlet known as the Inland Sea at Dwejra, Gozo",
+          "caption_html": "The Inland Sea at Dwejra, on the island of Gozo. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Mar_Interior%2C_isla_de_Gozo%2C_Malta%2C_2021-08-22%2C_DD_79.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Diego Delso</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
+          "span2": false
         }
       ],
       "cards": [
@@ -907,6 +955,38 @@
           "height": 900,
           "alt": "Lava flowing into the ocean at Hawaiʻi Volcanoes National Park",
           "caption_html": "Lava flowing into the ocean at Hawaiʻi Volcanoes National Park. <span class=\"photo-credit\">Photo: National Park Service, via <a href=\"https://commons.wikimedia.org/wiki/File:Lava_at_Hawai%27i_Volcanoes_National_Park.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Wikimedia Commons</a> (public domain)</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/haleakala-crater.jpg",
+          "width": 1400,
+          "height": 788,
+          "alt": "The colorful volcanic crater of Haleakalā on Maui",
+          "caption_html": "The summit crater of Haleakalā, Maui. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Haleakala_%22Crater%22%2C_Maui%2C_Hawaii.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Christoph Strässler</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/na-pali-coast.jpg",
+          "width": 1400,
+          "height": 933,
+          "alt": "Steep green sea cliffs along the Nā Pali coast of Kauaʻi",
+          "caption_html": "The Nā Pali coast of Kauaʻi. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Milolii_valley_Na_Pali_coast_Kauai_Hawaii_%2845554347574%29.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">dronepicr</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/waimea-canyon.jpg",
+          "width": 1400,
+          "height": 788,
+          "alt": "The green and red walls of Waimea Canyon on Kauaʻi",
+          "caption_html": "Waimea Canyon, Kauaʻi. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Lower_Part_of_Waimea_Canyon%2C_Kauai%2C_Hawaii_%2842045042864%29.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Christoph Strässler from Oberdorf BL, Schweiz</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/2.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 2.0</a> (resized).</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/akaka-falls.jpg",
+          "width": 1050,
+          "height": 1400,
+          "alt": "A tall waterfall dropping through a green gorge at ʻAkaka Falls",
+          "caption_html": "ʻAkaka Falls, on Hawaiʻi Island. <span class=\"photo-credit\">Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Akaka_falls_dllu.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Dllu</a>, Wikimedia Commons, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY-SA 4.0</a> (resized).</span>",
           "span2": false
         }
       ],
