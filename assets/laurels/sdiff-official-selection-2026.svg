@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" width="560" height="320" role="img">
+<svg class="festival-laurel-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" role="img" aria-label="Official Selection, San Diego International Film Festival, 2026">
   <defs>
     <linearGradient id="sdiff-gold" x1="0" y1="0" x2="0.15" y2="1">
       <stop offset="0%" stop-color="#E8C547"/>
@@ -10,41 +9,42 @@
       <stop offset="0%" stop-color="#D4B03A"/>
       <stop offset="100%" stop-color="#8E6F12"/>
     </linearGradient>
-    <filter id="sdiff-shadow" x="-5%" y="-5%" width="110%" height="110%">
+    <filter id="sdiff-shadow" x="-8%" y="-8%" width="116%" height="116%">
       <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#6B5410" flood-opacity="0.28"/>
     </filter>
   </defs>
   <style>
     .fl-kicker {
       font-family: "Playfair Display SC", "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.16em;
       fill: #2C1B24;
     }
     .fl-name {
       font-family: "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 30px;
+      font-size: 22px;
       font-weight: 600;
       fill: #2C1B24;
     }
     .fl-year {
       font-family: "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       letter-spacing: 0.28em;
       fill: #2C1B24;
     }
   </style>
-  <!-- Solid cream backing so the badge stays legible on photos and light grounds -->
-  <rect x="10" y="10" width="540" height="300" rx="18" ry="18" fill="#F7F1E4" stroke="#E3D6B3" stroke-width="1"/>
-  <g fill="url(#sdiff-gold)" stroke="#8E6F12" stroke-width="0.35" stroke-linejoin="round" filter="url(#sdiff-shadow)">
+  <rect x="14" y="14" width="372" height="492" rx="28" ry="28" fill="#F7F1E4" stroke="#E3D6B3" stroke-width="1"/>
+  <g transform="translate(200, 270) scale(0.58, 1.52) translate(-280, -160)">
+    <g fill="url(#sdiff-gold)" stroke="#8E6F12" stroke-width="0.35" stroke-linejoin="round" filter="url(#sdiff-shadow)">
     <path transform="translate(248.81 270.49) rotate(-202.00)" d="M0,0 C6.79,-7.46 23.39,-5.84 37.72,0 C23.39,5.84 6.79,7.46 0,0 Z"/><path transform="translate(221.01 266.69) rotate(-154.30)" d="M0,0 C5.52,-6.72 19.03,-5.26 30.69,0 C19.03,5.26 5.52,6.72 0,0 Z"/><path transform="translate(195.82 261.46) rotate(-194.10)" d="M0,0 C6.52,-7.16 22.45,-5.60 36.21,0 C22.45,5.60 6.52,7.16 0,0 Z"/><path transform="translate(187.73 259.34) rotate(-202.53)" d="M0,0 C5.08,-5.73 17.51,-4.48 28.24,0 C17.51,4.48 5.08,5.73 0,0 Z"/><path transform="translate(173.16 254.88) rotate(-145.34)" d="M0,0 C5.30,-6.45 18.25,-5.05 29.43,0 C18.25,5.05 5.30,6.45 0,0 Z"/><path transform="translate(152.96 247.02) rotate(-183.96)" d="M0,0 C6.25,-6.86 21.51,-5.37 34.70,0 C21.51,5.37 6.25,6.86 0,0 Z"/><path transform="translate(146.55 244.02) rotate(-191.96)" d="M0,0 C4.87,-5.49 16.78,-4.29 27.06,0 C16.78,4.29 4.87,5.49 0,0 Z"/><path transform="translate(135.12 237.95) rotate(-133.95)" d="M0,0 C5.07,-6.17 17.47,-4.83 28.18,0 C17.47,4.83 5.07,6.17 0,0 Z"/><path transform="translate(119.56 227.74) rotate(-171.33)" d="M0,0 C5.97,-6.56 20.57,-5.13 33.18,0 C20.57,5.13 5.97,6.56 0,0 Z"/><path transform="translate(114.72 223.97) rotate(-178.92)" d="M0,0 C4.66,-5.25 16.05,-4.11 25.88,0 C16.05,4.11 4.66,5.25 0,0 Z"/><path transform="translate(106.21 216.46) rotate(-120.20)" d="M0,0 C4.85,-5.90 16.69,-4.62 26.92,0 C16.69,4.62 4.85,5.90 0,0 Z"/><path transform="translate(94.96 204.19) rotate(-156.71)" d="M0,0 C5.70,-6.26 19.63,-4.90 31.67,0 C19.63,4.90 5.70,6.26 0,0 Z"/><path transform="translate(91.56 199.75) rotate(-164.09)" d="M0,0 C4.45,-5.01 15.31,-3.92 24.70,0 C15.31,3.92 4.45,5.01 0,0 Z"/><path transform="translate(85.75 191.00) rotate(-105.11)" d="M0,0 C4.62,-5.62 15.91,-4.40 25.66,0 C15.91,4.40 4.62,5.62 0,0 Z"/><path transform="translate(78.48 176.96) rotate(-141.63)" d="M0,0 C5.43,-5.96 18.69,-4.67 30.15,0 C18.69,4.67 5.43,5.96 0,0 Z"/><path transform="translate(76.42 171.93) rotate(-149.12)" d="M0,0 C4.23,-4.77 14.58,-3.73 23.52,0 C14.58,3.73 4.23,4.77 0,0 Z"/><path transform="translate(73.08 162.13) rotate(-90.50)" d="M0,0 C4.39,-5.35 15.13,-4.18 24.40,0 C15.13,4.18 4.39,5.35 0,0 Z"/><path transform="translate(69.46 146.60) rotate(-127.87)" d="M0,0 C5.15,-5.66 17.76,-4.43 28.64,0 C17.76,4.43 5.15,5.66 0,0 Z"/><path transform="translate(68.61 141.10) rotate(-135.73)" d="M0,0 C4.02,-4.53 13.85,-3.54 22.34,0 C13.85,3.54 4.02,4.53 0,0 Z"/><path transform="translate(67.53 130.44) rotate(-77.84)" d="M0,0 C4.17,-5.07 14.35,-3.97 23.15,0 C14.35,3.97 4.17,5.07 0,0 Z"/><path transform="translate(67.22 113.71) rotate(-116.43)" d="M0,0 C4.88,-5.36 16.82,-4.20 27.12,0 C16.82,4.20 4.88,5.36 0,0 Z"/><path transform="translate(67.47 107.83) rotate(-124.71)" d="M0,0 C3.81,-4.29 13.12,-3.36 21.16,0 C13.12,3.36 3.81,4.29 0,0 Z"/><path transform="translate(68.43 96.49) rotate(-67.62)" d="M0,0 C3.94,-4.80 13.57,-3.75 21.89,0 C13.57,3.75 3.94,4.80 0,0 Z"/><path transform="translate(71.09 78.85) rotate(-107.35)" d="M0,0 C4.61,-5.06 15.88,-3.96 25.61,0 C15.88,3.96 4.61,5.06 0,0 Z"/><path transform="translate(72.33 72.68) rotate(-115.99)" d="M0,0 C3.60,-4.05 12.38,-3.17 19.97,0 C12.38,3.17 3.60,4.05 0,0 Z"/><path transform="translate(75.11 60.86) rotate(-59.55)" d="M0,0 C3.71,-4.52 12.79,-3.54 20.63,0 C12.79,3.54 3.71,4.52 0,0 Z"/><path transform="translate(80.41 42.59) rotate(-100.18)" d="M0,0 C4.34,-4.76 14.94,-3.73 24.09,0 C14.94,3.73 4.34,4.76 0,0 Z"/>
     <path transform="translate(311.19 270.49) rotate(22.00)" d="M0,0 C6.79,-7.46 23.39,-5.84 37.72,0 C23.39,5.84 6.79,7.46 0,0 Z"/><path transform="translate(338.99 266.69) rotate(-25.70)" d="M0,0 C5.52,-6.72 19.03,-5.26 30.69,0 C19.03,5.26 5.52,6.72 0,0 Z"/><path transform="translate(364.18 261.46) rotate(14.10)" d="M0,0 C6.52,-7.16 22.45,-5.60 36.21,0 C22.45,5.60 6.52,7.16 0,0 Z"/><path transform="translate(372.27 259.34) rotate(22.53)" d="M0,0 C5.08,-5.73 17.51,-4.48 28.24,0 C17.51,4.48 5.08,5.73 0,0 Z"/><path transform="translate(386.84 254.88) rotate(-34.66)" d="M0,0 C5.30,-6.45 18.25,-5.05 29.43,0 C18.25,5.05 5.30,6.45 0,0 Z"/><path transform="translate(407.04 247.02) rotate(3.96)" d="M0,0 C6.25,-6.86 21.51,-5.37 34.70,0 C21.51,5.37 6.25,6.86 0,0 Z"/><path transform="translate(413.45 244.02) rotate(11.96)" d="M0,0 C4.87,-5.49 16.78,-4.29 27.06,0 C16.78,4.29 4.87,5.49 0,0 Z"/><path transform="translate(424.88 237.95) rotate(-46.05)" d="M0,0 C5.07,-6.17 17.47,-4.83 28.18,0 C17.47,4.83 5.07,6.17 0,0 Z"/><path transform="translate(440.44 227.74) rotate(-8.67)" d="M0,0 C5.97,-6.56 20.57,-5.13 33.18,0 C20.57,5.13 5.97,6.56 0,0 Z"/><path transform="translate(445.28 223.97) rotate(-1.08)" d="M0,0 C4.66,-5.25 16.05,-4.11 25.88,0 C16.05,4.11 4.66,5.25 0,0 Z"/><path transform="translate(453.79 216.46) rotate(-59.80)" d="M0,0 C4.85,-5.90 16.69,-4.62 26.92,0 C16.69,4.62 4.85,5.90 0,0 Z"/><path transform="translate(465.04 204.19) rotate(-23.29)" d="M0,0 C5.70,-6.26 19.63,-4.90 31.67,0 C19.63,4.90 5.70,6.26 0,0 Z"/><path transform="translate(468.44 199.75) rotate(-15.91)" d="M0,0 C4.45,-5.01 15.31,-3.92 24.70,0 C15.31,3.92 4.45,5.01 0,0 Z"/><path transform="translate(474.25 191.00) rotate(-74.89)" d="M0,0 C4.62,-5.62 15.91,-4.40 25.66,0 C15.91,4.40 4.62,5.62 0,0 Z"/><path transform="translate(481.52 176.96) rotate(-38.37)" d="M0,0 C5.43,-5.96 18.69,-4.67 30.15,0 C18.69,4.67 5.43,5.96 0,0 Z"/><path transform="translate(483.58 171.93) rotate(-30.88)" d="M0,0 C4.23,-4.77 14.58,-3.73 23.52,0 C14.58,3.73 4.23,4.77 0,0 Z"/><path transform="translate(486.92 162.13) rotate(-89.50)" d="M0,0 C4.39,-5.35 15.13,-4.18 24.40,0 C15.13,4.18 4.39,5.35 0,0 Z"/><path transform="translate(490.54 146.60) rotate(-52.13)" d="M0,0 C5.15,-5.66 17.76,-4.43 28.64,0 C17.76,4.43 5.15,5.66 0,0 Z"/><path transform="translate(491.39 141.10) rotate(-44.27)" d="M0,0 C4.02,-4.53 13.85,-3.54 22.34,0 C13.85,3.54 4.02,4.53 0,0 Z"/><path transform="translate(492.47 130.44) rotate(-102.16)" d="M0,0 C4.17,-5.07 14.35,-3.97 23.15,0 C14.35,3.97 4.17,5.07 0,0 Z"/><path transform="translate(492.78 113.71) rotate(-63.57)" d="M0,0 C4.88,-5.36 16.82,-4.20 27.12,0 C16.82,4.20 4.88,5.36 0,0 Z"/><path transform="translate(492.53 107.83) rotate(-55.29)" d="M0,0 C3.81,-4.29 13.12,-3.36 21.16,0 C13.12,3.36 3.81,4.29 0,0 Z"/><path transform="translate(491.57 96.49) rotate(-112.38)" d="M0,0 C3.94,-4.80 13.57,-3.75 21.89,0 C13.57,3.75 3.94,4.80 0,0 Z"/><path transform="translate(488.91 78.85) rotate(-72.65)" d="M0,0 C4.61,-5.06 15.88,-3.96 25.61,0 C15.88,3.96 4.61,5.06 0,0 Z"/><path transform="translate(487.67 72.68) rotate(-64.01)" d="M0,0 C3.60,-4.05 12.38,-3.17 19.97,0 C12.38,3.17 3.60,4.05 0,0 Z"/><path transform="translate(484.89 60.86) rotate(-120.45)" d="M0,0 C3.71,-4.52 12.79,-3.54 20.63,0 C12.79,3.54 3.71,4.52 0,0 Z"/><path transform="translate(479.59 42.59) rotate(-79.82)" d="M0,0 C4.34,-4.76 14.94,-3.73 24.09,0 C14.94,3.73 4.34,4.76 0,0 Z"/>
   </g>
-  <path d="M266.00,272.00 C70.00,258.00 42.00,150.00 84.00,32.00" fill="none" stroke="url(#sdiff-stem)" stroke-width="1.7" stroke-linecap="round"/>
-  <path d="M294.00,272.00 C490.00,258.00 518.00,150.00 476.00,32.00" fill="none" stroke="url(#sdiff-stem)" stroke-width="1.7" stroke-linecap="round"/>
-  <text x="280.0" y="112" text-anchor="middle" class="fl-kicker">OFFICIAL SELECTION</text>
-  <text x="280.0" y="148" text-anchor="middle" class="fl-name">San Diego International</text><text x="280.0" y="183" text-anchor="middle" class="fl-name">Film Festival</text>
-  <text x="280.0" y="232" text-anchor="middle" class="fl-year">2026</text>
+  </g>
+    <text x="200" y="118" text-anchor="middle" class="fl-kicker">OFFICIAL</text>
+    <text x="200" y="140" text-anchor="middle" class="fl-kicker">SELECTION</text>
+    <text x="200" y="190" text-anchor="middle" class="fl-name">San Diego International</text>
+    <text x="200" y="218" text-anchor="middle" class="fl-name">Film Festival</text>
+    <text x="200" y="278" text-anchor="middle" class="fl-year">2026</text>
 </svg>
