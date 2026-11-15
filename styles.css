@@ -220,7 +220,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
-.fact-card { perspective: 1200px; }
+.fact-card { perspective: 1200px; -webkit-perspective: 1200px; }
 .fact-flip {
   display: block;
   width: 100%;
@@ -235,10 +235,15 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   color: inherit;
   text-align: left;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform 0.6s ease;
+  -webkit-transition: -webkit-transform 0.6s ease, transform 0.6s ease;
   box-shadow: var(--shadow);
 }
-.fact-card.is-flipped .fact-flip { transform: rotateY(180deg); }
+.fact-card.is-flipped .fact-flip {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
 .fact-front, .fact-back {
   position: absolute;
   inset: 0;
@@ -246,7 +251,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   padding: 1.25rem 1.2rem 1.3rem;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  overflow: auto;
+  overflow: visible;
+  -webkit-transform: translateZ(0);
 }
 .fact-front {
   display: flex;
@@ -256,10 +262,13 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   background:
     radial-gradient(ellipse 80% 70% at 100% 0%, rgba(184, 112, 120, 0.16), transparent 55%),
     #fff;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
 }
 .fact-back {
   background: #fff;
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 .fact-kicker {
   font-size: 0.68rem;
@@ -1308,7 +1317,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   height: 0;
   scroll-margin-top: calc(var(--header-h) + 8px);
 }
-#travel-blog, #reflections, #intro { scroll-margin-top: var(--header-h); }
+#travel-blog, #reflections, #intro { scroll-margin-top: 84px; }
 
 .project-hero {
   position: relative;
@@ -1655,8 +1664,11 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .bts-journey.carousel-track,
 .travel-photos.carousel-track,
 .japan-gallery.carousel-track,
+.region-gallery.carousel-track,
 .video-grid.carousel-track {
-  columns: auto;
+  columns: unset;
+  column-count: unset;
+  column-width: unset;
   column-gap: unset;
   grid-template-columns: none;
   display: flex;
@@ -1762,13 +1774,18 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .carousel-btn:disabled { opacity: 0.35; cursor: default; }
 .media-carousel.is-static .carousel-btn { display: none; }
 
-@media (min-width: 801px) {
-  .carousel-btn { display: flex; }
+.carousel-btn { display: flex; }
+@media (max-width: 800px) {
+  .carousel-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .carousel-btn svg { width: 16px; height: 16px; }
 }
 
 @media (max-width: 700px) {
   :root { --carousel-media-h: 200px; }
-  .bts-journey.carousel-track { columns: auto; }
+  .bts-journey.carousel-track { columns: unset; column-count: unset; column-width: unset; }
   .bts-journey.carousel-track .bts-item { transform: none; }
   .travel-photos.carousel-track,
   .japan-gallery.carousel-track { grid-template-columns: none; }
@@ -2242,8 +2259,16 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 @media (max-width: 900px) {
   .region-stage,
   .travel-stage {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.6rem;
+  }
+  .region-stage-main,
+  .travel-stage-main,
+  .region-stage-aside,
+  .travel-stage-aside,
+  .media-carousel {
+    min-width: 0;
+    max-width: 100%;
   }
   .region-fact-grid::before { display: none; }
   .region-didyouknow .fact-card,
@@ -2355,8 +2380,9 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .japan-gallery.carousel-track figcaption,
 .region-gallery.carousel-track figcaption,
 .bts-journey.carousel-track figcaption {
-  width: 0;
-  min-width: 100%;
+  width: auto;
+  max-width: 100%;
+  align-self: stretch;
   box-sizing: border-box;
   margin: 0.4rem 0 0;
   line-height: 1.4;
@@ -2598,3 +2624,84 @@ button.live-pill {
 }
 .region-didyouknow .fact-sources[hidden],
 .region-didyouknow .fact-sources { display: none; }
+
+/* ---- iOS Safari + small-screen layout safety (carousels, culture cards, 3D flips) ---- */
+.region-stage,
+.travel-stage,
+.region-stage-main,
+.travel-stage-main,
+.region-stage-aside,
+.travel-stage-aside,
+.media-carousel,
+.carousel-track,
+.culture-grid,
+.culture-collage,
+.region-fact-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+.carousel-track > *,
+.bts-journey.carousel-track .bts-item,
+.travel-photos.carousel-track figure,
+.japan-gallery.carousel-track figure,
+.region-gallery.carousel-track figure,
+.video-grid.carousel-track .video-thumb {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+}
+.carousel-track .bts-item.bts-native video[width="720"][height="1280"],
+.carousel-track video[width="720"][height="1280"],
+.carousel-track .bts-player {
+  flex-shrink: 0;
+  height: var(--carousel-media-h);
+  width: calc(var(--carousel-media-h) * 9 / 16);
+  max-width: 75vw;
+}
+.fact-card,
+.fact-flip {
+  overflow: visible;
+  touch-action: manipulation;
+}
+@media (max-width: 900px) {
+  .culture-grid,
+  .culture-collage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 1rem;
+  }
+  .culture-card,
+  .culture-collage .culture-card,
+  .culture-collage .culture-card:nth-child(n),
+  .culture-collage .culture-card:hover,
+  .culture-card .fact-flip {
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto;
+    min-width: 0;
+    transform: none;
+  }
+  .culture-card .fact-flip {
+    min-height: 12.5rem;
+  }
+}
+
+/* Flip cards need an explicit width: faces are position:absolute, so the
+   card has no in-flow content and can collapse to 0px on narrow grids. */
+.fact-card,
+.fact-flip {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.region-fact-grid,
+.region-didyouknow .fact-card {
+  width: 100%;
+  max-width: 22rem;
+}
+.travel-note,
+.region-blurb {
+  overflow-wrap: anywhere;
+  max-width: min(40rem, 100%);
+}
