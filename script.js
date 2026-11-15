@@ -87,4 +87,19 @@
   if (story) handleForm(story, "form-success", document.getElementById("submit-btn"));
   const news = document.getElementById("newsletter-form");
   if (news) handleForm(news, "newsletter-success");
+
+  document.querySelectorAll(".fact-flip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".fact-card");
+      const open = card.classList.toggle("is-flipped");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      const back = btn.querySelector(".fact-back");
+      const front = btn.querySelector(".fact-front");
+      if (back) back.setAttribute("aria-hidden", open ? "false" : "true");
+      if (front) front.setAttribute("aria-hidden", open ? "true" : "false");
+    });
+    const back = btn.querySelector(".fact-back");
+    if (back) back.setAttribute("aria-hidden", "true");
+  });
+
 })();
