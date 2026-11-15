@@ -9,8 +9,8 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261115">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261115b">
 </head>
 <body class="region-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,24 +56,16 @@
           <a class="place-chip" href="philippines.html">Philippines</a>
         </nav>
         
-          <header class="section-head region-media-head">
+                    <header class="section-head region-media-head">
             <p class="eyebrow">Watch</p>
             <h2>Interviews</h2>
-            <p>Click a thumbnail to play.</p>
+            <p class="region-videos-lede">Click a thumbnail to play.</p>
+            <p class="region-videos-empty" hidden>Interview videos from Argentina will appear here when they are ready.</p>
           </header>
-          <div class="video-group" id="videos-argentina">
-            <div class="video-grid">
-              <button type="button" class="video-thumb" data-open-video="W26A0soMmVM" data-title="Interview from Argentina">
-                <img src="../assets/voices/argentina.jpg" width="800" height="450" alt="" loading="lazy">
-                <span>Interview from Argentina</span>
-              </button>
-            </div>
-            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLohWU7C96ZbRcyKnbC1dNRsw0ja66OPhO" target="_blank" rel="noopener noreferrer">Watch the playlist</a>
-          </div>
-          
+          <div id="region-videos" class="video-group" data-region="argentina"></div>
+          <script type="application/json" id="region-videos-data">{"regions": {"argentina": {"name": "Argentina", "playlist": "PLohWU7C96ZbRcyKnbC1dNRsw0ja66OPhO", "videos": [{"id": "Yh4JXiddf8U", "title": "What you think of teenagers in the united states"}, {"id": "7ewKNBRoouw", "title": "How you feel when you listen stereotypes about failures?"}, {"id": "hKFpWzv6PmY", "title": "you feel comfortable travelling to united states"}, {"id": "W26A0soMmVM", "title": "what you think which are some good ways to break the stereotypes and help to understand each other"}]}}}</script>
 
-        
-          <div class="didyouknow region-didyouknow" id="did-you-know">
+        <div class="didyouknow region-didyouknow" id="did-you-know">
             <h3 class="clips-title">Did you know?</h3>
             <p class="clips-lede">Tap or click the card to flip it.</p>
             <div class="fact-grid region-fact-grid">
@@ -132,6 +124,6 @@
       <div class="yt-lightbox-frame"></div>
     </div>
   </div>
-  <script src="../script.js?v=20261115"></script>
+  <script src="../script.js?v=20261115b"></script>
 </body>
 </html>

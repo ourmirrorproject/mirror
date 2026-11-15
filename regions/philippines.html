@@ -9,8 +9,8 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261115">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261115b">
 </head>
 <body class="region-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,24 +56,16 @@
           <a class="place-chip is-active" href="philippines.html">Philippines</a>
         </nav>
         
-          <header class="section-head region-media-head">
+                    <header class="section-head region-media-head">
             <p class="eyebrow">Watch</p>
             <h2>Interviews</h2>
-            <p>Click a thumbnail to play.</p>
+            <p class="region-videos-lede">Click a thumbnail to play.</p>
+            <p class="region-videos-empty" hidden>Interview videos from The Philippines will appear here when they are ready.</p>
           </header>
-          <div class="video-group" id="videos-philippines">
-            <div class="video-grid">
-              <button type="button" class="video-thumb" data-open-video="V7smAPSLkYU" data-title="Interview from the Philippines">
-                <img src="../assets/voices/philippines.jpg" width="800" height="450" alt="" loading="lazy">
-                <span>Interview from the Philippines</span>
-              </button>
-            </div>
-            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLohWU7C96ZbS1LXCzweYKx4-aHpN_CQN9" target="_blank" rel="noopener noreferrer">Watch the playlist</a>
-          </div>
-          
+          <div id="region-videos" class="video-group" data-region="philippines"></div>
+          <script type="application/json" id="region-videos-data">{"regions": {"philippines": {"name": "The Philippines", "playlist": "PLohWU7C96ZbS1LXCzweYKx4-aHpN_CQN9", "videos": [{"id": "V7smAPSLkYU", "title": "Do you think americans are welcome to travel to philipines | Philipines (Asia) Interview"}, {"id": "MY0WzJmIT5Y", "title": "Do you think you would feel comfortable and welcome if you travel to america | Philipines (Asia)"}, {"id": "pawmYpXhKLo", "title": "How do you personally feel when you hear stereotypes about philipines that are not true | Philipines"}, {"id": "QNpg8HNmVIY", "title": "The most common Stereotypes you hear about the teenagers of philipines | Philipines (Asia) Interview"}, {"id": "pSdeUQqKrE0", "title": "what do you think are some good ways to break stereotypes | Philipines (Asis) Interview"}, {"id": "ybgQRrzz6xY", "title": "what is your impression on american teenagers | Philipines (Asia) Interview"}, {"id": "TngLk3UfE3Q", "title": "What are the interesting things about teenagers of your country that others dont know | Philipines"}]}}}</script>
 
-        
-          <div class="didyouknow region-didyouknow" id="did-you-know">
+        <div class="didyouknow region-didyouknow" id="did-you-know">
             <h3 class="clips-title">Did you know?</h3>
             <p class="clips-lede">Tap or click the card to flip it.</p>
             <div class="fact-grid region-fact-grid">
@@ -132,6 +124,6 @@
       <div class="yt-lightbox-frame"></div>
     </div>
   </div>
-  <script src="../script.js?v=20261115"></script>
+  <script src="../script.js?v=20261115b"></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261115">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261115b">
 </head>
 <body class="region-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,24 +56,16 @@
           <a class="place-chip" href="philippines.html">Philippines</a>
         </nav>
         
-          <header class="section-head region-media-head">
+                    <header class="section-head region-media-head">
             <p class="eyebrow">Watch</p>
             <h2>Interviews</h2>
-            <p>Click a thumbnail to play.</p>
+            <p class="region-videos-lede">Click a thumbnail to play.</p>
+            <p class="region-videos-empty" hidden>Interview videos from Bolivia will appear here when they are ready.</p>
           </header>
-          <div class="video-group" id="videos-bolivia">
-            <div class="video-grid">
-              <button type="button" class="video-thumb" data-open-video="zsR8yeuzXJE" data-title="Interview from Bolivia">
-                <img src="../assets/voices/bolivia.jpg" width="800" height="450" alt="" loading="lazy">
-                <span>Interview from Bolivia</span>
-              </button>
-            </div>
-            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLohWU7C96ZbTyqBA99H123J4TBOjzMLt5" target="_blank" rel="noopener noreferrer">Watch the playlist</a>
-          </div>
-          
+          <div id="region-videos" class="video-group" data-region="bolivia"></div>
+          <script type="application/json" id="region-videos-data">{"regions": {"bolivia": {"name": "Bolivia", "playlist": "PLohWU7C96ZbTyqBA99H123J4TBOjzMLt5", "videos": [{"id": "zsR8yeuzXJE", "title": "Do you think americans are welcome to travel to your country?"}, {"id": "Brpt29uf4zs", "title": "Do you think you would feel comfortable and welcome to united states?"}, {"id": "L3SboznEryg", "title": "How do you personally feel when you hear stereotypes about people from your country?"}, {"id": "JFsIbEWBIw8", "title": "what are some common stereotypes about teenagers in your country that you think they are not true?"}, {"id": "8h_beAQwyTk", "title": "What interesting things about teenagers in your country that people from other countries not know?"}, {"id": "H4VifOR6h34", "title": "What you think of teenagers in the united states? Bolivian Interview"}, {"id": "l8cUT8aiQv4", "title": "what do you think which are good ways to break the stereotypes and help to understand each other"}]}}}</script>
 
-        
-          <div class="didyouknow region-didyouknow" id="did-you-know">
+        <div class="didyouknow region-didyouknow" id="did-you-know">
             <h3 class="clips-title">Did you know?</h3>
             <p class="clips-lede">Tap or click the card to flip it.</p>
             <div class="fact-grid region-fact-grid">
@@ -132,6 +124,6 @@
       <div class="yt-lightbox-frame"></div>
     </div>
   </div>
-  <script src="../script.js?v=20261115"></script>
+  <script src="../script.js?v=20261115b"></script>
 </body>
 </html>

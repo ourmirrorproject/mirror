@@ -1767,3 +1767,23 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 @media (prefers-reduced-motion: reduce) {
   .carousel-track { scroll-behavior: auto; }
 }
+
+
+/* ---- Classic official-selection laurels (original SVG; cream backing for contrast) ---- */
+.official-laurels {
+  width: min(46rem, 100%);
+  align-items: center;
+}
+.festival-laurel { display: none; }
+.festival-laurel-badge {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 420px;
+  margin-inline: auto;
+  filter: drop-shadow(0 8px 18px rgba(44, 27, 36, 0.22));
+}
+@media (max-width: 700px) {
+  .official-laurels { width: 100%; gap: 0.45rem; }
+  .festival-laurel-badge { max-width: none; }
+}

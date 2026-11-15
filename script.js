@@ -226,11 +226,11 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     if (closeBtn) closeBtn.focus();
   }
 
-  document.querySelectorAll("[data-open-video]").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      openLightbox(el.getAttribute("data-open-video"), el.getAttribute("data-title"));
-    });
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-open-video]");
+    if (!el) return;
+    e.preventDefault();
+    openLightbox(el.getAttribute("data-open-video"), el.getAttribute("data-title"));
   });
 
   if (lightbox) {
@@ -339,7 +339,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
-  loadJSON("video-of-the-week.json?v=20261115", "votw-data").then((data) => {
+  loadJSON("video-of-the-week.json?v=20261115b", "votw-data").then((data) => {
     if (!data || !data.id) return;
     const player = document.getElementById("votw-player");
     const caption = document.getElementById("votw-caption");
@@ -463,7 +463,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115b", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -479,5 +479,59 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     });
   });
   }
+
+  function renderRegionVideos() {
+    const root = document.getElementById("region-videos");
+    if (!root) return;
+    const slug = root.getAttribute("data-region");
+    const jsonUrl = "../data/regions.json?v=20261115b";
+    loadJSON(jsonUrl, "region-videos-data").then((data) => {
+      const region = data && data.regions && data.regions[slug];
+      const videos = (region && region.videos) || [];
+      const lede = document.querySelector(".region-videos-lede");
+      const empty = document.querySelector(".region-videos-empty");
+      if (!videos.length) {
+        if (lede) lede.hidden = true;
+        if (empty) empty.hidden = false;
+        return;
+      }
+      if (lede) lede.hidden = false;
+      if (empty) empty.hidden = true;
+      const grid = document.createElement("div");
+      grid.className = "video-grid";
+      videos.forEach((v) => {
+        if (!v || !v.id) return;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "video-thumb";
+        btn.setAttribute("data-open-video", v.id);
+        btn.setAttribute("data-title", v.title || "Interview");
+        const img = document.createElement("img");
+        img.src = "https://i.ytimg.com/vi/" + encodeURIComponent(v.id) + "/hqdefault.jpg";
+        img.width = 480;
+        img.height = 360;
+        img.alt = "";
+        img.loading = "lazy";
+        const span = document.createElement("span");
+        span.textContent = v.title || "Interview";
+        btn.appendChild(img);
+        btn.appendChild(span);
+        grid.appendChild(btn);
+      });
+      root.appendChild(grid);
+      if (region.playlist) {
+        const a = document.createElement("a");
+        a.className = "playlist-link";
+        a.href = "https://www.youtube.com/playlist?list=" + encodeURIComponent(region.playlist);
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = "Watch the playlist";
+        root.appendChild(a);
+      }
+      initCarousels(root);
+    });
+  }
+
+  renderRegionVideos();
   initCarousels();
 })();
