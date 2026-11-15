@@ -592,7 +592,17 @@
     "japan": {
       "name": "Japan",
       "playlist": null,
-      "people": [],
+      "people": [
+        {
+          "clips": [
+            {
+              "src": "assets/japan/japan-interview.mp4",
+              "poster": "assets/japan/japan-interview.jpg",
+              "type": "video/mp4"
+            }
+          ]
+        }
+      ],
       "videos": [],
       "facts": [
         {

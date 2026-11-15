@@ -742,7 +742,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115i", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115j", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -809,7 +809,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115i";
+    const jsonUrl = "../data/regions.json?v=20261115j";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
@@ -829,7 +829,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       const region = data && data.regions && data.regions[slug];
       const people = peopleFromRegion(region).map((person) => ({
         thumbnail: person.thumbnail,
-        clips: (person.clips || []).filter((v) => v && v.id)
+        clips: (person.clips || []).filter((v) => v && (v.id || v.src))
       })).filter((person) => person.clips.length);
       const lede = document.querySelector(".region-videos-lede");
       const empty = document.querySelector(".region-videos-empty");
@@ -842,8 +842,34 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       if (empty) empty.hidden = true;
       const list = document.createElement("div");
       list.className = "person-grid";
+      function localInterviewPlayer(v) {
+        const fig = document.createElement("figure");
+        fig.className = "local-interview";
+        const frame = document.createElement("div");
+        frame.className = "local-interview-frame";
+        const video = document.createElement("video");
+        video.setAttribute("playsinline", "");
+        video.setAttribute("controls", "");
+        video.preload = "metadata";
+        video.width = 720;
+        video.height = 1280;
+        if (v.poster) video.poster = mediaUrl(v.poster);
+        const source = document.createElement("source");
+        source.src = mediaUrl(v.src);
+        source.type = v.type || "video/mp4";
+        video.appendChild(source);
+        frame.appendChild(video);
+        fig.appendChild(frame);
+        return fig;
+      }
       people.forEach((person) => {
         const clips = person.clips;
+        const localClips = clips.filter((v) => v.src && !v.id);
+        const ytClips = clips.filter((v) => v.id);
+        if (localClips.length && !ytClips.length) {
+          localClips.forEach((clip) => list.appendChild(localInterviewPlayer(clip)));
+          return;
+        }
         const card = document.createElement("article");
         card.className = "person-card";
         const portrait = document.createElement("div");
