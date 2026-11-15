@@ -88,7 +88,7 @@
   const news = document.getElementById("newsletter-form");
   if (news) handleForm(news, "newsletter-success");
 
-  document.querySelectorAll(".fact-flip").forEach((btn) => {
+  document.querySelectorAll("button.fact-flip").forEach((btn) => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".fact-card");
       const open = card.classList.toggle("is-flipped");
@@ -100,6 +100,86 @@
     });
     const back = btn.querySelector(".fact-back");
     if (back) back.setAttribute("aria-hidden", "true");
+  });
+
+document.querySelectorAll(".bts-player").forEach((player) => {
+    const video = player.querySelector("video");
+    const playBtn = player.querySelector(".bts-play");
+    const muteBtn = player.querySelector(".bts-mute");
+    if (!video || !playBtn) return;
+
+    const setPlaying = (on) => {
+      player.classList.toggle("is-playing", on);
+      playBtn.setAttribute("aria-hidden", on ? "true" : "false");
+    };
+
+    const pauseOthers = () => {
+      document.querySelectorAll(".bts-player").forEach((other) => {
+        if (other === player) return;
+        const v = other.querySelector("video");
+        if (v && !v.paused) v.pause();
+        other.classList.remove("is-playing");
+      });
+    };
+
+    const playMuted = async () => {
+      pauseOthers();
+      video.muted = true;
+      if (muteBtn) {
+        muteBtn.setAttribute("aria-pressed", "true");
+        muteBtn.setAttribute("aria-label", "Unmute");
+      }
+      try {
+        await video.play();
+        setPlaying(true);
+      } catch (err) {
+        setPlaying(false);
+      }
+    };
+
+    playBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      playMuted();
+    });
+    video.addEventListener("click", () => {
+      if (video.paused) playMuted();
+      else {
+        video.pause();
+        setPlaying(false);
+      }
+    });
+    if (muteBtn) {
+      muteBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        muteBtn.setAttribute("aria-pressed", video.muted ? "true" : "false");
+        muteBtn.setAttribute("aria-label", video.muted ? "Unmute" : "Mute");
+      });
+    }
+    video.addEventListener("ended", () => setPlaying(false));
+  });
+
+
+  document.querySelectorAll(".culture-card").forEach((card) => {
+    const front = card.querySelector(".fact-front");
+    const back = card.querySelector(".fact-back");
+    const toggle = () => {
+      const open = card.classList.toggle("is-flipped");
+      card.setAttribute("aria-expanded", open ? "true" : "false");
+      if (front) front.setAttribute("aria-hidden", open ? "true" : "false");
+      if (back) back.setAttribute("aria-hidden", open ? "false" : "true");
+    };
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      toggle();
+    });
+    card.addEventListener("keydown", (e) => {
+      if (e.target.closest("a")) return;
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle();
+      }
+    });
   });
 
 })();
