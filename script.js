@@ -400,7 +400,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
-  loadJSON("video-of-the-week.json?v=20261115f", "votw-data").then((data) => {
+  loadJSON("video-of-the-week.json?v=20261115g", "votw-data").then((data) => {
     if (!data || !data.id) return;
     const player = document.getElementById("votw-player");
     const caption = document.getElementById("votw-caption");
@@ -488,12 +488,6 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         (v.caption ? "<p>" + escapeHtml(v.caption) + "</p>" : "") +
         "</div></div>";
     }
-    const sources = (place.cards || []).map((card) => {
-      return "<li><a href=\"" + escapeHtml(card.source_url) +
-        "\" target=\"_blank\" rel=\"noopener noreferrer\">" + escapeHtml(card.source_label) +
-        "</a> \u2014 " + escapeHtml(card.title) + "</li>";
-    }).join("");
-
     root.innerHTML =
       '<div class="travel-highlight-head"><div>' +
       '<p class="travel-kicker">' + kicker + "</p>" +
@@ -508,8 +502,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       '<h4 class="culture-heading">Culture cards</h4>' +
       '<p class="culture-lede">Tap or click a card to flip it.</p>' +
       '<div class="culture-grid culture-collage">' + cards + "</div>" +
-      "</aside></div>" +
-      '<details class="travel-sources"><summary>Sources</summary><ul>' + sources + "</ul></details>";
+      "</aside></div>";
 
     bindCultureCards(root);
     initCarousels(root);
@@ -537,7 +530,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115f", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115g", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -603,7 +596,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115f";
+    const jsonUrl = "../data/regions.json?v=20261115g";
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       const region = data && data.regions && data.regions[slug];
       const people = peopleFromRegion(region).map((person) => ({
