@@ -341,9 +341,10 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const next = wrap.querySelector(".carousel-next");
     const looping = wrap.classList.contains("is-looping");
     const max = track.scrollWidth - track.clientWidth;
-    wrap.classList.toggle("is-static", max <= 4 && !looping);
-    if (prev) prev.disabled = looping ? false : track.scrollLeft <= 4;
-    if (next) next.disabled = looping ? false : track.scrollLeft >= max - 4;
+    const count = track.querySelectorAll(":scope > :not([data-carousel-clone])").length;
+    wrap.classList.toggle("is-static", max <= 4 && !looping && count < 2);
+    if (prev) prev.disabled = false;
+    if (next) next.disabled = false;
   }
 
   function carouselSetWidth(track) {
@@ -384,6 +385,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     // Only loop when the row actually overflows
     const overflows = track.scrollWidth - track.clientWidth > 8;
     if (!overflows) return;
+    track.dataset.loopReady = "1";
     originals.forEach((node, i) => node.setAttribute("data-carousel-index", String(i)));
     const prepend = [];
     originals.forEach((node) => {
@@ -416,6 +418,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       ticking = true;
       requestAnimationFrame(() => {
         ticking = false;
+        if (track.dataset.wrapLock === "1") return;
         const w = carouselSetWidth(track);
         if (w <= 0) return;
         const sl = track.scrollLeft;
@@ -476,8 +479,50 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         wrap.appendChild(next);
         const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const go = (dir) => {
+          const behavior = reduce ? "auto" : "smooth";
+          const looping = wrap.classList.contains("is-looping");
+          const n = Number(track.dataset.loopCount || 0);
+          const items = Array.from(track.children);
+          if (!items.length) return;
+          const sl = track.scrollLeft;
+          if (looping && n > 0 && items.length >= n * 2) {
+            let best = n, bestDist = Infinity;
+            items.forEach((el, i) => {
+              const d = Math.abs(el.offsetLeft - sl);
+              if (d < bestDist) { bestDist = d; best = i; }
+            });
+            const target = items[best + dir];
+            if (target) {
+              track.dataset.wrapLock = "1";
+              track.scrollTo({ left: target.offsetLeft, behavior });
+              const unlock = () => {
+                if (track.dataset.wrapLock !== "1") return;
+                track.dataset.wrapLock = "";
+                const w = carouselSetWidth(track);
+                if (w <= 0) return;
+                const x = track.scrollLeft;
+                const prevBe = track.style.scrollBehavior;
+                track.style.scrollBehavior = "auto";
+                if (x >= w * 2 - 2) track.scrollLeft = x - w;
+                else if (x <= 2) track.scrollLeft = x + w;
+                track.style.scrollBehavior = prevBe;
+              };
+              track.addEventListener("scrollend", unlock, { once: true });
+              setTimeout(unlock, 700);
+              return;
+            }
+          }
+          const max = Math.max(0, track.scrollWidth - track.clientWidth);
+          if (dir > 0 && sl >= max - 8) {
+            track.scrollTo({ left: 0, behavior });
+            return;
+          }
+          if (dir < 0 && sl <= 8) {
+            track.scrollTo({ left: max, behavior });
+            return;
+          }
           const amount = Math.max(Math.round(track.clientWidth * 0.72), 200);
-          track.scrollBy({ left: dir * amount, behavior: reduce ? "auto" : "smooth" });
+          track.scrollBy({ left: dir * amount, behavior });
         };
         prev.addEventListener("click", () => go(-1));
         next.addEventListener("click", () => go(1));
@@ -486,11 +531,15 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
           if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
           if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
         });
+        const retryLoop = () => { setupCarouselLoop(wrap, track); updateCarousel(wrap); };
         if (typeof ResizeObserver !== "undefined") {
-          new ResizeObserver(() => updateCarousel(wrap)).observe(track);
+          new ResizeObserver(retryLoop).observe(track);
         } else {
-          window.addEventListener("resize", () => updateCarousel(wrap));
+          window.addEventListener("resize", retryLoop);
         }
+        track.querySelectorAll("img").forEach((img) => {
+          if (!img.complete) img.addEventListener("load", retryLoop, { once: true });
+        });
       }
       setupCarouselLoop(wrap, track);
       updateCarousel(wrap);
@@ -528,11 +577,93 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     });
   }
 
+
+  function resolveMonthlyHighlight(data) {
+    const month = new Date().getMonth();
+    const byMonth = data.featuredByMonth;
+    if (Array.isArray(byMonth) && byMonth.length) {
+      const id = byMonth[month % byMonth.length];
+      if (id && data.places.some((p) => p.id === id)) return id;
+    }
+    return data.highlight || data.places[0].id;
+  }
+
+  function orderPlacesForChips(places, highlightId) {
+    const list = places.slice();
+    const i = list.findIndex((p) => p.id === highlightId);
+    if (i > 0) {
+      const feat = list.splice(i, 1)[0];
+      list.unshift(feat);
+    }
+    return list;
+  }
+
+  function liveViewBar(webcam, timezone, placeName) {
+    const bits = [];
+    if (webcam && webcam.url) {
+      const label = webcam.label || "Live view";
+      bits.push(
+        '<a class="live-pill" href="' + escapeHtml(webcam.url) +
+        '" target="_blank" rel="noopener noreferrer" aria-label="Live view: ' +
+        escapeHtml(label) + ' (opens in a new tab)">' +
+        '<span class="live-dot" aria-hidden="true"></span>Live view' +
+        (webcam.label ? '<span class="live-pill-place">' + escapeHtml(webcam.label) + "</span>" : "") +
+        "</a>"
+      );
+    }
+    if (timezone) {
+      bits.push(
+        '<span class="local-time" data-timezone="' + escapeHtml(timezone) + '">' +
+        '<span class="local-time-label">Local time</span> <time></time></span>'
+      );
+    }
+    if (!bits.length) return "";
+    return '<div class="live-view">' + bits.join("") + "</div>";
+  }
+
+  function formatClock(timezone) {
+    const now = new Date();
+    const time = new Intl.DateTimeFormat("en-GB", {
+      timeZone: timezone,
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: false
+    }).format(now);
+    let zone = "";
+    try {
+      const part = new Intl.DateTimeFormat("en-GB", { timeZone: timezone, timeZoneName: "short" })
+        .formatToParts(now)
+        .find((p) => p.type === "timeZoneName");
+      zone = part ? part.value : "";
+    } catch (e) {}
+    return { time: time, zone: zone };
+  }
+
+  function tickLocalClocks(root) {
+    (root || document).querySelectorAll(".local-time[data-timezone]").forEach((el) => {
+      const tz = el.getAttribute("data-timezone");
+      const timeEl = el.querySelector("time");
+      if (!tz || !timeEl) return;
+      try {
+        const clock = formatClock(tz);
+        timeEl.dateTime = new Date().toISOString();
+        timeEl.textContent = clock.time + (clock.zone ? " " + clock.zone : "");
+      } catch (e) {}
+    });
+  }
+
+  function initLocalClocks(root) {
+    tickLocalClocks(root || document);
+    if (!window.__mirrorClockTimer) {
+      window.__mirrorClockTimer = setInterval(() => tickLocalClocks(document), 30000);
+    }
+  }
+
   function renderPlace(place, isHighlight) {
     const root = document.getElementById("travel-highlight");
     if (!root || !place) return;
     const photosList = place.photos || [];
-    const kicker = isHighlight ? "This week\u2019s highlight" : "From the travel blog";
+    const kicker = isHighlight ? "" : "From the travel blog";
     const badge = place.badge ? '<span class="badge-travel">' + escapeHtml(place.badge) + "</span>" : "";
     const cards = (place.cards || []).map((card) => {
       return '<div class="fact-card culture-card" tabindex="0" role="button" aria-expanded="false">' +
@@ -567,10 +698,11 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         (v.caption ? "<p>" + escapeHtml(v.caption) + "</p>" : "") +
         "</div></div>";
     }
+    const liveBar = liveViewBar(place.webcam, place.timezone, place.name);
     root.innerHTML =
       '<div class="travel-highlight-head"><div>' +
-      '<p class="travel-kicker">' + kicker + "</p>" +
-      "<h3>" + escapeHtml(place.name) + "</h3></div>" + badge + "</div>" +
+      (kicker ? '<p class="travel-kicker">' + kicker + "</p>" : "") +
+      "<h3>" + escapeHtml(place.name) + "</h3>" + liveBar + "</div>" + badge + "</div>" +
       '<div class="travel-stage">' +
       '<div class="travel-stage-main">' +
       '<p class="travel-note">' + escapeHtml(place.note) + "</p>" +
@@ -585,6 +717,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
 
     bindCultureCards(root);
     initCarousels(root);
+    initLocalClocks(root);
   }
 
   function renderChips(places, activeId, onPick) {
@@ -609,13 +742,14 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115h", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115i", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
-    const highlightId = data.highlight || data.places[0].id;
+    const highlightId = resolveMonthlyHighlight(data);
+    const ordered = orderPlacesForChips(data.places, highlightId);
     const show = (id) => {
       const place = data.places.find((p) => p.id === id) || data.places[0];
       renderPlace(place, place.id === highlightId);
-      renderChips(data.places, place.id, show);
+      renderChips(ordered, place.id, show);
     };
     show(placeFromHash() || highlightId);
     window.addEventListener("hashchange", () => {
@@ -675,8 +809,23 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115h";
+    const jsonUrl = "../data/regions.json?v=20261115i";
+    function mountRegionLiveBar(data) {
+      const holder = document.querySelector(".region-section > .wrap > .section-head");
+      const group = document.getElementById("region-videos");
+      if (!holder || !data || !data.regions) return;
+      const key = ((group && group.getAttribute("data-region")) || "").toLowerCase();
+      const region = data.regions[key];
+      if (!region) return;
+      holder.querySelectorAll(".live-view").forEach((el) => el.remove());
+      const bar = liveViewBar(region.webcam, region.timezone, region.name);
+      if (bar) {
+        holder.insertAdjacentHTML("beforeend", bar);
+        initLocalClocks(holder);
+      }
+    }
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
+      mountRegionLiveBar(data);
       const region = data && data.regions && data.regions[slug];
       const people = peopleFromRegion(region).map((person) => ({
         thumbnail: person.thumbnail,

@@ -105,7 +105,13 @@
           "source_url": "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-00869",
           "source_label": "UNESCO — Washoku"
         }
-      ]
+      ],
+      "timezone": "Asia/Tokyo",
+      "webcam": {
+        "label": "Shibuya Crossing, Tokyo",
+        "url": "https://www.skylinewebcams.com/en/webcam/japan/kanto/tokyo/tokyo-shibuya-scramble-crossing.html",
+        "source": "SkylineWebcams"
+      }
     },
     {
       "id": "france",
@@ -206,7 +212,13 @@
           "source_url": "https://ich.unesco.org/en/RL/gastronomic-meal-of-the-french-00437",
           "source_label": "UNESCO"
         }
-      ]
+      ],
+      "timezone": "Europe/Paris",
+      "webcam": {
+        "label": "Eiffel Tower, Paris",
+        "url": "https://www.skylinewebcams.com/en/webcam/france/ile-de-france/paris/tour-eiffel.html",
+        "source": "SkylineWebcams"
+      }
     },
     {
       "id": "spain",
@@ -307,7 +319,13 @@
           "source_url": "https://dle.rae.es/tapa",
           "source_label": "RAE"
         }
-      ]
+      ],
+      "timezone": "Europe/Madrid",
+      "webcam": {
+        "label": "Giralda, Seville",
+        "url": "https://www.skylinewebcams.com/en/webcam/espana/andalucia/sevilla/giralda.html",
+        "source": "SkylineWebcams"
+      }
     },
     {
       "id": "italy",
@@ -408,7 +426,13 @@
           "source_url": "https://www.treccani.it/vocabolario/aperitivo/",
           "source_label": "Treccani"
         }
-      ]
+      ],
+      "timezone": "Europe/Rome",
+      "webcam": {
+        "label": "Amalfi Coast",
+        "url": "https://www.skylinewebcams.com/en/webcam/italia/campania/salerno/costiera-amalfi.html",
+        "source": "SkylineWebcams"
+      }
     },
     {
       "id": "india",
@@ -509,7 +533,8 @@
           "source_url": "https://www.britannica.com/topic/Indian-cuisine",
           "source_label": "Encyclopaedia Britannica"
         }
-      ]
+      ],
+      "timezone": "Asia/Kolkata"
     },
     {
       "id": "mexico",
@@ -578,7 +603,13 @@
           "source_url": "https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
           "source_label": "UNESCO"
         }
-      ]
+      ],
+      "timezone": "America/Mazatlan",
+      "webcam": {
+        "label": "Downtown Cabo San Lucas",
+        "url": "https://myearthcam.com/cabowebcam",
+        "source": "EarthCam"
+      }
     },
     {
       "id": "england",
@@ -679,7 +710,13 @@
           "source_url": "https://www.bbc.co.uk/bitesize/articles/zsphjfr",
           "source_label": "BBC Bitesize"
         }
-      ]
+      ],
+      "timezone": "Europe/London",
+      "webcam": {
+        "label": "Abbey Road, London",
+        "url": "https://www.earthcam.com/uk/england/london/abbeyroad/?cam=abbeyroad_uk",
+        "source": "EarthCam"
+      }
     },
     {
       "id": "singapore",
@@ -772,7 +809,13 @@
           "source_url": "https://ich.unesco.org/en/RL/hawker-culture-in-singapore-community-dining-and-culinary-practices-in-a-multicultural-urban-context-01568",
           "source_label": "UNESCO"
         }
-      ]
+      ],
+      "timezone": "Asia/Singapore",
+      "webcam": {
+        "label": "Singapore harbour",
+        "url": "https://www.skylinewebcams.com/en/webcam/republic-of-singapore/singapore/singapore/singapore.html",
+        "source": "SkylineWebcams"
+      }
     },
     {
       "id": "malta",
@@ -849,7 +892,13 @@
           "source_url": "https://www.visitmalta.com/en/info/maltese-pastizzi",
           "source_label": "VisitMalta"
         }
-      ]
+      ],
+      "timezone": "Europe/Malta",
+      "webcam": {
+        "label": "Grand Harbour, Valletta",
+        "url": "https://www.skylinewebcams.com/en/webcam/malta/malta/floriana/grand-harbour-valletta-waterfront.html",
+        "source": "SkylineWebcams"
+      }
     },
     {
       "id": "hawaii",
@@ -918,7 +967,27 @@
           "source_url": "https://www.britannica.com/topic/luau",
           "source_label": "Encyclopaedia Britannica"
         }
-      ]
+      ],
+      "timezone": "Pacific/Honolulu",
+      "webcam": {
+        "label": "Kīlauea, Hawaiʻi Volcanoes National Park",
+        "url": "https://www.nps.gov/havo/learn/photosmultimedia/webcams.htm",
+        "source": "National Park Service"
+      }
     }
+  ],
+  "featuredByMonth": [
+    "hawaii",
+    "india",
+    "france",
+    "spain",
+    "italy",
+    "england",
+    "malta",
+    "mexico",
+    "singapore",
+    "japan",
+    "japan",
+    "france"
   ]
 }

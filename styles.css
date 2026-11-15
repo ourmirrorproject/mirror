@@ -2422,3 +2422,77 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   .globe-card { grid-column: span 2; width: 132px; height: 132px; }
   .globe-card:nth-child(7) { grid-column: 2 / span 2; }
 }
+
+
+/* ---- Live view pill + local time ---- */
+.live-view {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin: 0.7rem 0 0;
+}
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+  padding: 0.28rem 0.8rem 0.28rem 0.65rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--peach) 28%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, var(--line));
+  box-shadow: 0 4px 14px rgba(44, 27, 36, 0.06);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.live-pill:hover {
+  background: color-mix(in srgb, var(--peach) 42%, var(--paper));
+  border-color: var(--gold-deep);
+}
+.live-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #c45b4d;
+  box-shadow: 0 0 0 0 color-mix(in srgb, #c45b4d 55%, transparent);
+  animation: live-pulse 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, #c45b4d 50%, transparent); }
+  70% { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none; }
+}
+.live-pill-place {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--taupe);
+  font-size: 0.82rem;
+}
+.local-time {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.local-time-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--taupe);
+  margin-right: 0.25rem;
+}
+.local-time time {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  font-weight: 600;
+}
+.region-section .section-head .live-view { justify-content: flex-start; }
+.travel-highlight-head .live-view { margin-top: 0.55rem; }
