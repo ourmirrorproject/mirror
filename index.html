@@ -6,7 +6,8 @@
   <title>Mirror Project</title>
   <meta name="description" content="Mirror Project is a global collection of 100 interviews with young people across seven regions by Anya Zenooz. That work led to Reflections, a documentary exploring culture, stereotypes, and human connection.">
   <link rel="canonical" href="https://ourmirrorproject.com/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:title" content="Mirror Project">
   <meta property="og:description" content="Mirror Project is a global collection of 100 interviews with young people across seven regions by Anya Zenooz. That work led to Reflections, a documentary exploring culture, stereotypes, and human connection.">
   <meta property="og:type" content="website">
@@ -16,14 +17,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261115g">
+  <link rel="stylesheet" href="styles.css?v=20261115h">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
     <a class="brand" href="#top">
-      <img class="brand-mark" src="assets/logo-mark.svg" width="44" height="44" alt="">
+      <img class="brand-mark" src="assets/logo-mark.webp" width="44" height="44" alt="">
       <span class="brand-name">Mirror Project</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -42,7 +43,7 @@
   <main id="main">
     <section class="project-hero" id="intro">
       <div class="wrap">
-        <img class="hero-logo" src="assets/logo.svg" width="400" height="340" alt="Mirror Project">
+        <img class="hero-logo" src="assets/logo.webp" width="900" height="844" alt="Mirror Project">
         <h1 class="hero-kicker">100 Voices. 7 Regions.</h1>
         <p class="hero-lede">Mirror Project is a global collection of 100 interviews with young people across seven regions by Anya Zenooz. That work led to <em>Reflections</em>, a documentary exploring culture, stereotypes, and human connection.</p>
       </div>
@@ -57,12 +58,8 @@
             <img class="op op-still" src="assets/reflections.jpg" width="1600" height="1067" alt="Sun reflected on water, the title card for Reflections">
             <img class="op op-theater" src="assets/sdyff-theater-2026.jpg" width="1600" height="1253" alt="Rows of red theater seats facing a movie screen">
           </div>
-        </div>
-        <div class="official-below">
-            <div class="hero-actions official-watch">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=-6ybJOofFA4" target="_blank" rel="noopener noreferrer">Watch Reflections</a>
-            </div>
-            <div class="official-laurels">
+          <div class="official-overlay official-overlay-right">
+          <div class="official-laurels">
               <svg class="festival-laurel-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" width="560" height="320" role="img" aria-label="Official Selection, San Diego Young Filmmakers Festival, 2026">
   <defs>
     <linearGradient id="sdyff-gold" x1="0" y1="0" x2="0.15" y2="1">
@@ -163,19 +160,24 @@
   <text x="280.0" y="232" text-anchor="middle" class="fl-year">2026</text>
 </svg>
 
+          </div>
+          </div>
+        </div>
+        <div class="official-below">
+            <div class="hero-actions official-watch">
+              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=-6ybJOofFA4" data-open-video="-6ybJOofFA4" data-title="Reflections">Watch Reflections</a>
             </div>
         </div>
       </div>
     </section>
 
     <section class="section regions" id="regions">
-      <div class="wrap regions-votw">
-        <div class="regions-col">
-          <header class="section-head">
+      <div class="wrap">
+        <header class="section-head">
           <h2>Regions</h2>
           <p>Tap a globe to open that region’s interviews, facts, and photos.</p>
         </header>
-          <nav class="globe-grid" aria-label="Interview regions">
+        <nav class="globe-grid" aria-label="Interview regions">
           <a class="globe-card" data-region="argentina" href="regions/argentina.html">
             <span class="g-bg" aria-hidden="true"></span>
             <span class="g-overlay" aria-hidden="true"></span>
@@ -233,21 +235,7 @@
             </span>
           </a>
         </nav>
-        </div>
-        <aside class="votw-card" id="watch" aria-label="Video of the Week">
-          <header class="section-head">
-            <p class="eyebrow">This week</p>
-            <h2>Video of the Week</h2>
-          </header>
-          <div class="yt yt-feature" id="votw-player" data-youtube="v9NWlqYaPfo" data-title="Common Stereotypes From Your Region" data-start="15" data-end="46">
-          <img src="assets/voices/common-stereotypes.jpg" width="800" height="450" alt="Thumbnail for Common Stereotypes From Your Region">
-          <button type="button" class="yt-play" aria-label="Play Common Stereotypes From Your Region"></button>
-        </div>
-          <p class="votw-caption" id="votw-caption">Young people share the stereotypes they hear about their regions — and how they see themselves instead.</p>
-          <p class="votw-full"><a id="votw-full-link" href="https://www.youtube.com/watch?v=v9NWlqYaPfo" target="_blank" rel="noopener noreferrer">Watch full interview</a></p>
-          <script type="application/json" id="votw-data">{"id": "v9NWlqYaPfo", "title": "Common Stereotypes From Your Region", "caption": "Young people share the stereotypes they hear about their regions — and how they see themselves instead.", "thumbnail": "assets/voices/common-stereotypes.jpg", "start": 15, "end": 46}</script>
-        </aside>
-      </div>
+
       <div class="wrap">
 
         <div class="bts" id="behind-the-scenes">
@@ -358,8 +346,7 @@
         </header>
         <nav class="place-chips" id="travel-chips" aria-label="Choose a place"></nav>
         <div id="travel-highlight"></div>
-        <script type="application/json" id="travel-blog-data">
-{
+        <script type="application/json" id="travel-blog-data">{
   "highlight": "japan",
   "places": [
     {
@@ -395,6 +382,30 @@
           "height": 1094,
           "alt": "White-walled castle buildings and a wide lawn at Kanazawa Castle Park",
           "caption_html": "Kanazawa Castle Park, with the restored castle buildings across the lawn. <span class=\"photo-credit\">Photo: Mirror Project</span>"
+        },
+        {
+          "src": "assets/japan/hiroshima-peace-park.jpg",
+          "alt": "View down Hiroshima Peace Memorial Park toward the Cenotaph and the Atomic Bomb Dome",
+          "caption_html": "Looking across Hiroshima Peace Memorial Park to the Cenotaph and the Dome. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/japan/koyasan-gokurakubashi.jpg",
+          "alt": "A red Koyasan cable car at Gokurakubashi Station",
+          "caption_html": "The Koyasan cable car at Gokurakubashi Station, Wakayama. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/japan/osaka-midosuji-night.jpg",
+          "alt": "A tree-lined Osaka boulevard at night, with lights wrapped around the trees",
+          "caption_html": "Evening lights along Midōsuji, Osaka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
         }
       ],
       "video": {
@@ -481,6 +492,30 @@
           "alt": "The Assemblée nationale, Paris",
           "caption_html": "The Assemblée nationale, the lower house of the French Parliament, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/france/arc-de-triomphe.jpg",
+          "alt": "The Arc de Triomphe in Paris",
+          "caption_html": "The Arc de Triomphe, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1232,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/france/bonnieux-village.jpg",
+          "alt": "The hill village of Bonnieux in Provence",
+          "caption_html": "Bonnieux, a hill village in the Luberon, Provence. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/france/concorde-ferris-wheel.jpg",
+          "alt": "A Ferris wheel at the Place de la Concorde in Paris",
+          "caption_html": "The Ferris wheel at Place de la Concorde, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1130,
+          "height": 1400,
+          "span2": false
         }
       ],
       "cards": [
@@ -557,6 +592,30 @@
           "height": 1050,
           "alt": "A view through Metropol Parasol, Las Setas, over Seville",
           "caption_html": "Looking out through Metropol Parasol (Las Setas) over Seville. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/mezquita-arches.jpg",
+          "alt": "Horseshoe arches in the Mosque-Cathedral of Córdoba",
+          "caption_html": "Horseshoe arches in the Mosque-Cathedral of Córdoba. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/mezquita-dome.jpg",
+          "alt": "A ribbed dome inside the Mosque-Cathedral of Córdoba",
+          "caption_html": "A ribbed dome in the Mosque-Cathedral of Córdoba. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/valencia-ayuntamiento.jpg",
+          "alt": "Valencia City Hall facing the plaza",
+          "caption_html": "Valencia City Hall (Ajuntament), on the Plaça de l’Ajuntament. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1280,
+          "height": 480,
           "span2": false
         }
       ],
@@ -635,6 +694,30 @@
           "alt": "The Baptistery, Cathedral, and Leaning Tower in Pisa",
           "caption_html": "The Baptistery, Cathedral, and Leaning Tower in the Piazza del Duomo, Pisa. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/italy/amalfi-hills.jpg",
+          "alt": "Terraced hills along the Amalfi Coast",
+          "caption_html": "Terraced hills along the Amalfi Coast. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/italy/atrani.jpg",
+          "alt": "The coastal village of Atrani on the Amalfi Coast",
+          "caption_html": "Atrani, on the Amalfi Coast. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1250,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/italy/sant-agnese-dome.jpg",
+          "alt": "The baroque church of Sant’Agnese in Agone in Rome",
+          "caption_html": "Sant’Agnese in Agone, on Piazza Navona, Rome. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
         }
       ],
       "cards": [
@@ -711,6 +794,30 @@
           "height": 1050,
           "alt": "A tusker elephant in Nagarhole National Park, Karnataka",
           "caption_html": "A tusker elephant in Nagarhole National Park, near Kabini, Karnataka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/mysore-carved-door.jpg",
+          "alt": "An elaborately carved wooden door at Mysore Palace",
+          "caption_html": "A carved doorway at Mysore Palace. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/nagarhole-herd.jpg",
+          "alt": "A herd of elephants in Nagarhole National Park",
+          "caption_html": "Elephants in Nagarhole National Park, Karnataka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1024,
+          "height": 768,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/kabini-cormorant.jpg",
+          "alt": "A cormorant on the water at Kabini",
+          "caption_html": "A cormorant on the Kabini, at the edge of Nagarhole National Park. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
           "span2": false
         }
       ],
@@ -858,6 +965,30 @@
           "alt": "The Houses of Parliament and the Elizabeth Tower under a grey sky",
           "caption_html": "The Houses of Parliament and the Elizabeth Tower, from Westminster Bridge. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/england/city-hall-shard.jpg",
+          "alt": "City Hall and the Shard in London",
+          "caption_html": "City Hall and the Shard, London. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/england/london-eye.jpg",
+          "alt": "The London Eye on the South Bank",
+          "caption_html": "The London Eye, on the South Bank. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 810,
+          "height": 1393,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/england/blenheim-organ.jpg",
+          "alt": "The pipe organ at Blenheim Palace",
+          "caption_html": "The organ at Blenheim Palace, Oxfordshire. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
         }
       ],
       "cards": [
@@ -934,6 +1065,22 @@
           "height": 1400,
           "alt": "The colorful shophouses and murals of Haji Lane, with a pedestrian whose face is blurred",
           "caption_html": "Haji Lane in Kampong Glam. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/marina-bay-sands.jpg",
+          "alt": "Marina Bay Sands and the bay in Singapore",
+          "caption_html": "Marina Bay Sands, Singapore. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/singapura-club.jpg",
+          "alt": "The facade of the Singapore Club or a heritage shophouse club building",
+          "caption_html": "A heritage clubhouse façade in Singapore. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
           "span2": false
         }
       ],
@@ -1063,7 +1210,7 @@
           "width": 1400,
           "height": 1050,
           "alt": "A sunset over a rocky shore, framed by trees",
-          "caption_html": "Sunset on a rocky shore, Hawaiʻi Island — the exact beach is unverified, so we hedge the place. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "caption_html": "Sunset on a rocky shore, Hawaiʻi Island. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
         },
         {
@@ -1072,6 +1219,14 @@
           "height": 1372,
           "alt": "Palm trees silhouetted against a pink and purple sunset",
           "caption_html": "Palms at sunset, Hawaiʻi. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/lava-volcanoes-np.jpg",
+          "width": 1200,
+          "height": 900,
+          "alt": "Lava flowing into the ocean at Hawaiʻi Volcanoes National Park",
+          "caption_html": "Lava flowing into the ocean at Hawaiʻi Volcanoes National Park. <span class=\"photo-credit\">Photo: National Park Service, via <a href=\"https://commons.wikimedia.org/wiki/File:Lava_at_Hawai%27i_Volcanoes_National_Park.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Wikimedia Commons</a> (public domain)</span>",
           "span2": false
         }
       ],
@@ -1114,8 +1269,7 @@
       ]
     }
   ]
-}
-    </script>
+}</script>
       </div>
     </section>
 <section class="section about-us" id="about">
@@ -1167,12 +1321,12 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <a class="brand" href="#top">
-        <img class="brand-mark" src="assets/logo-mark.svg" width="40" height="40" alt="">
+        <img class="brand-mark" src="assets/logo-mark.webp" width="40" height="40" alt="">
         <span class="brand-name">Mirror Project</span>
       </a>
       <nav aria-label="Footer">
         <a href="#reflections">Reflections</a>
-        <a href="#watch">Watch</a>
+        <a href="#reflections">Watch</a>
         <a href="#regions">Regions</a>
         <a href="#travel-blog">Travel Blog</a>
         <a href="#about">About Us</a>
@@ -1192,6 +1346,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261115g"></script>
+  <script src="script.js?v=20261115h"></script>
 </body>
 </html>

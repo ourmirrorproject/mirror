@@ -91,7 +91,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
 .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); }
-.brand-mark { width: 40px; height: 40px; }
+.brand-mark { width: 40px; height: 40px; object-fit: contain; }
 .brand-name {
   font-family: var(--serif);
   font-size: 1.05rem;
@@ -162,7 +162,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
     radial-gradient(ellipse 40% 40% at 60% 30%, rgba(243, 235, 225, 0.9), transparent 60%);
 }
 .hero .eyebrow, .hero-logo, .hero-lede, .hero-stats, .hero-actions { position: relative; }
-.hero-logo { width: min(400px, 82vw); margin: 0.4rem auto 1.5rem; }
+.hero-logo { width: min(400px, 82vw); height: auto; margin: 0.4rem auto 1.5rem; }
 .hero-lede {
   max-width: 34rem; margin: 0 auto 1.6rem;
   font-size: 1.12rem; color: var(--muted);
@@ -1047,20 +1047,6 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .reflections-hero .hero-actions { position: relative; margin-top: 0.2rem; }
 .festival-more { padding-top: 2.5rem; padding-bottom: 0.5rem; }
 
-.votw {
-  background: color-mix(in srgb, var(--lavender) 22%, var(--paper));
-  padding-top: 3.4rem;
-  padding-bottom: 3.4rem;
-}
-.votw-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.8fr);
-  gap: 1.6rem;
-  align-items: center;
-}
-.votw .yt { border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-.votw-caption { color: var(--ink); margin: 0 0 0.6rem; font-size: 1.05rem; }
-.votw .section-head { margin-bottom: 0.4rem; }
 
 .globe-grid {
   display: flex;
@@ -1302,7 +1288,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .footer-email a { color: var(--plum); }
 
 @media (max-width: 900px) {
-  .votw-layout, .laurels-compact { grid-template-columns: 1fr; }
+  .laurels-compact { grid-template-columns: 1fr; }
   .bts-journey { columns: 2; }
   .travel-photos { grid-template-columns: 1fr 1fr; }
   .globe-card { width: 132px; height: 132px; }
@@ -1371,7 +1357,7 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .official-photos {
   display: grid;
   grid-template-columns: 1.05fr 1.15fr 0.9fr;
-  grid-template-rows: 200px 200px;
+  grid-template-rows: 270px 130px;
   gap: 0.4rem;
   background: color-mix(in srgb, var(--lavender) 16%, var(--paper));
   min-height: 400px;
@@ -1387,20 +1373,14 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 }
 .op-anya { grid-row: 1 / 3; object-position: 50% 14%; }
 .op-still { grid-column: 2 / 4; object-position: 50% 50%; }
-.op-theater { grid-column: 2 / 4; object-position: 50% 92%; }
+.op-theater { grid-column: 2 / 4; object-position: 50% 100%; }
 .official-overlay {
   position: absolute;
-  inset: auto 0 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  padding: 4.5rem 1rem 1.3rem;
-  background: linear-gradient(to top,
-    color-mix(in srgb, var(--paper) 94%, var(--plum)) 0%,
-    color-mix(in srgb, var(--paper) 82%, transparent) 55%,
-    transparent 100%);
+  inset: 0;
+  background: none;
   pointer-events: none;
+  z-index: 2;
+  padding: 0;
 }
 .official-overlay .hero-actions,
 .official-overlay a,
@@ -1438,12 +1418,12 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 @media (max-width: 900px) {
   .official-photos {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 180px 160px 160px;
+    grid-template-rows: 200px 170px 110px;
     min-height: 0;
   }
   .op-anya { grid-row: 1 / 3; grid-column: 1; }
   .op-still { grid-row: 1 / 3; grid-column: 2; }
-  .op-theater { grid-row: 3; grid-column: 1 / 3; }
+  .op-theater { grid-row: 3; grid-column: 1 / 3; object-position: 50% 100%; }
   .official-laurels { grid-template-columns: 1fr 1fr; }
   .travel-video { grid-template-columns: minmax(140px, 180px) minmax(0, 1fr); }
 }
@@ -1454,9 +1434,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   .project-hero .hero-lede { font-size: 0.92rem; }
   .official-photos {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 128px 108px 118px;
+    grid-template-rows: 150px 128px 86px;
   }
-  .official-overlay { padding: 2.4rem 0.7rem 0.75rem; }
   .official-laurels { grid-template-columns: 1fr 1fr; gap: 0.45rem; }
   .official-laurels .laurel { padding: 0.5rem 0.4rem 0.55rem; }
   .official-laurels .laurel-mark svg { width: 44px; height: 44px; }
@@ -1477,7 +1456,6 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 
 .official-strip { padding: 0.15rem 0 3.2rem; }
 .official-collage { border-radius: 24px; }
-.official-overlay { padding-bottom: 1.25rem; }
 .official-laurels { gap: 0.9rem; }
 .official-strip .btn-primary {
   padding: 0.95rem 1.75rem;
@@ -1802,8 +1780,9 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 }
 
 
-/* ---- Hero collage: clean grid, light airy wash; laurels and CTA sit fully below ---- */
+/* ---- Hero collage: laurels sit only on the right-hand photos; no wash over the seats; CTA below ---- */
 .official-collage { overflow: hidden; }
+
 .official-collage::after {
   content: "";
   position: absolute;
@@ -1813,19 +1792,110 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   z-index: 1;
   background:
     linear-gradient(180deg,
-      color-mix(in srgb, var(--paper) 22%, transparent),
-      transparent 32%,
-      transparent 68%,
-      color-mix(in srgb, var(--paper) 16%, transparent)),
-    radial-gradient(ellipse 70% 55% at 12% 8%, color-mix(in srgb, var(--lavender) 18%, transparent), transparent 60%),
-    radial-gradient(ellipse 55% 50% at 92% 88%, color-mix(in srgb, var(--peach) 14%, transparent), transparent 62%);
+      color-mix(in srgb, var(--paper) 16%, transparent),
+      transparent 28%),
+    radial-gradient(ellipse 70% 50% at 12% 8%, color-mix(in srgb, var(--lavender) 12%, transparent), transparent 60%);
 }
+/* Two laurels sit left and right of the REFLECTIONS title, on the still only — off Anya and the seats */
+.official-overlay-right {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr 0.9fr;
+  grid-template-rows: 270px 130px;
+  gap: 0.4rem;
+  padding: 0;
+  background: none;
+  pointer-events: none;
+}
+.official-overlay-right .official-laurels {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30% minmax(0, 1fr);
+  grid-column: 2 / 4;
+  grid-row: 1;
+  align-self: start;
+  justify-self: stretch;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0 1.15rem;
+  box-sizing: border-box;
+  /* Vertically center on the baked-in REFLECTIONS title (~64.7% down the desktop crop) */
+  margin-top: calc(270px * 0.647);
+  transform: translateY(-50%);
+}
+.official-overlay-right .festival-laurel-badge {
+  width: min(176px, 100%);
+  max-width: 176px;
+  height: auto;
+  margin: 0;
+  filter: drop-shadow(0 4px 14px rgba(44, 27, 36, 0.32));
+}
+.official-overlay-right .festival-laurel-badge:first-child {
+  grid-column: 1;
+  justify-self: end;
+}
+.official-overlay-right .festival-laurel-badge:last-child {
+  grid-column: 3;
+  justify-self: start;
+}
+@media (max-width: 900px) {
+  .official-overlay-right {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 170px 110px;
+  }
+  .official-overlay-right .official-laurels {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    margin-top: calc((200px + 170px + 0.4rem) * 0.58);
+    padding: 0 0.45rem;
+    gap: 0.35rem;
+  }
+  .official-overlay-right .festival-laurel-badge {
+    width: min(120px, 100%);
+    max-width: 120px;
+  }
+}
+@media (max-width: 700px) {
+  .official-overlay-right {
+    grid-template-rows: 150px 128px 86px;
+  }
+  .official-overlay-right .official-laurels {
+    margin-top: calc((150px + 128px + 0.4rem) * 0.58);
+    padding: 0 0.35rem;
+    gap: 0.28rem;
+  }
+  .official-overlay-right .festival-laurel-badge {
+    width: min(100px, 100%);
+    max-width: 100px;
+  }
+}
+/* Phone: the portrait crop leaves no room beside the title; keep both badges on the still, above the word */
+@media (max-width: 520px) {
+  .official-overlay-right .official-laurels {
+    grid-template-columns: 1fr 1fr;
+    margin-top: calc((150px + 128px + 0.4rem) * 0.34);
+    padding: 0 0.28rem;
+    gap: 0.28rem;
+    width: 90%;
+    justify-self: center;
+  }
+  .official-overlay-right .festival-laurel-badge,
+  .official-overlay-right .festival-laurel-badge:first-child,
+  .official-overlay-right .festival-laurel-badge:last-child {
+    grid-column: auto;
+    justify-self: center;
+    width: min(92px, 100%);
+    max-width: 92px;
+  }
+}
+
 .official-below {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1.35rem;
+  gap: 0;
+  margin-top: 1.15rem;
   position: relative;
   z-index: 2;
   padding: 0 0.4rem 0.2rem;
@@ -1875,14 +1945,6 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   filter: drop-shadow(0 8px 18px rgba(44, 27, 36, 0.18));
 }
 
-.votw-full {
-  margin: 0.15rem 0 0;
-  font-size: 0.92rem;
-}
-.votw-full a {
-  color: var(--plum);
-  font-weight: 600;
-}
 
 /* ---- One card per interviewee (no invented names) ---- */
 .person-grid {
@@ -2058,124 +2120,6 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 }
 
 
-/* ---- Regions + Video of the Week: two-column on desktop, stacked on mobile ---- */
-.section.regions {
-  background:
-    linear-gradient(180deg,
-      color-mix(in srgb, var(--mint) 14%, var(--paper)),
-      color-mix(in srgb, var(--lavender) 12%, var(--paper)) 48%,
-      color-mix(in srgb, var(--mint) 10%, var(--paper)) 100%);
-  padding-top: 4.4rem;
-  padding-bottom: 5.2rem;
-}
-.regions-votw {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(17.5rem, 21.5rem);
-  grid-template-rows: auto auto;
-  gap: 1.2rem 2.2rem;
-  align-items: start;
-  margin-bottom: 1.4rem;
-}
-.regions-col { display: contents; }
-.regions-col .section-head {
-  grid-column: 1;
-  grid-row: 1;
-  max-width: 32rem;
-  margin-bottom: 0.4rem;
-}
-.regions-col .section-head h2 {
-  font-weight: 700;
-  white-space: nowrap;
-  margin-bottom: 0.55rem;
-}
-.regions-col .globe-grid {
-  grid-column: 1;
-  grid-row: 2;
-  justify-content: flex-start;
-  max-width: calc(156px * 4 + 1.25rem * 3);
-  margin: 0;
-  gap: 1.15rem 1.25rem;
-}
-.votw-card {
-  grid-column: 2;
-  grid-row: 2;
-  align-self: center;
-  position: relative;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0.15rem 0.1rem 0.2rem;
-  scroll-margin-top: 84px;
-}
-.votw-card::before {
-  content: "";
-  position: absolute;
-  inset: -1.6rem -1.35rem -1.8rem;
-  z-index: -1;
-  pointer-events: none;
-  border-radius: 36px;
-  background:
-    radial-gradient(ellipse 80% 70% at 50% 42%, color-mix(in srgb, var(--lavender) 38%, transparent), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 85% 90%, color-mix(in srgb, var(--peach) 24%, transparent), transparent 68%),
-    radial-gradient(ellipse 50% 45% at 10% 85%, color-mix(in srgb, var(--mint) 20%, transparent), transparent 65%);
-}
-.votw-card .section-head {
-  max-width: none;
-  margin-bottom: 0.85rem;
-}
-.votw-card h2 {
-  font-size: 1.55rem;
-  margin-bottom: 0;
-}
-.votw-card .yt {
-  border-radius: 22px;
-  overflow: hidden;
-  border: 0;
-  box-shadow:
-    0 16px 40px rgba(44, 27, 36, 0.08),
-    0 0 0 1px color-mix(in srgb, var(--lavender) 22%, transparent);
-  margin: 0 0 0.85rem;
-}
-.votw-card .votw-caption {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0 0 0.45rem;
-  color: var(--ink);
-}
-.votw-card .votw-full { margin: 0; font-size: 0.88rem; }
-.section.regions .globe-note { margin: 0.4rem auto 2.4rem; }
-
-@media (max-width: 900px) {
-  .regions-votw {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 1.5rem;
-  }
-  .regions-col .section-head {
-    grid-column: 1;
-    grid-row: 1;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .regions-col .globe-grid {
-    grid-column: 1;
-    grid-row: 2;
-    justify-content: center;
-    max-width: none;
-    margin: 0 auto;
-  }
-  .votw-card {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: stretch;
-    max-width: 24rem;
-    width: 100%;
-    margin-inline: auto;
-  }
-}
-
 
 /* ---- Region + travel two-column stages: interviews/photos left, artsy DYK/culture cards right ---- */
 .region-stage,
@@ -2339,4 +2283,142 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ---- Shared photo rows: consistent 14px gaps, cards sized to image aspect ratio ---- */
+.carousel-track {
+  gap: 14px;
+}
+.travel-photos.carousel-track,
+.japan-gallery.carousel-track,
+.region-gallery.carousel-track,
+.bts-journey.carousel-track {
+  gap: 14px;
+  align-items: flex-start;
+}
+.travel-photos.carousel-track figure,
+.japan-gallery.carousel-track figure,
+.region-gallery.carousel-track figure,
+.bts-journey.carousel-track .bts-item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: min(75vw, 28rem);
+  margin: 0;
+  min-width: 0;
+}
+.travel-photos.carousel-track img,
+.japan-gallery.carousel-track img,
+.region-gallery.carousel-track img,
+.bts-journey.carousel-track .bts-item > img,
+.carousel-track figure img {
+  height: var(--carousel-media-h);
+  width: auto;
+  max-width: min(75vw, calc(var(--carousel-media-h) * 2.15));
+  aspect-ratio: auto;
+  object-fit: cover;
+  display: block;
+  flex: 0 0 auto;
+}
+.travel-photos.carousel-track figcaption,
+.japan-gallery.carousel-track figcaption,
+.region-gallery.carousel-track figcaption,
+.bts-journey.carousel-track figcaption {
+  width: 0;
+  min-width: 100%;
+  box-sizing: border-box;
+  margin: 0.4rem 0 0;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  display: block;
+}
+
+/* Dawn Avatar Robot Café: portrait column + text column, no overflow */
+.travel-video {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.1rem 1.5rem;
+  align-items: start;
+  margin: 0 0 1.6rem;
+  padding: 0.9rem 0;
+}
+.travel-video .dawn-video {
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  background: #1c1216;
+  margin: 0;
+  overflow: hidden;
+  justify-self: start;
+}
+.travel-video .dawn-copy {
+  min-width: 0;
+  padding: 0;
+}
+.travel-video .dawn-copy h3,
+.travel-video .dawn-copy p,
+.travel-video .dawn-copy .eyebrow {
+  position: static;
+}
+@media (max-width: 700px) {
+  .travel-video {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .travel-video .dawn-video { width: min(220px, 70vw); }
+}
+
+/* ---- Regions: full-width 4+3 globes, no Video of the Week ---- */
+.section.regions {
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--mint) 14%, var(--paper)),
+      color-mix(in srgb, var(--lavender) 12%, var(--paper)) 48%,
+      color-mix(in srgb, var(--mint) 10%, var(--paper)) 100%);
+  padding-top: 4.4rem;
+  padding-bottom: 5.2rem;
+}
+.section.regions .section-head {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 2.1rem;
+}
+.section.regions .section-head h2 {
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+.section.regions .section-head p {
+  margin: 0 auto;
+}
+.globe-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  justify-items: center;
+  align-items: start;
+  column-gap: clamp(0.4rem, 2vw, 1.2rem);
+  row-gap: clamp(1.3rem, 3vw, 2.2rem);
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto 1.6rem;
+}
+.globe-card {
+  grid-column: span 2;
+  width: 156px;
+  height: 156px;
+  flex-shrink: 0;
+}
+@media (min-width: 900px) {
+  .globe-card:nth-child(5) { grid-column: 2 / span 2; }
+}
+@media (max-width: 899px) and (min-width: 600px) {
+  .globe-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .globe-card { grid-column: span 2; width: 144px; height: 144px; }
+  .globe-card:nth-child(7) { grid-column: 3 / span 2; }
+}
+@media (max-width: 599px) {
+  .globe-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .globe-card { grid-column: span 2; width: 132px; height: 132px; }
+  .globe-card:nth-child(7) { grid-column: 2 / span 2; }
 }

@@ -34,6 +34,30 @@
           "height": 1094,
           "alt": "White-walled castle buildings and a wide lawn at Kanazawa Castle Park",
           "caption_html": "Kanazawa Castle Park, with the restored castle buildings across the lawn. <span class=\"photo-credit\">Photo: Mirror Project</span>"
+        },
+        {
+          "src": "assets/japan/hiroshima-peace-park.jpg",
+          "alt": "View down Hiroshima Peace Memorial Park toward the Cenotaph and the Atomic Bomb Dome",
+          "caption_html": "Looking across Hiroshima Peace Memorial Park to the Cenotaph and the Dome. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/japan/koyasan-gokurakubashi.jpg",
+          "alt": "A red Koyasan cable car at Gokurakubashi Station",
+          "caption_html": "The Koyasan cable car at Gokurakubashi Station, Wakayama. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/japan/osaka-midosuji-night.jpg",
+          "alt": "A tree-lined Osaka boulevard at night, with lights wrapped around the trees",
+          "caption_html": "Evening lights along Midōsuji, Osaka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
         }
       ],
       "video": {
@@ -120,6 +144,30 @@
           "alt": "The Assemblée nationale, Paris",
           "caption_html": "The Assemblée nationale, the lower house of the French Parliament, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/france/arc-de-triomphe.jpg",
+          "alt": "The Arc de Triomphe in Paris",
+          "caption_html": "The Arc de Triomphe, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1232,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/france/bonnieux-village.jpg",
+          "alt": "The hill village of Bonnieux in Provence",
+          "caption_html": "Bonnieux, a hill village in the Luberon, Provence. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/france/concorde-ferris-wheel.jpg",
+          "alt": "A Ferris wheel at the Place de la Concorde in Paris",
+          "caption_html": "The Ferris wheel at Place de la Concorde, Paris. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1130,
+          "height": 1400,
+          "span2": false
         }
       ],
       "cards": [
@@ -196,6 +244,30 @@
           "height": 1050,
           "alt": "A view through Metropol Parasol, Las Setas, over Seville",
           "caption_html": "Looking out through Metropol Parasol (Las Setas) over Seville. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/mezquita-arches.jpg",
+          "alt": "Horseshoe arches in the Mosque-Cathedral of Córdoba",
+          "caption_html": "Horseshoe arches in the Mosque-Cathedral of Córdoba. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/mezquita-dome.jpg",
+          "alt": "A ribbed dome inside the Mosque-Cathedral of Córdoba",
+          "caption_html": "A ribbed dome in the Mosque-Cathedral of Córdoba. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/spain/valencia-ayuntamiento.jpg",
+          "alt": "Valencia City Hall facing the plaza",
+          "caption_html": "Valencia City Hall (Ajuntament), on the Plaça de l’Ajuntament. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1280,
+          "height": 480,
           "span2": false
         }
       ],
@@ -274,6 +346,30 @@
           "alt": "The Baptistery, Cathedral, and Leaning Tower in Pisa",
           "caption_html": "The Baptistery, Cathedral, and Leaning Tower in the Piazza del Duomo, Pisa. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/italy/amalfi-hills.jpg",
+          "alt": "Terraced hills along the Amalfi Coast",
+          "caption_html": "Terraced hills along the Amalfi Coast. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/italy/atrani.jpg",
+          "alt": "The coastal village of Atrani on the Amalfi Coast",
+          "caption_html": "Atrani, on the Amalfi Coast. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1250,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/italy/sant-agnese-dome.jpg",
+          "alt": "The baroque church of Sant’Agnese in Agone in Rome",
+          "caption_html": "Sant’Agnese in Agone, on Piazza Navona, Rome. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
         }
       ],
       "cards": [
@@ -350,6 +446,30 @@
           "height": 1050,
           "alt": "A tusker elephant in Nagarhole National Park, Karnataka",
           "caption_html": "A tusker elephant in Nagarhole National Park, near Kabini, Karnataka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/mysore-carved-door.jpg",
+          "alt": "An elaborately carved wooden door at Mysore Palace",
+          "caption_html": "A carved doorway at Mysore Palace. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/nagarhole-herd.jpg",
+          "alt": "A herd of elephants in Nagarhole National Park",
+          "caption_html": "Elephants in Nagarhole National Park, Karnataka. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1024,
+          "height": 768,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/india/kabini-cormorant.jpg",
+          "alt": "A cormorant on the water at Kabini",
+          "caption_html": "A cormorant on the Kabini, at the edge of Nagarhole National Park. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
           "span2": false
         }
       ],
@@ -497,6 +617,30 @@
           "alt": "The Houses of Parliament and the Elizabeth Tower under a grey sky",
           "caption_html": "The Houses of Parliament and the Elizabeth Tower, from Westminster Bridge. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
+        },
+        {
+          "src": "assets/travels/england/city-hall-shard.jpg",
+          "alt": "City Hall and the Shard in London",
+          "caption_html": "City Hall and the Shard, London. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/england/london-eye.jpg",
+          "alt": "The London Eye on the South Bank",
+          "caption_html": "The London Eye, on the South Bank. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 810,
+          "height": 1393,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/england/blenheim-organ.jpg",
+          "alt": "The pipe organ at Blenheim Palace",
+          "caption_html": "The organ at Blenheim Palace, Oxfordshire. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
+          "span2": false
         }
       ],
       "cards": [
@@ -573,6 +717,22 @@
           "height": 1400,
           "alt": "The colorful shophouses and murals of Haji Lane, with a pedestrian whose face is blurred",
           "caption_html": "Haji Lane in Kampong Glam. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/marina-bay-sands.jpg",
+          "alt": "Marina Bay Sands and the bay in Singapore",
+          "caption_html": "Marina Bay Sands, Singapore. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1400,
+          "height": 1050,
+          "span2": false
+        },
+        {
+          "src": "assets/travels/singapore/singapura-club.jpg",
+          "alt": "The facade of the Singapore Club or a heritage shophouse club building",
+          "caption_html": "A heritage clubhouse façade in Singapore. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "width": 1050,
+          "height": 1400,
           "span2": false
         }
       ],
@@ -702,7 +862,7 @@
           "width": 1400,
           "height": 1050,
           "alt": "A sunset over a rocky shore, framed by trees",
-          "caption_html": "Sunset on a rocky shore, Hawaiʻi Island — the exact beach is unverified, so we hedge the place. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "caption_html": "Sunset on a rocky shore, Hawaiʻi Island. <span class=\"photo-credit\">Photo: Mirror Project</span>",
           "span2": false
         },
         {
@@ -711,6 +871,14 @@
           "height": 1372,
           "alt": "Palm trees silhouetted against a pink and purple sunset",
           "caption_html": "Palms at sunset, Hawaiʻi. <span class=\"photo-credit\">Photo: Mirror Project</span>",
+          "span2": false
+        },
+        {
+          "src": "assets/travels/hawaii/lava-volcanoes-np.jpg",
+          "width": 1200,
+          "height": 900,
+          "alt": "Lava flowing into the ocean at Hawaiʻi Volcanoes National Park",
+          "caption_html": "Lava flowing into the ocean at Hawaiʻi Volcanoes National Park. <span class=\"photo-credit\">Photo: National Park Service, via <a href=\"https://commons.wikimedia.org/wiki/File:Lava_at_Hawai%27i_Volcanoes_National_Park.jpg\" target=\"_blank\" rel=\"noopener noreferrer\">Wikimedia Commons</a> (public domain)</span>",
           "span2": false
         }
       ],

@@ -339,15 +339,112 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     if (!track) return;
     const prev = wrap.querySelector(".carousel-prev");
     const next = wrap.querySelector(".carousel-next");
+    const looping = wrap.classList.contains("is-looping");
     const max = track.scrollWidth - track.clientWidth;
-    wrap.classList.toggle("is-static", max <= 4);
-    if (prev) prev.disabled = track.scrollLeft <= 4;
-    if (next) next.disabled = track.scrollLeft >= max - 4;
+    wrap.classList.toggle("is-static", max <= 4 && !looping);
+    if (prev) prev.disabled = looping ? false : track.scrollLeft <= 4;
+    if (next) next.disabled = looping ? false : track.scrollLeft >= max - 4;
+  }
+
+  function carouselSetWidth(track) {
+    const n = Number(track.dataset.loopCount || 0);
+    if (n < 1) return 0;
+    const kids = Array.from(track.children);
+    if (kids.length < n * 2) return 0;
+    const firstOrig = kids[n];
+    const firstClone = kids[0];
+    return firstOrig.offsetLeft - firstClone.offsetLeft;
+  }
+
+  function neutralizeClone(clone) {
+    clone.setAttribute("data-carousel-clone", "true");
+    clone.setAttribute("aria-hidden", "true");
+    clone.querySelectorAll("[data-open-video]").forEach((el) => {
+      el.removeAttribute("data-open-video");
+      el.setAttribute("data-carousel-ghost", "true");
+    });
+    clone.querySelectorAll("video").forEach((v) => {
+      v.pause();
+      v.removeAttribute("src");
+      v.querySelectorAll("source").forEach((s) => s.remove());
+      v.preload = "none";
+      v.removeAttribute("controls");
+      v.classList.add("is-clone-video");
+    });
+    clone.querySelectorAll("button, a").forEach((el) => {
+      el.setAttribute("tabindex", "-1");
+      el.setAttribute("aria-hidden", "true");
+    });
+  }
+
+  function setupCarouselLoop(wrap, track) {
+    if (track.dataset.loopReady === "1") return;
+    const originals = Array.from(track.children);
+    if (originals.length < 1) return;
+    // Only loop when the row actually overflows
+    const overflows = track.scrollWidth - track.clientWidth > 8;
+    if (!overflows) return;
+    originals.forEach((node, i) => node.setAttribute("data-carousel-index", String(i)));
+    const prepend = [];
+    originals.forEach((node) => {
+      const clone = node.cloneNode(true);
+      neutralizeClone(clone);
+      prepend.push(clone);
+    });
+    originals.forEach((node) => {
+      const clone = node.cloneNode(true);
+      neutralizeClone(clone);
+      track.appendChild(clone);
+    });
+    prepend.reverse().forEach((clone) => track.insertBefore(clone, track.firstChild));
+    track.dataset.loopCount = String(originals.length);
+    track.dataset.loopReady = "1";
+    wrap.classList.add("is-looping");
+    const jumpToOriginals = () => {
+      const w = carouselSetWidth(track);
+      if (w > 0) {
+        const prev = track.style.scrollBehavior;
+        track.style.scrollBehavior = "auto";
+        track.scrollLeft = w;
+        track.style.scrollBehavior = prev;
+      }
+    };
+    requestAnimationFrame(() => requestAnimationFrame(jumpToOriginals));
+    let ticking = false;
+    track.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        const w = carouselSetWidth(track);
+        if (w <= 0) return;
+        const sl = track.scrollLeft;
+        if (sl >= w * 2 - 2) {
+          track.style.scrollBehavior = "auto";
+          track.scrollLeft = sl - w;
+        } else if (sl <= 2) {
+          track.style.scrollBehavior = "auto";
+          track.scrollLeft = sl + w;
+        }
+      });
+    }, { passive: true });
+    // Clicks on clones should activate the matching original, never a second player
+    track.addEventListener("click", (e) => {
+      const clone = e.target.closest("[data-carousel-clone]");
+      if (!clone || !track.contains(clone)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const idx = clone.getAttribute("data-carousel-index");
+      const original = track.querySelector(':scope > [data-carousel-index="' + idx + '"]:not([data-carousel-clone])');
+      if (!original) return;
+      const playBtn = original.querySelector(".bts-play, [data-open-video], .yt-play, video");
+      if (playBtn) playBtn.click();
+    }, true);
   }
 
   function initCarousels(scope) {
     const root = scope || document;
-    root.querySelectorAll(".bts-journey, .travel-photos, .japan-gallery, .video-grid").forEach((track) => {
+    root.querySelectorAll(".bts-journey, .travel-photos, .japan-gallery, .region-gallery, .video-grid").forEach((track) => {
       if (!track.children.length) return;
       let wrap = track.parentElement;
       if (!wrap || !wrap.classList.contains("media-carousel")) {
@@ -395,29 +492,11 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
           window.addEventListener("resize", () => updateCarousel(wrap));
         }
       }
+      setupCarouselLoop(wrap, track);
       updateCarousel(wrap);
     });
   }
 
-  if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
-  loadJSON("video-of-the-week.json?v=20261115g", "votw-data").then((data) => {
-    if (!data || !data.id) return;
-    const player = document.getElementById("votw-player");
-    const caption = document.getElementById("votw-caption");
-    const heading = document.getElementById("votw-title");
-    const full = document.getElementById("votw-full-link");
-    mountThumb(player, data.id, data.title, data.thumbnail, data.title, {
-      start: data.start,
-      end: data.end
-    });
-    if (caption && data.caption) caption.textContent = data.caption;
-    if (heading && data.title) heading.textContent = data.title;
-    if (full) {
-      full.href = "https://www.youtube.com/watch?v=" + encodeURIComponent(data.id);
-      full.hidden = false;
-    }
-  });
-  }
 
   function escapeHtml(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
@@ -530,7 +609,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115g", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115h", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -596,7 +675,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115g";
+    const jsonUrl = "../data/regions.json?v=20261115h";
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       const region = data && data.regions && data.regions[slug];
       const people = peopleFromRegion(region).map((person) => ({

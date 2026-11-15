@@ -62,6 +62,33 @@
           "id": "W26A0soMmVM",
           "title": "what you think which are some good ways to break the stereotypes and help to understand each other"
         }
+      ],
+      "facts": [
+        {
+          "text": "Cerro Aconcagua, in Mendoza province, is the highest peak in the Western Hemisphere at 6,962 meters, and Laguna del Carbón is the hemisphere’s lowest point, 105 meters below sea level.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/argentina/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "Iguazú Falls, shared with Brazil, drop about 80 meters across a span of almost three kilometers — a great crescent of water on the Argentina–Brazil border.",
+          "source_url": "https://whc.unesco.org/en/list/303/",
+          "source_label": "UNESCO — Iguazu National Park"
+        },
+        {
+          "text": "At Cueva de las Manos in Patagonia, stenciled handprints and hunting scenes were painted between about 13,000 and 9,500 years ago.",
+          "source_url": "https://whc.unesco.org/en/list/936/",
+          "source_label": "UNESCO — Cueva de las Manos, Río Pinturas"
+        },
+        {
+          "text": "Spanish is the official language; Indigenous languages including Quechua, Guarani, and Mapudungun are also spoken.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/argentina/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "In national elections, 16- and 17-year-olds may choose to vote. Voting is compulsory from age 18 to 70.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/argentina/",
+          "source_label": "CIA World Factbook (suffrage)"
+        }
       ]
     },
     "bolivia": {
@@ -133,6 +160,33 @@
         {
           "id": "H4VifOR6h34",
           "title": "What you think of teenagers in the united states? Bolivian Interview"
+        }
+      ],
+      "facts": [
+        {
+          "text": "Spanish and 36 Indigenous languages are official under Bolivia’s 2009 Constitution.",
+          "source_url": "https://media.unesco.org/sites/default/files/webform/mhm001/bolivia_newconstitution_spaorof.pdf",
+          "source_label": "Bolivia’s 2009 Constitution, Article 5 (UNESCO-hosted text)"
+        },
+        {
+          "text": "Lake Titicaca, shared with Peru, is the world’s highest lake navigable to large vessels.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/bolivia/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "Salar de Uyuni, on the Andean plateau, is the world’s largest salt flat.",
+          "source_url": "https://science.nasa.gov/earth/earth-observatory/an-expanse-of-white-in-bolivia-84853/",
+          "source_label": "NASA Earth Observatory"
+        },
+        {
+          "text": "Bolivia has two capitals: Sucre is the constitutional (legislative and judicial) capital, and La Paz is the administrative capital.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/bolivia/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "At about 3,630 meters above sea level, La Paz is the world’s highest administrative capital city.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/bolivia/",
+          "source_label": "CIA World Factbook"
         }
       ]
     },
@@ -388,6 +442,33 @@
           "end": 220,
           "thumbnail": "assets/voices/people/cameroon-10.jpg"
         }
+      ],
+      "facts": [
+        {
+          "text": "The country’s name comes from the Portuguese “Rio dos Camarões” (River of Prawns), after shrimp in the Wouri River.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/cameroon/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "English and French are both official, alongside 24 major African language groups.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/cameroon/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "The Dja Faunal Reserve, a UNESCO World Heritage rainforest, is almost encircled by the Dja River; about 90% of it remains undisturbed, and it is home to 107 mammal species.",
+          "source_url": "https://whc.unesco.org/en/list/407/",
+          "source_label": "UNESCO — Dja Faunal Reserve"
+        },
+        {
+          "text": "Mount Cameroon, an active volcano, is the highest mountain in Sub-Saharan West Africa.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/cameroon/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "Cameroon sits at the west-south juncture of the Gulf of Guinea, where West and Central Africa meet.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/cameroon/",
+          "source_label": "CIA World Factbook"
+        }
       ]
     },
     "china": {
@@ -460,13 +541,67 @@
           "id": "Ow_0khDR4aI",
           "title": "what is your impression of american teenagers | china (Asia) Interview"
         }
+      ],
+      "facts": [
+        {
+          "text": "Standard Chinese, or Putonghua, is the official national language; other languages, including Mongolian, Uyghur, and Tibetan, are official in some regions.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/china/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "China has 61 properties inscribed on the UNESCO World Heritage List, including cultural, natural, and mixed sites.",
+          "source_url": "https://whc.unesco.org/en/statesparties/cn/",
+          "source_label": "UNESCO — China (61 properties)"
+        },
+        {
+          "text": "The Grand Canal, begun in sections from the 5th century BC, stretched more than 2,000 kilometers by the 13th century, links five major river basins, and is still in use today.",
+          "source_url": "https://whc.unesco.org/en/list/1443/",
+          "source_label": "UNESCO — The Grand Canal"
+        },
+        {
+          "text": "The Honghe Hani Rice Terraces in Yunnan, a UNESCO World Heritage cultural landscape, have been shaped and farmed by the Hani people for centuries.",
+          "source_url": "https://whc.unesco.org/en/list/1111/",
+          "source_label": "UNESCO — Cultural Landscape of Honghe Hani Rice Terraces"
+        },
+        {
+          "text": "The Dujiangyan irrigation system, begun in the 3rd century BC, still waters the Chengdu Plain and was inscribed by UNESCO together with nearby Mount Qingcheng.",
+          "source_url": "https://whc.unesco.org/en/list/1001/",
+          "source_label": "UNESCO — Mount Qingcheng and the Dujiangyan Irrigation System"
+        }
       ]
     },
     "japan": {
       "name": "Japan",
       "playlist": null,
       "people": [],
-      "videos": []
+      "videos": [],
+      "facts": [
+        {
+          "text": "Kenroku-en in Kanazawa is one of Japan’s three great gardens, together with Kairakuen in Mito and Kōrakuen in Okayama.",
+          "source_url": "https://shiro-niwa.pref.ishikawa.lg.jp/kenrokuen-garden/e/about.html",
+          "source_label": "Kenroku-en, Ishikawa Prefecture"
+        },
+        {
+          "text": "The Hiroshima Peace Memorial (Genbaku Dome) was inscribed as a UNESCO World Heritage Site in 1996. It is the ruined hall that stood near the hypocenter of the 6 August 1945 atomic bombing, preserved as a call for peace.",
+          "source_url": "https://whc.unesco.org/en/list/775/",
+          "source_label": "UNESCO — Hiroshima Peace Memorial (Genbaku Dome)"
+        },
+        {
+          "text": "Itsukushima Shinto Shrine on Miyajima has been a UNESCO World Heritage Site since 1996. Its great vermilion torii stands in the sea and appears to float at high tide.",
+          "source_url": "https://whc.unesco.org/en/list/776/",
+          "source_label": "UNESCO — Itsukushima Shinto Shrine"
+        },
+        {
+          "text": "Washoku, the traditional dietary culture of the Japanese, was inscribed in 2013 on UNESCO’s list of intangible cultural heritage — a social practice of sharing meals, not only a set of dishes.",
+          "source_url": "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869",
+          "source_label": "UNESCO — Washoku"
+        },
+        {
+          "text": "Since 1 April 2022, Japan’s Civil Code has set the age of majority at 18 — down from 20 — so 18- and 19-year-olds can enter contracts and make more decisions about their own lives.",
+          "source_url": "https://www.moj.go.jp/EN/MINJI/minji07_00218.html",
+          "source_label": "Ministry of Justice, Japan"
+        }
+      ]
     },
     "nigeria": {
       "name": "Nigeria",
@@ -542,6 +677,33 @@
           "id": "B3yfT6xwMi0",
           "title": "What you think of teenagers in the united states | Nigeria (Africa) interviews"
         }
+      ],
+      "facts": [
+        {
+          "text": "Nigeria is Africa’s most populous country.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "It is home to more than 250 ethnic groups, and English is the official language.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "The Osun-Osogbo Sacred Grove, a UNESCO World Heritage Site, is one of the last remnants of primary high forest in southern Nigeria and a living sacred place in Yoruba culture.",
+          "source_url": "https://whc.unesco.org/en/list/1118/",
+          "source_label": "UNESCO — Osun-Osogbo Sacred Grove"
+        },
+        {
+          "text": "The Sukur cultural landscape, on a hilltop in the Mandara Mountains, is a UNESCO World Heritage Site and a living testimony to a society that has long farmed and built in the highlands.",
+          "source_url": "https://whc.unesco.org/en/list/938/",
+          "source_label": "UNESCO — Sukur Cultural Landscape"
+        },
+        {
+          "text": "Hausa, Yoruba, and Igbo are among the most widely spoken languages, used alongside official English in daily life and the arts.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+          "source_label": "CIA World Factbook"
+        }
       ]
     },
     "philippines": {
@@ -609,6 +771,33 @@
         {
           "id": "TngLk3UfE3Q",
           "title": "What are the interesting things about teenagers of your country that others dont know | Philipines"
+        }
+      ],
+      "facts": [
+        {
+          "text": "The national mapping agency NAMRIA’s inventory, updated with high-resolution mapping, counts 7,641 islands in the archipelago.",
+          "source_url": "https://newsinfo.inquirer.net/1179120/namria-says-philippines-has-over-500-new-islands",
+          "source_label": "NAMRIA, reported by the Philippine Daily Inquirer"
+        },
+        {
+          "text": "Filipino and English are both official languages.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/philippines/",
+          "source_label": "CIA World Factbook"
+        },
+        {
+          "text": "For 2,000 years, Ifugao communities have maintained rice terraces that follow the mountain contours of the Cordilleras — a living UNESCO World Heritage cultural landscape.",
+          "source_url": "https://whc.unesco.org/en/list/722/",
+          "source_label": "UNESCO — Rice Terraces of the Philippine Cordilleras"
+        },
+        {
+          "text": "The Baroque Churches of the Philippines — in Paoay, Santa Maria, Miagao, and San Agustin in Intramuros — are a UNESCO World Heritage serial site, built and adapted in stone from the 16th to 18th centuries.",
+          "source_url": "https://whc.unesco.org/en/list/677/",
+          "source_label": "UNESCO — Baroque Churches of the Philippines"
+        },
+        {
+          "text": "The country’s name comes from King Philip II of Spain; the islands were called Las Islas Filipinas in the 16th century.",
+          "source_url": "https://www.cia.gov/the-world-factbook/countries/philippines/",
+          "source_label": "CIA World Factbook"
         }
       ]
     }
