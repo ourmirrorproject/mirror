@@ -1844,8 +1844,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   transform: translateY(-50%);
 }
 .official-overlay-right .festival-laurel-badge {
-  width: min(118px, 100%);
-  max-width: 118px;
+  width: min(136px, 100%);
+  max-width: 136px;
   height: auto;
   margin: 0;
   filter: drop-shadow(0 4px 14px rgba(44, 27, 36, 0.32));
@@ -1872,8 +1872,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
     gap: 0.35rem;
   }
   .official-overlay-right .festival-laurel-badge {
-    width: min(110px, 100%);
-    max-width: 110px;
+    width: min(126px, 100%);
+    max-width: 126px;
   }
 }
 @media (max-width: 700px) {
@@ -1887,8 +1887,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
     gap: 0.28rem;
   }
   .official-overlay-right .festival-laurel-badge {
-    width: min(96px, 100%);
-    max-width: 96px;
+    width: min(110px, 100%);
+    max-width: 110px;
   }
 }
 @media (max-width: 520px) {
@@ -1902,8 +1902,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
     grid-template-columns: minmax(0, 1fr) 42% minmax(0, 1fr);
   }
   .official-overlay-right .festival-laurel-badge {
-    width: min(84px, 100%);
-    max-width: 84px;
+    width: min(96px, 100%);
+    max-width: 96px;
   }
 }
 
