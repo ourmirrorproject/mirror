@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display+SC:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261115e">
+  <link rel="stylesheet" href="styles.css?v=20261115f">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,7 +35,7 @@
         <li><a href="#regions">Regions</a></li>
         <li><a href="#travel-blog">Travel Blog</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#involved">Get Involved</a></li>
+        <li><a href="mailto:ourmirrorproject@gmail.com?subject=Getting%20involved%20with%20Mirror%20Project">Get Involved</a></li>
       </ul>
     </nav>
   </header>
@@ -54,9 +54,8 @@
         <div class="official-collage">
           <div class="official-photos">
             <img class="op op-anya" src="assets/sdyff-2026.jpg" width="1162" height="1600" alt="Anya Zenooz in front of a San Diego Young Filmmakers Festival backdrop">
-            <img class="op op-theater" src="assets/sdyff-theater-2026.jpg" width="1600" height="1253" alt="A movie theater screen showing San Diego Young Filmmakers Festival 2026">
             <img class="op op-still" src="assets/reflections.jpg" width="1600" height="1067" alt="Sun reflected on water, the title card for Reflections">
-            <img class="op op-poster" src="assets/sdyff-poster-2026.jpg" width="1047" height="1600" alt="Official poster for the San Diego Young Filmmakers Festival 2026, listing Reflections among the official selections">
+            <img class="op op-theater" src="assets/sdyff-theater-2026.jpg" width="1600" height="1253" alt="Rows of red theater seats facing a movie screen">
           </div>
         </div>
         <div class="official-below">
@@ -250,7 +249,7 @@
         </aside>
       </div>
       <div class="wrap">
-<p class="globe-note">Each globe opens that region’s page. Japan also appears as this week’s Travel Blog highlight, below, and more from the road is in Behind the Scenes. Interviews from France and Spain will appear when they are ready.</p>
+
         <div class="bts" id="behind-the-scenes">
           <h3 class="clips-title">Behind the Scenes</h3>
           <p class="clips-lede">Prep and on the road: stills from travel days, streets, and food along the way, plus short clips from the journey.</p>
@@ -448,7 +447,7 @@
     {
       "id": "france",
       "name": "France",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "In France, so much of public life still happens in person: at a café table, in a market line, around a meal that is allowed to take its time. Since 2017, labor law has also recognized a right to disconnect, so work messages are not assumed to follow people home.",
       "photos": [
         {
@@ -525,7 +524,7 @@
     {
       "id": "spain",
       "name": "Spain",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "Spain is too often flattened into sun, spectacle, and a long afternoon sleep. After a meal, sobremesa keeps people at the table just to talk; in the evening, the paseo turns a street into a shared living room.",
       "photos": [
         {
@@ -602,7 +601,7 @@
     {
       "id": "italy",
       "name": "Italy",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "Italy is easy to reduce to one plate of pasta and one famous tower, but connection often happens at a walking pace: a passeggiata in the evening, an aperitivo before the meal. Slow Food, which began here, is one way people have pushed back against speed and sameness at the table.",
       "photos": [
         {
@@ -679,7 +678,7 @@
     {
       "id": "india",
       "name": "India",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "In India, a meal can be a thali of many complementary dishes, and a greeting like namaste acknowledges the person in front of you. A vast generation of young people is already changing how the country pays, speaks, and is seen — including through public systems such as UPI.",
       "photos": [
         {
@@ -1135,42 +1134,9 @@
         </div>
       </div>
     </section>
-    <section class="section involved" id="involved">
+    <section class="section faq-section" id="faq">
       <div class="wrap narrow">
-        <p class="eyebrow">Get involved</p>
-        <h2>Share your story</h2>
-        <p>Every perspective matters. Tell us about yourself, your culture, and what you’d like the world to know.</p>
-        <form id="story-form" class="story-form" action="https://formspree.io/f/xgolnpqj" method="POST">
-            <input type="hidden" name="form-type" value="story">
-            <label>Your name
-              <input type="text" name="name" autocomplete="name" placeholder="First and last name" required>
-            </label>
-            <label>Where are you from?
-              <input type="text" name="location" placeholder="City, country" required>
-            </label>
-            <label>Region
-              <select name="region" required>
-                <option value="" disabled selected>Select your region</option>
-                <option>Argentina</option>
-                <option>Bolivia</option>
-                <option>Cameroon</option>
-                <option>China</option>
-                <option>Japan</option>
-                <option>Nigeria</option>
-                <option>Philippines</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>Your story
-              <textarea name="story" rows="6" placeholder="Tell us about yourself, your culture, and what you’d like the world to know…" required></textarea>
-            </label>
-            <label>Email (optional)
-              <input type="email" name="email" autocomplete="email" placeholder="you@email.com">
-            </label>
-            <button type="submit" class="btn btn-primary" id="submit-btn">Submit your story</button>
-          </form>
-          <p class="form-success" id="form-success" hidden>Thank you for sharing. Your story has been sent to the Mirror Project team. We read every submission and will be in touch if we are filming in your region.</p>
-        <h2 id="faq">FAQ</h2>
+        <h2>FAQ</h2>
         <div class="faq-list">
           <details>
             <summary>What is Mirror Project?</summary>
@@ -1178,7 +1144,7 @@
           </details>
           <details>
             <summary>How can I be interviewed?</summary>
-            <p>Head to the <a href="#involved">Share your story</a> form and tell us a little about yourself. The team reviews submissions and reaches out when filming in your region.</p>
+            <p>Email <a href="mailto:ourmirrorproject@gmail.com?subject=Getting%20involved%20with%20Mirror%20Project">ourmirrorproject@gmail.com</a> with your story, or attach a clip or photos (a Google Drive or WeTransfer link is fine too). Sending them means you consent to Mirror Project featuring your media. The team reads every message and will be in touch if we are filming in your region.</p>
           </details>
           <details>
             <summary>Is this free to participate in?</summary>
@@ -1186,15 +1152,16 @@
           </details>
           <details>
             <summary>How can I support the project?</summary>
-            <p>Share the videos, submit your story, and spread the word. For sponsorship or partnership inquiries, use the story form and mention that in your message, or reach out on Instagram, TikTok, or YouTube.</p>
+            <p>Share the videos, email us to get involved, and spread the word. For sponsorship or partnership inquiries, email ourmirrorproject@gmail.com, or reach out on Instagram, TikTok, or YouTube.</p>
           </details>
           <details>
             <summary>Where have you recorded interviews?</summary>
-            <p>We’ve recorded interviews with young people in 7 regions: Argentina, Bolivia, Cameroon, China, Japan, Nigeria, and the Philippines. Conversations were also recorded in France and Spain; those videos will be shared when they are ready. France, Spain, Italy, and India appear in the Travel Blog with an “Interviews coming soon” badge; Japan also appears there as a travel highlight. Mexico, England, Singapore, Malta, and Hawaiʻi are travel stories for now. The travel-only places are not counted as interview regions — see <a href="#travel-blog">Travel Blog</a>.</p>
+            <p>We’ve recorded interviews with young people in 7 regions: Argentina, Bolivia, Cameroon, China, Japan, Nigeria, and the Philippines. Conversations were also recorded in France and Spain; those videos will be shared when they are ready. France, Spain, Italy, and India appear in the Travel Blog; Japan also appears there as a travel highlight. Mexico, England, Singapore, Malta, and Hawaiʻi are travel stories for now. The travel-only places are not counted as interview regions — see <a href="#travel-blog">Travel Blog</a>.</p>
           </details>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -1209,9 +1176,10 @@
         <a href="#regions">Regions</a>
         <a href="#travel-blog">Travel Blog</a>
         <a href="#about">About Us</a>
-        <a href="#involved">Get Involved</a>
+        <a href="mailto:ourmirrorproject@gmail.com?subject=Getting%20involved%20with%20Mirror%20Project">Get Involved</a>
       </nav>
       <p class="footer-email"><a href="mailto:ourmirrorproject@gmail.com">ourmirrorproject@gmail.com</a></p>
+      <p class="footer-involved-note">You can email your story, clips, or photos.</p>
       <p class="footer-copy">© 2026 Mirror Project · A global youth cultural exchange · All rights reserved</p>
     </div>
   </footer>
@@ -1224,6 +1192,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261115e"></script>
+  <script src="script.js?v=20261115f"></script>
 </body>
 </html>

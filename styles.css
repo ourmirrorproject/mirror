@@ -134,13 +134,13 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .btn-primary {
-  background: var(--cream);
+  background: color-mix(in srgb, var(--peach) 42%, var(--cream));
   color: var(--ink);
-  border: 1.5px solid var(--gold);
-  box-shadow: 0 6px 16px color-mix(in srgb, var(--gold-deep) 16%, transparent);
+  border: 2px solid var(--gold-deep);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--gold-deep) 18%, transparent);
 }
 .btn-primary:hover {
-  background: color-mix(in srgb, var(--gold-light) 32%, var(--cream));
+  background: color-mix(in srgb, var(--peach) 58%, var(--gold-light));
   border-color: var(--gold-deep);
   color: var(--ink);
 }
@@ -1386,9 +1386,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   min-height: 0;
 }
 .op-anya { grid-row: 1 / 3; object-position: 50% 14%; }
-.op-theater { object-position: 50% 40%; }
-.op-still { object-position: 50% 50%; }
-.op-poster { grid-column: 2 / 4; object-position: 50% 20%; }
+.op-still { grid-column: 2 / 4; object-position: 50% 50%; }
+.op-theater { grid-column: 2 / 4; object-position: 50% 92%; }
 .official-overlay {
   position: absolute;
   inset: auto 0 0 0;
@@ -1443,9 +1442,8 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
     min-height: 0;
   }
   .op-anya { grid-row: 1 / 3; grid-column: 1; }
-  .op-theater { grid-row: 1; grid-column: 2; }
-  .op-still { grid-row: 2; grid-column: 2; }
-  .op-poster { grid-row: 3; grid-column: 1 / 3; }
+  .op-still { grid-row: 1 / 3; grid-column: 2; }
+  .op-theater { grid-row: 3; grid-column: 1 / 3; }
   .official-laurels { grid-template-columns: 1fr 1fr; }
   .travel-video { grid-template-columns: minmax(140px, 180px) minmax(0, 1fr); }
 }
@@ -1848,8 +1846,13 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   border-color: transparent transparent transparent currentColor;
 }
 .official-below .official-laurels {
-  width: min(46rem, 100%);
-  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  width: min(38rem, 100%);
+  margin: 0 auto;
+  justify-items: center;
+  justify-content: center;
 }
 .official-strip {
   background:
@@ -2284,4 +2287,56 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   .region-didyouknow .fact-card,
   .region-didyouknow .fact-card:hover,
   .culture-collage .culture-card { transform: none; margin-left: 0; margin-top: 0; }
+}
+
+
+/* Footer note under Get Involved / email */
+.footer-involved-note {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: inherit;
+}
+.faq-section { scroll-margin-top: 84px; }
+
+/* Portrait Behind the Scenes / Japan clips: true 9:16 frame, consistent row height */
+.carousel-track .bts-player,
+.carousel-track .bts-item.bts-clip .bts-player,
+.carousel-track .bts-item.bts-native video[width="720"][height="1280"],
+.carousel-track video[width="720"][height="1280"] {
+  height: var(--carousel-media-h);
+  width: calc(var(--carousel-media-h) * 9 / 16);
+  max-width: 75vw;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: #1c1216;
+}
+.carousel-track .bts-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: transparent;
+}
+.carousel-track .bts-item.bts-native video[width="1280"],
+.carousel-track video[width="1280"][height="720"],
+.carousel-track video[width="1400"] {
+  height: var(--carousel-media-h);
+  width: calc(var(--carousel-media-h) * 16 / 9);
+  max-width: 75vw;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.dawn-feature .dawn-video,
+.travel-video .dawn-video {
+  width: min(280px, 70vw);
+  aspect-ratio: 9 / 16;
+  background: #1c1216;
+  overflow: hidden;
+}
+.dawn-feature .dawn-video video,
+.travel-video .dawn-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }

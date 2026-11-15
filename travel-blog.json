@@ -86,7 +86,7 @@
     {
       "id": "france",
       "name": "France",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "In France, so much of public life still happens in person: at a café table, in a market line, around a meal that is allowed to take its time. Since 2017, labor law has also recognized a right to disconnect, so work messages are not assumed to follow people home.",
       "photos": [
         {
@@ -163,7 +163,7 @@
     {
       "id": "spain",
       "name": "Spain",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "Spain is too often flattened into sun, spectacle, and a long afternoon sleep. After a meal, sobremesa keeps people at the table just to talk; in the evening, the paseo turns a street into a shared living room.",
       "photos": [
         {
@@ -240,7 +240,7 @@
     {
       "id": "italy",
       "name": "Italy",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "Italy is easy to reduce to one plate of pasta and one famous tower, but connection often happens at a walking pace: a passeggiata in the evening, an aperitivo before the meal. Slow Food, which began here, is one way people have pushed back against speed and sameness at the table.",
       "photos": [
         {
@@ -317,7 +317,7 @@
     {
       "id": "india",
       "name": "India",
-      "badge": "Interviews coming soon",
+      "badge": "",
       "note": "In India, a meal can be a thali of many complementary dishes, and a greeting like namaste acknowledges the person in front of you. A vast generation of young people is already changing how the country pays, speaks, and is seen — including through public systems such as UPI.",
       "photos": [
         {
