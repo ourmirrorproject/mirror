@@ -743,7 +743,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115m", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115n", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -810,7 +810,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115m";
+    const jsonUrl = "../data/regions.json?v=20261115n";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
@@ -837,7 +837,9 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       const sources = card.closest(".region-didyouknow").querySelector("details.fact-sources");
       if (sources) sources.hidden = true;
       const lede = card.closest(".region-didyouknow").querySelector(".clips-lede");
-      if (lede) lede.textContent = "Tap or click the card to see a fact. Click again for the next one.";
+      if (lede) lede.textContent = "Tap or click the card to flip it. Flip again to return to the front, then flip for the next fact.";
+      const hint = card.querySelector(".fact-hint");
+      if (hint) hint.textContent = "Tap to flip";
       let index = 0;
       function showFact() {
         const fact = facts[index];
@@ -878,14 +880,18 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
         if (event.type === "keydown") event.preventDefault();
         if (!card.classList.contains("is-flipped")) {
+          showFact();
           card.classList.add("is-flipped");
           flip.setAttribute("aria-expanded", "true");
           back.setAttribute("aria-hidden", "false");
           if (front) front.setAttribute("aria-hidden", "true");
           return;
         }
+        card.classList.remove("is-flipped");
+        flip.setAttribute("aria-expanded", "false");
+        back.setAttribute("aria-hidden", "true");
+        if (front) front.setAttribute("aria-hidden", "false");
         index = (index + 1) % facts.length;
-        showFact();
       };
       flip.addEventListener("click", advance);
       flip.addEventListener("keydown", advance);
