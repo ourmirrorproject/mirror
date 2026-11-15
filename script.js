@@ -50,8 +50,10 @@
     params.set("cc_load_policy", "0");
     params.set("iv_load_policy", "3");
     params.set("hl", "en");
-    // No cc_lang_pref and no captions param: YouTube has no "captions=none",
-    // so omitting them is the equivalent of not requesting a caption track.
+    params.set("cc_lang_pref", "en");
+    // Captions stay off by default (cc_load_policy=0). If a viewer or the
+    // player still opens a track, prefer English over auto-translated
+    // Spanish/French. No captions= param.
     if (opts.start !== undefined && opts.start !== null && String(opts.start) !== "") {
       const start = parseInt(opts.start, 10);
       if (!Number.isNaN(start) && start >= 0) params.set("start", String(start));
@@ -389,7 +391,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("votw-player") || document.getElementById("votw-data")) {
-  loadJSON("video-of-the-week.json?v=20261115c", "votw-data").then((data) => {
+  loadJSON("video-of-the-week.json?v=20261115d", "votw-data").then((data) => {
     if (!data || !data.id) return;
     const player = document.getElementById("votw-player");
     const caption = document.getElementById("votw-caption");
@@ -521,7 +523,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115c", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115d", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
     const show = (id) => {
@@ -587,7 +589,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115c";
+    const jsonUrl = "../data/regions.json?v=20261115d";
     loadJSON(jsonUrl, "region-videos-data").then((data) => {
       const region = data && data.regions && data.regions[slug];
       const people = peopleFromRegion(region).map((person) => ({
