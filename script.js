@@ -25,6 +25,22 @@
     });
   }
 
+  const remapHash = {
+    "watch-reflections": "reflections",
+    "japan": "travel-japan",
+    "dawn-cafe": "travel-japan"
+  };
+  const applyLegacyHash = () => {
+    const raw = (location.hash || "").replace(/^#/, "");
+    const next = remapHash[raw];
+    if (next && next !== raw) {
+      if (history.replaceState) history.replaceState(null, "", "#" + next);
+      else location.hash = next;
+    }
+  };
+  applyLegacyHash();
+  window.addEventListener("hashchange", applyLegacyHash);
+
   function mountPlayer(el) {
     const id = el.getAttribute("data-youtube");
     const title = el.getAttribute("data-title") || "YouTube video";
@@ -318,6 +334,21 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         "\" height=\"" + (ph.height || "") + "\" alt=\"" + escapeHtml(ph.alt || "") +
         "\" loading=\"lazy\"><figcaption>" + (ph.caption_html || "") + "</figcaption></figure>";
     }).join("");
+    let videoHtml = "";
+    if (place.video && place.video.src) {
+      const v = place.video;
+      videoHtml =
+        '<div class="travel-video">' +
+        '<div class="dawn-video">' +
+        '<video playsinline controls preload="metadata" poster="' + escapeHtml(v.poster || "") +
+        '" width="' + (v.width || "") + '" height="' + (v.height || "") +
+        '"><source src="' + escapeHtml(v.src) + '" type="video/mp4"></video></div>' +
+        '<div class="dawn-copy">' +
+        (v.eyebrow ? '<p class="eyebrow">' + escapeHtml(v.eyebrow) + "</p>" : "") +
+        (v.title ? "<h3>" + escapeHtml(v.title) + "</h3>" : "") +
+        (v.caption ? "<p>" + escapeHtml(v.caption) + "</p>" : "") +
+        "</div></div>";
+    }
     const sources = (place.cards || []).map((card) => {
       return "<li><a href=\"" + escapeHtml(card.source_url) +
         "\" target=\"_blank\" rel=\"noopener noreferrer\">" + escapeHtml(card.source_label) +
@@ -333,6 +364,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         '" alt="' + escapeHtml(lead.alt || "") + '"><figcaption>' +
         (lead.caption_html || "") + "</figcaption></figure>" : "") +
       '<p class="travel-note">' + escapeHtml(place.note) + "</p>" +
+      videoHtml +
       '<h4 class="culture-heading">Culture cards</h4>' +
       '<p class="culture-lede">Tap or click a card to flip it.</p>' +
       '<div class="culture-grid">' + cards + "</div>" +
@@ -357,6 +389,12 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     });
   }
 
+  function placeFromHash() {
+    const h = (location.hash || "").replace(/^#/, "").toLowerCase();
+    if (h === "japan" || h === "travel-japan" || h === "dawn-cafe") return "japan";
+    return null;
+  }
+
   loadJSON("travel-blog.json", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = data.highlight || data.places[0].id;
@@ -365,6 +403,11 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       renderPlace(place, place.id === highlightId);
       renderChips(data.places, place.id, show);
     };
-    show(highlightId);
+    show(placeFromHash() || highlightId);
+    window.addEventListener("hashchange", () => {
+      const id = placeFromHash();
+      if (!id) return;
+      show(id);
+    });
   });
 })();

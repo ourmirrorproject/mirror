@@ -1,6 +1,88 @@
 {
-  "highlight": "singapore",
+  "highlight": "japan",
   "places": [
+    {
+      "id": "japan",
+      "name": "Japan",
+      "badge": "",
+      "note": "Japan is one of Mirror Project’s seven interview regions. These photographs follow the trip through Kanazawa, Kōyasan, Hiroshima, Miyajima, Osaka, and Tokyo. On Miyajima, decorative sake barrels sit behind the vermilion woodwork at Itsukushima Shrine.",
+      "photos": [
+        {
+          "src": "assets/japan/itsukushima-sake-barrels.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "Rows of decorative sake barrels behind vermilion shrine woodwork",
+          "caption_html": "Sake barrels offered at Itsukushima Shrine, Miyajima. <span class=\"photo-credit\">Photo: Mirror Project</span>"
+        },
+        {
+          "src": "assets/japan/matcha-gyokusen-an.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "A glass bowl of iced matcha and a wagashi sweet on a small plate, set on tatami",
+          "caption_html": "Iced matcha and wagashi on tatami at Gyokusen-an, Kanazawa Castle Park. <span class=\"photo-credit\">Photo: Mirror Project</span>"
+        },
+        {
+          "src": "assets/japan/hiroshima-genbaku-dome.jpg",
+          "width": 1400,
+          "height": 1050,
+          "alt": "The skeletal dome and ruined walls of the Hiroshima Peace Memorial",
+          "caption_html": "The Hiroshima Peace Memorial (Genbaku Dome), a UNESCO World Heritage Site. <span class=\"photo-credit\">Photo: Mirror Project</span>"
+        },
+        {
+          "src": "assets/japan/kanazawa-castle-park.jpg",
+          "width": 1400,
+          "height": 1094,
+          "alt": "White-walled castle buildings and a wide lawn at Kanazawa Castle Park",
+          "caption_html": "Kanazawa Castle Park, with the restored castle buildings across the lawn. <span class=\"photo-credit\">Photo: Mirror Project</span>"
+        }
+      ],
+      "video": {
+        "src": "assets/japan/bts-tokyo-dawn-cafe.mp4",
+        "poster": "assets/japan/bts-tokyo-dawn-cafe.jpg",
+        "width": 720,
+        "height": 1280,
+        "eyebrow": "Tech and human connection",
+        "title": "Dawn Avatar Robot Café, Tokyo",
+        "caption": "OriHime robots greet guests at this café in Nihonbashi. They are remotely piloted by people who have difficulty going out, including people with disabilities."
+      },
+      "cards": [
+        {
+          "kicker": "A place",
+          "title": "The floating torii",
+          "body": "Itsukushima Shinto Shrine on Miyajima has been a UNESCO World Heritage Site since 1996. Its great vermilion torii stands in the sea and appears to float at high tide.",
+          "source_url": "https://whc.unesco.org/en/list/776/",
+          "source_label": "UNESCO — Itsukushima Shinto Shrine"
+        },
+        {
+          "kicker": "Young people",
+          "title": "Adulthood at 18",
+          "body": "Since April 1, 2022, Japan’s Civil Code has set the age of majority at 18 — down from 20 — so 18- and 19-year-olds can enter contracts and make more decisions about their own lives.",
+          "source_url": "https://www.moj.go.jp/EN/MINJI/minji07_00218.html",
+          "source_label": "Ministry of Justice, Japan"
+        },
+        {
+          "kicker": "Tech & connection",
+          "title": "Avatar robot café",
+          "body": "At Dawn Avatar Robot Café in Nihonbashi, Tokyo, OriHime robots are remotely piloted by people who have difficulty going out, including people with disabilities.",
+          "source_url": "https://dawn2021.orylab.com/en/?lang=en",
+          "source_label": "BUNSHIN Robot Café / OryLab"
+        },
+        {
+          "kicker": "A garden",
+          "title": "Kenroku-en",
+          "body": "Kenroku-en in Kanazawa is one of Japan’s three great gardens, together with Kairakuen in Mito and Kōrakuen in Okayama.",
+          "source_url": "https://shiro-niwa.pref.ishikawa.lg.jp/kenrokuen-garden/e/about.html",
+          "source_label": "Kenroku-en, Ishikawa Prefecture"
+        },
+        {
+          "kicker": "Food",
+          "title": "Washoku",
+          "body": "Washoku, the traditional dietary cultures of the Japanese, was inscribed by UNESCO in 2013. It is a social practice that values seasonal ingredients, presentation, and sitting down to a meal together.",
+          "source_url": "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-00869",
+          "source_label": "UNESCO — Washoku"
+        }
+      ]
+    },
     {
       "id": "france",
       "name": "France",
