@@ -2250,6 +2250,47 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 .culture-collage .culture-card:nth-child(3) { transform: rotate(-2.2deg); margin-top: -1.6rem; margin-left: 0.3rem; z-index: 4; }
 .culture-collage .culture-card:hover { z-index: 5; }
 
+.culture-rotator-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 22rem;
+}
+.culture-rotator-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 1.15rem -0.85rem -1.25rem 0.7rem;
+  border-radius: 20px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--cream) 70%, var(--lavender)), var(--cream));
+  box-shadow: 0 10px 28px rgba(44, 27, 36, 0.07);
+  transform: rotate(6.5deg);
+  z-index: 0;
+  pointer-events: none;
+}
+.culture-rotator {
+  position: relative;
+  z-index: 1;
+  max-width: 22rem;
+  margin: 0;
+  transform: rotate(-3.2deg);
+  transition: transform 0.28s ease;
+}
+.culture-rotator:hover { transform: rotate(-1deg) translateY(-4px); }
+.culture-rotator .fact-flip { min-height: 13.2rem; }
+.culture-rotator .fact-back-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+.culture-rotator .fact-index {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 @media (max-width: 900px) {
   .region-stage,
   .travel-stage {
@@ -2267,11 +2308,14 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
   .region-fact-grid::before { display: none; }
   .region-didyouknow .fact-card,
   .region-didyouknow .fact-card:hover,
-  .culture-collage .culture-card {
+  .culture-collage .culture-card,
+  .culture-rotator,
+  .culture-rotator:hover {
     transform: none;
     margin: 0 auto;
   }
   .culture-collage { gap: 1rem; }
+  .culture-rotator-wrap { margin-inline: auto; width: 100%; }
   .region-stage-aside,
   .travel-stage-aside { padding: 0; }
 }
@@ -2279,7 +2323,9 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 @media (prefers-reduced-motion: reduce) {
   .region-didyouknow .fact-card,
   .region-didyouknow .fact-card:hover,
-  .culture-collage .culture-card { transform: none; margin-left: 0; margin-top: 0; }
+  .culture-collage .culture-card,
+  .culture-rotator,
+  .culture-rotator:hover { transform: none; margin-left: 0; margin-top: 0; }
 }
 
 
@@ -2630,6 +2676,7 @@ button.live-pill {
 .carousel-track,
 .culture-grid,
 .culture-collage,
+.culture-rotator-wrap,
 .region-fact-grid {
   min-width: 0;
   max-width: 100%;
@@ -2669,6 +2716,9 @@ button.live-pill {
   .culture-collage .culture-card,
   .culture-collage .culture-card:nth-child(n),
   .culture-collage .culture-card:hover,
+  .culture-rotator,
+  .culture-rotator:hover,
+  .culture-rotator-wrap,
   .culture-card .fact-flip {
     width: 100%;
     max-width: 22rem;

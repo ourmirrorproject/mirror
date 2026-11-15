@@ -226,7 +226,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   });
 
 
-  document.querySelectorAll(".culture-card").forEach((card) => {
+  document.querySelectorAll(".culture-card:not(.culture-rotator)").forEach((card) => {
     const front = card.querySelector(".fact-front");
     const back = card.querySelector(".fact-back");
     const toggle = () => {
@@ -556,7 +556,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   function bindCultureCards(root) {
-    root.querySelectorAll(".culture-card").forEach((card) => {
+    root.querySelectorAll(".culture-card:not(.culture-rotator)").forEach((card) => {
       const front = card.querySelector(".fact-front");
       const back = card.querySelector(".fact-back");
       const toggle = () => {
@@ -577,6 +577,77 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         }
       });
     });
+  }
+
+  function initCultureRotator(root, cards) {
+    const card = root.querySelector(".culture-rotator");
+    if (!card || !cards || !cards.length) return;
+    const flip = card.querySelector(".fact-flip") || card;
+    const front = card.querySelector(".fact-front");
+    const back = card.querySelector(".fact-back");
+    if (!front || !back) return;
+    const kickerEl = front.querySelector(".fact-kicker");
+    const titleEl = front.querySelector(".fact-country");
+    let index = 0;
+    function paintFront() {
+      const item = cards[index];
+      if (kickerEl) kickerEl.textContent = item.kicker || "";
+      if (titleEl) titleEl.textContent = item.title || "";
+    }
+    function paintBack() {
+      const item = cards[index];
+      back.replaceChildren();
+      const head = document.createElement("div");
+      head.className = "fact-back-head";
+      const kicker = document.createElement("span");
+      kicker.className = "fact-kicker";
+      kicker.textContent = item.kicker || "";
+      const counter = document.createElement("span");
+      counter.className = "fact-index";
+      counter.textContent = (index + 1) + "/" + cards.length;
+      head.appendChild(kicker);
+      head.appendChild(counter);
+      const title = document.createElement("span");
+      title.className = "fact-country";
+      title.textContent = item.title || "";
+      const text = document.createElement("p");
+      text.textContent = item.body || "";
+      back.appendChild(head);
+      back.appendChild(title);
+      back.appendChild(text);
+      if (item.source_url && item.source_label) {
+        const a = document.createElement("a");
+        a.className = "culture-source";
+        a.href = item.source_url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = "Source: " + item.source_label;
+        back.appendChild(a);
+      }
+    }
+    paintFront();
+    paintBack();
+    const advance = (event) => {
+      if (event.target.closest("a")) return;
+      if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+      if (event.type === "keydown") event.preventDefault();
+      if (!card.classList.contains("is-flipped")) {
+        paintBack();
+        card.classList.add("is-flipped");
+        card.setAttribute("aria-expanded", "true");
+        back.setAttribute("aria-hidden", "false");
+        front.setAttribute("aria-hidden", "true");
+        return;
+      }
+      card.classList.remove("is-flipped");
+      card.setAttribute("aria-expanded", "false");
+      back.setAttribute("aria-hidden", "true");
+      front.setAttribute("aria-hidden", "false");
+      index = (index + 1) % cards.length;
+      paintFront();
+    };
+    card.addEventListener("click", advance);
+    card.addEventListener("keydown", advance);
   }
 
 
@@ -667,19 +738,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const photosList = place.photos || [];
     const kicker = isHighlight ? "" : "From the travel blog";
     const badge = place.badge ? '<span class="badge-travel">' + escapeHtml(place.badge) + "</span>" : "";
-    const cards = (place.cards || []).map((card) => {
-      return '<div class="fact-card culture-card" tabindex="0" role="button" aria-expanded="false">' +
-        '<div class="fact-flip"><div class="fact-front" aria-hidden="false">' +
-        '<span class="fact-kicker">' + escapeHtml(card.kicker) + "</span>" +
-        '<span class="fact-country">' + escapeHtml(card.title) + "</span>" +
-        '<span class="fact-hint">Tap to flip</span></div>' +
-        '<div class="fact-back" aria-hidden="true">' +
-        '<span class="fact-kicker">' + escapeHtml(card.kicker) + "</span>" +
-        "<p>" + escapeHtml(card.body) + "</p>" +
-        '<a class="culture-source" href="' + escapeHtml(card.source_url) +
-        '" target="_blank" rel="noopener noreferrer">Source: ' + escapeHtml(card.source_label) +
-        "</a></div></div></div>";
-    }).join("");
+    const cultureCards = (place.cards || []).filter((card) => card && (card.title || card.body));
     const photos = photosList.map((ph) => {
       return "<figure><img src=\"" + escapeHtml(ph.src) + "\" width=\"" + (ph.width || "") +
         "\" height=\"" + (ph.height || "") + "\" alt=\"" + escapeHtml(ph.alt || "") +
@@ -712,12 +771,20 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
       videoHtml +
       "</div>" +
       '<aside class="travel-stage-aside">' +
-      '<h4 class="culture-heading">Culture cards</h4>' +
-      '<p class="culture-lede">Tap or click a card to flip it.</p>' +
-      '<div class="culture-grid culture-collage">' + cards + "</div>" +
+      (cultureCards.length
+        ? '<h4 class="culture-heading">Culture cards</h4>' +
+          '<p class="culture-lede">Tap or click the card to flip it. Flip again to return to the front, then flip for the next card.</p>' +
+          '<div class="culture-rotator-wrap">' +
+          '<div class="fact-card culture-card culture-rotator" tabindex="0" role="button" aria-expanded="false">' +
+          '<div class="fact-flip"><div class="fact-front" aria-hidden="false">' +
+          '<span class="fact-kicker"></span>' +
+          '<span class="fact-country"></span>' +
+          '<span class="fact-hint">Tap to flip</span></div>' +
+          '<div class="fact-back" aria-hidden="true"></div></div></div></div>'
+        : "") +
       "</aside></div>";
 
-    bindCultureCards(root);
+    if (cultureCards.length) initCultureRotator(root, cultureCards);
     initCarousels(root);
     initLocalClocks(root);
   }
@@ -744,7 +811,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115y", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115z", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -815,7 +882,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115y";
+    const jsonUrl = "../data/regions.json?v=20261115z";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");
