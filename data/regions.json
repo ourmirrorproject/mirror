@@ -559,7 +559,54 @@
           ]
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-01.jpg",
+          "clips": [
+            {
+              "id": "DxMhmJjM7T0",
+              "title": "What is your impression of American teenagers?"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "K5x8efHMiFY",
+              "title": "How do you personally feel when you hear stereotypes about people from Africa?"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "SipjK6Oq6OE",
+              "title": "What are some interesting things about teenagers in Africa that other people may not know?"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "T-WVed-cRtI",
+              "title": "Do you think Americans are welcome to travel to your country?"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "rhC8ZysM7TU",
+              "title": "What are some good ways to break stereotypes and help people understand each other better?"
+            }
+          ]
+        },
+        {
+          "clips": [
+            {
+              "id": "BDG9Sjo3zRI",
+              "title": "Do you think you would feel welcome if you travel to America?"
+            }
+          ]
+        },
+        {
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -568,10 +615,10 @@
               "end": 15,
               "thumbnail": "assets/voices/people/cameroon-01.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-01.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-02.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -580,10 +627,10 @@
               "end": 46,
               "thumbnail": "assets/voices/people/cameroon-02.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-02.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-03.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -592,10 +639,10 @@
               "end": 62,
               "thumbnail": "assets/voices/people/cameroon-03.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-03.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-04.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -604,10 +651,10 @@
               "end": 88,
               "thumbnail": "assets/voices/people/cameroon-04.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-04.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-05.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -616,10 +663,10 @@
               "end": 110,
               "thumbnail": "assets/voices/people/cameroon-05.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-05.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-06.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -628,10 +675,10 @@
               "end": 134,
               "thumbnail": "assets/voices/people/cameroon-06.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-06.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-07.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -639,35 +686,11 @@
               "start": 134,
               "end": 168,
               "thumbnail": "assets/voices/people/cameroon-07.jpg"
-            },
-            {
-              "id": "DxMhmJjM7T0",
-              "title": "What is your impression of American teenagers?"
-            },
-            {
-              "id": "K5x8efHMiFY",
-              "title": "How do you personally feel when you hear stereotypes about people from Africa?"
-            },
-            {
-              "id": "SipjK6Oq6OE",
-              "title": "What are some interesting things about teenagers in Africa that other people may not know?"
-            },
-            {
-              "id": "T-WVed-cRtI",
-              "title": "Do you think Americans are welcome to travel to your country?"
-            },
-            {
-              "id": "rhC8ZysM7TU",
-              "title": "What are some good ways to break stereotypes and help people understand each other better?"
-            },
-            {
-              "id": "BDG9Sjo3zRI",
-              "title": "Do you think you would feel welcome if you travel to America?"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-07.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-08.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -676,10 +699,10 @@
               "end": 185,
               "thumbnail": "assets/voices/people/cameroon-08.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-08.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-09.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -687,15 +710,11 @@
               "start": 185,
               "end": 206,
               "thumbnail": "assets/voices/people/cameroon-09.jpg"
-            },
-            {
-              "id": "-bazu61qXfw",
-              "title": "What should people know about Cameroonians?"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-09.jpg"
         },
         {
-          "thumbnail": "assets/voices/people/cameroon-10.jpg",
           "clips": [
             {
               "id": "v9NWlqYaPfo",
@@ -704,10 +723,85 @@
               "end": 220,
               "thumbnail": "assets/voices/people/cameroon-10.jpg"
             }
-          ]
+          ],
+          "thumbnail": "assets/voices/people/cameroon-10.jpg"
+        },
+        {
+          "clips": [
+            {
+              "id": "-bazu61qXfw",
+              "title": "What should people know about Cameroonians?",
+              "thumbnail": "assets/voices/cameroon-voices.jpg"
+            }
+          ],
+          "thumbnail": "assets/voices/cameroon-voices.jpg"
         }
       ],
       "videos": [
+        {
+          "id": "BWpeDw-hwOk",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "JuWPlYUjznU",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "6cjoZDxcnWQ",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "68UmmoWg_Pc",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "RlNCt_ccp8s",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "0AbqpC6f2cQ",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "yUujnWy4jRU",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "aVNCijcJggg",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "XEyMOvzl5bg",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "yRmcdUD8E8Y",
+          "title": "What do you think about stereotypes and teenagers?"
+        },
+        {
+          "id": "DxMhmJjM7T0",
+          "title": "What is your impression of American teenagers?"
+        },
+        {
+          "id": "K5x8efHMiFY",
+          "title": "How do you personally feel when you hear stereotypes about people from Africa?"
+        },
+        {
+          "id": "SipjK6Oq6OE",
+          "title": "What are some interesting things about teenagers in Africa that other people may not know?"
+        },
+        {
+          "id": "T-WVed-cRtI",
+          "title": "Do you think Americans are welcome to travel to your country?"
+        },
+        {
+          "id": "rhC8ZysM7TU",
+          "title": "What are some good ways to break stereotypes and help people understand each other better?"
+        },
+        {
+          "id": "BDG9Sjo3zRI",
+          "title": "Do you think you would feel welcome if you travel to America?"
+        },
         {
           "id": "v9NWlqYaPfo",
           "title": "What are some common stereotypes from your region?",
@@ -758,30 +852,6 @@
           "thumbnail": "assets/voices/people/cameroon-07.jpg"
         },
         {
-          "id": "DxMhmJjM7T0",
-          "title": "What is your impression of American teenagers?"
-        },
-        {
-          "id": "K5x8efHMiFY",
-          "title": "How do you personally feel when you hear stereotypes about people from Africa?"
-        },
-        {
-          "id": "SipjK6Oq6OE",
-          "title": "What are some interesting things about teenagers in Africa that other people may not know?"
-        },
-        {
-          "id": "T-WVed-cRtI",
-          "title": "Do you think Americans are welcome to travel to your country?"
-        },
-        {
-          "id": "rhC8ZysM7TU",
-          "title": "What are some good ways to break stereotypes and help people understand each other better?"
-        },
-        {
-          "id": "BDG9Sjo3zRI",
-          "title": "Do you think you would feel welcome if you travel to America?"
-        },
-        {
           "id": "v9NWlqYaPfo",
           "title": "What are some common stereotypes from your region?",
           "start": 168,
@@ -796,15 +866,16 @@
           "thumbnail": "assets/voices/people/cameroon-09.jpg"
         },
         {
-          "id": "-bazu61qXfw",
-          "title": "What should people know about Cameroonians?"
-        },
-        {
           "id": "v9NWlqYaPfo",
           "title": "What are some common stereotypes from your region?",
           "start": 206,
           "end": 220,
           "thumbnail": "assets/voices/people/cameroon-10.jpg"
+        },
+        {
+          "id": "-bazu61qXfw",
+          "title": "What should people know about Cameroonians?",
+          "thumbnail": "assets/voices/cameroon-voices.jpg"
         }
       ],
       "facts": [
