@@ -601,15 +601,15 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
 
   function liveViewBar(webcam, timezone, placeName) {
     const bits = [];
-    if (webcam && webcam.url) {
+    if (webcam && webcam.youtube) {
       const label = webcam.label || "Live view";
       bits.push(
-        '<a class="live-pill" href="' + escapeHtml(webcam.url) +
-        '" target="_blank" rel="noopener noreferrer" aria-label="Live view: ' +
-        escapeHtml(label) + ' (opens in a new tab)">' +
+        '<button type="button" class="live-pill" data-open-video="' + escapeHtml(webcam.youtube) +
+        '" data-title="' + escapeHtml(label) +
+        '" aria-label="Live view: ' + escapeHtml(label) + '">' +
         '<span class="live-dot" aria-hidden="true"></span>Live view' +
         (webcam.label ? '<span class="live-pill-place">' + escapeHtml(webcam.label) + "</span>" : "") +
-        "</a>"
+        "</button>"
       );
     }
     if (timezone) {
@@ -743,7 +743,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
   }
 
   if (document.getElementById("travel-highlight") || document.getElementById("travel-blog-data")) {
-  loadJSON("travel-blog.json?v=20261115n", "travel-blog-data").then((data) => {
+  loadJSON("travel-blog.json?v=20261115o", "travel-blog-data").then((data) => {
     if (!data || !data.places || !data.places.length) return;
     const highlightId = resolveMonthlyHighlight(data);
     const ordered = orderPlacesForChips(data.places, highlightId);
@@ -810,7 +810,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
     const root = document.getElementById("region-videos");
     if (!root) return;
     const slug = root.getAttribute("data-region");
-    const jsonUrl = "../data/regions.json?v=20261115n";
+    const jsonUrl = "../data/regions.json?v=20261115o";
     function mountRegionLiveBar(data) {
       const holder = document.querySelector(".region-section > .wrap > .section-head");
       const group = document.getElementById("region-videos");

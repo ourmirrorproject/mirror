@@ -173,8 +173,8 @@
       "timezone": "America/Argentina/Buenos_Aires",
       "webcam": {
         "label": "Obelisk of Buenos Aires",
-        "url": "https://www.skylinewebcams.com/en/webcam/argentina/buenos-aires/buenos-aires/obelisco.html",
-        "source": "SkylineWebcams"
+        "youtube": "r8Busmkpsh8",
+        "source": "ARGNews"
       }
     },
     "bolivia": {
@@ -276,11 +276,7 @@
         }
       ],
       "timezone": "America/La_Paz",
-      "webcam": {
-        "label": "Lake Titicaca, Copacabana",
-        "url": "https://www.skylinewebcams.com/en/webcam/bolivia/manco-kapac/copacabana/lago-titicaca.html",
-        "source": "SkylineWebcams"
-      }
+      "webcam": null
     },
     "cameroon": {
       "name": "Cameroon",
@@ -663,11 +659,7 @@
         }
       ],
       "timezone": "Asia/Shanghai",
-      "webcam": {
-        "label": "Skyline of Shanghai",
-        "url": "https://www.skylinewebcams.com/en/webcam/china/shanghai/shanghai/skyline-of-shanghai.html",
-        "source": "SkylineWebcams"
-      }
+      "webcam": null
     },
     "japan": {
       "name": "Japan",
@@ -714,8 +706,8 @@
       "timezone": "Asia/Tokyo",
       "webcam": {
         "label": "Shibuya Crossing, Tokyo",
-        "url": "https://www.skylinewebcams.com/en/webcam/japan/kanto/tokyo/tokyo-shibuya-scramble-crossing.html",
-        "source": "SkylineWebcams"
+        "youtube": "5B4LmH4JbnY",
+        "source": "TV Asahi (ANN)"
       }
     },
     "nigeria": {
@@ -917,11 +909,7 @@
         }
       ],
       "timezone": "Asia/Manila",
-      "webcam": {
-        "label": "El Nido, Palawan",
-        "url": "https://www.skylinewebcams.com/en/webcam/philippines/mimaropa/palawan/el-nido.html",
-        "source": "SkylineWebcams"
-      }
+      "webcam": null
     }
   }
 }

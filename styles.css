@@ -2487,6 +2487,13 @@ h3 { font-family: var(--serif); font-weight: 500; margin: 0 0 0.5rem; }
 @media (prefers-reduced-motion: reduce) {
   .live-dot { animation: none; }
 }
+button.live-pill {
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
 .live-pill-place {
   font-weight: 600;
   letter-spacing: 0.02em;
