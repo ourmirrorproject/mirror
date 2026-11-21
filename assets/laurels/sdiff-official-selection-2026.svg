@@ -14,21 +14,21 @@
     </filter>
   </defs>
   <style>
-    .fl-kicker {
+    .sdiff-kicker {
       font-family: "Playfair Display SC", "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
       font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.22em;
       fill: #FFF4DE;
     }
-    .fl-name {
+    .sdiff-name {
       font-family: "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
       font-size: 26px;
       font-weight: 600;
       letter-spacing: 0.02em;
       fill: #FFF4DE;
     }
-    .fl-year {
+    .sdiff-year {
       font-family: "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
       font-size: 19px;
       font-weight: 600;
@@ -100,9 +100,9 @@
 <g transform="translate(445.23,108.11) rotate(228.21)"><path d="M0,0 C2.7216654545454544,-2.813090909090909 4.838516363636364,-9.142545454545456 0,-17.581818181818182 C-4.838516363636364,-9.142545454545456 -2.7216654545454544,-2.813090909090909 0,0 Z" fill="url(#sdiff-gold)" stroke="#7A5E10" stroke-width="0.4" stroke-linejoin="round"/><path d="M0,-1.7581818181818183 C0,-7.384363636363636 0,-12.658909090909091 0,-15.823636363636364" fill="none" stroke="#7A5E10" stroke-width="0.35" stroke-opacity="0.4"/></g>
 <g transform="translate(417.25,89.52) rotate(218.80)"><path d="M0,0 C2.5527927272727275,-2.6385454545454547 4.538298181818182,-8.575272727272727 0,-16.490909090909092 C-4.538298181818182,-8.575272727272727 -2.5527927272727275,-2.6385454545454547 0,0 Z" fill="url(#sdiff-gold)" stroke="#7A5E10" stroke-width="0.4" stroke-linejoin="round"/><path d="M0,-1.6490909090909094 C0,-6.926181818181818 0,-11.873454545454546 0,-14.841818181818184" fill="none" stroke="#7A5E10" stroke-width="0.35" stroke-opacity="0.4"/></g></g>
   </g>
-<text x="270" y="146" text-anchor="middle" class="fl-kicker">OFFICIAL SELECTION</text>
-    <text x="270" y="176" text-anchor="middle" class="fl-name">SAN DIEGO</text>
-<text x="270" y="206" text-anchor="middle" class="fl-name">INTERNATIONAL</text>
-<text x="270" y="236" text-anchor="middle" class="fl-name">FILM FESTIVAL</text>
-    <text x="270" y="268" text-anchor="middle" class="fl-year">2026</text>
+<text x="270" y="146" text-anchor="middle" class="sdiff-kicker" fill="#FFF4DE">OFFICIAL SELECTION</text>
+    <text x="270" y="176" text-anchor="middle" class="sdiff-name" fill="#FFF4DE">SAN DIEGO</text>
+<text x="270" y="206" text-anchor="middle" class="sdiff-name" fill="#FFF4DE">INTERNATIONAL</text>
+<text x="270" y="236" text-anchor="middle" class="sdiff-name" fill="#FFF4DE">FILM FESTIVAL</text>
+    <text x="270" y="268" text-anchor="middle" class="sdiff-year" fill="#FFF4DE">2026</text>
 </svg>
