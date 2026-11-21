@@ -12,6 +12,26 @@
     <filter id="laff-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="1" stdDeviation="2.1" flood-color="#140C10" flood-opacity="0.8"/>
     </filter>
+    <filter id="laff-textglow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1.1" result="fat"/>
+      <feGaussianBlur in="fat" stdDeviation="2.2" result="coreblur"/>
+      <feFlood flood-color="#140C10" flood-opacity="0.9" result="corecolor"/>
+      <feComposite in="corecolor" in2="coreblur" operator="in" result="core"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.4" result="bloomblur"/>
+      <feFlood flood-color="#140C10" flood-opacity="0.5" result="bloomcolor"/>
+      <feComposite in="bloomcolor" in2="bloomblur" operator="in" result="bloom"/>
+      <feMerge>
+        <feMergeNode in="bloom"/>
+        <feMergeNode in="core"/>
+        <feMergeNode in="core"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="laff-veil" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#140C10" stop-opacity="0.48"/>
+      <stop offset="50%" stop-color="#140C10" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#140C10" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <style>
     .fl-kicker {
@@ -99,9 +119,12 @@
 <g transform="translate(467.64,129.56) rotate(239.17)"><path d="M0,0 C2.8905381818181812,-2.9876363636363634 5.138734545454545,-9.709818181818182 0,-18.672727272727272 C-5.138734545454545,-9.709818181818182 -2.8905381818181812,-2.9876363636363634 0,0 Z" fill="url(#laff-gold)" stroke="#7A5E10" stroke-width="0.4" stroke-linejoin="round"/><path d="M0,-1.8672727272727272 C0,-7.842545454545454 0,-13.444363636363635 0,-16.805454545454545" fill="none" stroke="#7A5E10" stroke-width="0.35" stroke-opacity="0.4"/></g>
 <g transform="translate(445.23,108.11) rotate(228.21)"><path d="M0,0 C2.7216654545454544,-2.813090909090909 4.838516363636364,-9.142545454545456 0,-17.581818181818182 C-4.838516363636364,-9.142545454545456 -2.7216654545454544,-2.813090909090909 0,0 Z" fill="url(#laff-gold)" stroke="#7A5E10" stroke-width="0.4" stroke-linejoin="round"/><path d="M0,-1.7581818181818183 C0,-7.384363636363636 0,-12.658909090909091 0,-15.823636363636364" fill="none" stroke="#7A5E10" stroke-width="0.35" stroke-opacity="0.4"/></g>
 <g transform="translate(417.25,89.52) rotate(218.80)"><path d="M0,0 C2.5527927272727275,-2.6385454545454547 4.538298181818182,-8.575272727272727 0,-16.490909090909092 C-4.538298181818182,-8.575272727272727 -2.5527927272727275,-2.6385454545454547 0,0 Z" fill="url(#laff-gold)" stroke="#7A5E10" stroke-width="0.4" stroke-linejoin="round"/><path d="M0,-1.6490909090909094 C0,-6.926181818181818 0,-11.873454545454546 0,-14.841818181818184" fill="none" stroke="#7A5E10" stroke-width="0.35" stroke-opacity="0.4"/></g></g>
-    <text x="270" y="154" text-anchor="middle" class="fl-kicker">OFFICIAL SELECTION</text>
+            <ellipse cx="270" cy="204" rx="150" ry="90" fill="url(#laff-veil)"/>
+<g filter="url(#laff-textglow)">
+<text x="270" y="154" text-anchor="middle" class="fl-kicker">OFFICIAL SELECTION</text>
     <text x="270" y="186" text-anchor="middle" class="fl-name">LA FILM</text>
 <text x="270" y="218" text-anchor="middle" class="fl-name">FESTIVALS</text>
     <text x="270" y="254" text-anchor="middle" class="fl-year">2026</text>
+    </g>
   </g>
 </svg>
