@@ -19,21 +19,21 @@
       font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.22em;
-      fill: #4A2C17;
+      fill: #FFF4DE;
     }
     .fl-name {
       font-family: "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
       font-size: 26px;
       font-weight: 600;
       letter-spacing: 0.02em;
-      fill: #4A2C17;
+      fill: #FFF4DE;
     }
     .fl-year {
       font-family: "Playfair Display", Palatino, "Palatino Linotype", Georgia, serif;
       font-size: 19px;
       font-weight: 600;
       letter-spacing: 0.36em;
-      fill: #4A2C17;
+      fill: #FFF4DE;
     }
   </style>
   <g filter="url(#sdiff-shadow)">
