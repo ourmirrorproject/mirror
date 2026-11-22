@@ -463,7 +463,7 @@ document.querySelectorAll(".bts-player:not(.is-native)").forEach((player) => {
         if (track.classList.contains("bts-journey")) track.setAttribute("aria-label", "Behind the Scenes photos and clips");
         else if (track.classList.contains("travel-photos")) track.setAttribute("aria-label", "Travel photos");
         else if (track.classList.contains("japan-gallery")) track.setAttribute("aria-label", "Photos from the trip");
-        else if (track.classList.contains("region-gallery")) track.setAttribute("aria-label", "Photographs of the region");
+        else if (track.classList.contains("region-gallery")) track.setAttribute("aria-label", "Photographs of the country");
         else track.setAttribute("aria-label", "Interview videos");
       }
       if (!wrap.querySelector(".carousel-btn")) {
